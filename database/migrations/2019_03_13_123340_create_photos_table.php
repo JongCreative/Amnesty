@@ -16,17 +16,17 @@ class CreatePhotosTable extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->text('descr');
+            $table->text('descr')->nullable();
             $table->string('src');
-            $table->string('exposure');
-            $table->boolean('flits');
-            $table->string('camera_brand');
-            $table->string('brand_model');
-            $table->date('capture_time');
-            $table->string ('focal');
-            $table->string ('aperture');
-            $table->unsignedBigInteger('series_id')->unsigned()->index();
-            $table->unsignedBigInteger('user_id')->unsigned()->index();
+            $table->string('exposure')->nullable();
+            $table->boolean('flits')->nullable();
+            $table->string('camera_brand')->nullable();
+            $table->string('brand_model')->nullable();
+            $table->date('capture_time')->nullable();
+            $table->string ('focal')->nullable();
+            $table->string ('aperture')->nullable();
+            $table->unsignedBigInteger('series_id')->unsigned()->index()->default(0);
+            $table->unsignedBigInteger('user_id')->unsigned()->index()->default(0);
 
             // $table->foreign('series_id')
             //         ->references('id')
@@ -35,6 +35,7 @@ class CreatePhotosTable extends Migration
             $table->foreign('user_id')
                     ->references('id')
                     ->on('users');
+                    // ->onDelete('set NULL');
                     
             $table->timestamps();
         });
