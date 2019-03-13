@@ -14,7 +14,7 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        //
+        return view('photos.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class PhotosController extends Controller
      */
     public function create()
     {
-        //
+        return view('photos.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect('photos');
     }
 
     /**
@@ -46,7 +46,7 @@ class PhotosController extends Controller
      */
     public function show(Photo $photo)
     {
-        //
+        return view('photos.show');
     }
 
     /**
@@ -57,7 +57,7 @@ class PhotosController extends Controller
      */
     public function edit(Photo $photo)
     {
-        //
+        return view('photos.edit');
     }
 
     /**
@@ -69,7 +69,7 @@ class PhotosController extends Controller
      */
     public function update(Request $request, Photo $photo)
     {
-        //
+        return redirect('photos');
     }
 
     /**
@@ -80,6 +80,6 @@ class PhotosController extends Controller
      */
     public function destroy(Photo $photo)
     {
-        //
+        return redirect('photos');
     }
 }
