@@ -25,17 +25,17 @@ class CreatePhotosTable extends Migration
             $table->date('capture_time')->nullable();
             $table->string ('focal')->nullable();
             $table->string ('aperture')->nullable();
-            $table->unsignedBigInteger('series_id')->unsigned()->index()->default(0);
-            $table->unsignedBigInteger('user_id')->unsigned()->index()->default(0);
+            //$table->unsignedBigInteger('series_id')->unsigned()->index()->default(0);
+            //$table->unsignedBigInteger('user_id')->unsigned()->index()->default(0);
 
             // $table->foreign('series_id')
             //         ->references('id')
             //         ->on('series');
                     
-            $table->foreign('user_id')
-                    ->references('id')
-                    ->on('users');
-                    // ->onDelete('set NULL');
+            // $table->foreign('user_id')
+            //         ->references('id')
+            //         ->on('users');
+            //         ->onDelete('set NULL');
                     
             $table->timestamps();
         });
