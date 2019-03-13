@@ -6,13 +6,23 @@
   <form method="POST" action="{{ route('register') }}">
     @csrf
 
-    <label for="name" class="">First name</label>
+    <label for="first_name" class="">First name</label>
 
     <input id="first_name" type="text" class="" name="first_name" value="{{ old('first_name') }}" required autofocus>
 
     @if ($errors->has('first_name'))
       <span class="invalid-feedback" role="alert">
-        <strong>{{ $errors->first('name') }}</strong>
+        <strong>{{ $errors->first('first_name') }}</strong>
+      </span>
+    @endif
+
+    <label for="last_name" class="">First name</label>
+
+    <input id="last_name" type="text" class="" name="last_name" value="{{ old('last_name') }}" required autofocus>
+
+    @if ($errors->has('last_name'))
+      <span class="invalid-feedback" role="alert">
+        <strong>{{ $errors->first('last_name') }}</strong>
       </span>
     @endif
 
