@@ -16,8 +16,8 @@
       </span>
     @endif
 
-    <label for="last_name" class="">First name</label>
 
+    <label for="last_name" class="">Last name</label>
     <input id="last_name" type="text" class="" name="last_name" value="{{ old('last_name') }}" required autofocus>
 
     @if ($errors->has('last_name'))
