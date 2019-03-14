@@ -10,4 +10,9 @@ class AdminsController extends Controller
     {
         return view('admin.dashboard');
     }
+
+    public function contestEdit()
+    {
+        return view('admin.editContest');
+    }
 }

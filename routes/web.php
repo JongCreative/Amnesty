@@ -32,6 +32,8 @@ Route::get('/faq', 'PagesController@faq')->name('faq');
  */
 Route::get('/admin', 'AdminsController@index');
 
+Route::get('/admin/contest/edit', 'AdminsController@contestEdit');
+
 /**
  * Auth Routes
  */

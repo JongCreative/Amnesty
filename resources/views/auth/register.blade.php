@@ -18,7 +18,7 @@
 
 
     <label for="last_name" class="">Last name</label>
-    <input id="last_name" type="text" class="" name="last_name" value="{{ old('last_name') }}" required autofocus>
+    <input id="last_name" type="text" class="" name="last_name" value="{{ old('last_name') }}" required>
 
     @if ($errors->has('last_name'))
       <span class="invalid-feedback" role="alert">
