@@ -2,7 +2,7 @@
 <p> all photos</p>
 
 @foreach($photos as $photo)
-    {{ $photo->id }}
+    <a href="/photos/{{ $photo->id }}">{{ $photo->src }}</a>
     <hr/>
 @endforeach
 {{ $photos->links() }}
