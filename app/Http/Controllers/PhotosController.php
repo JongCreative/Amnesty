@@ -46,7 +46,7 @@ class PhotosController extends Controller
 
         $photo = new Photo;
         $photo->title = $request->input('title');
-        // $photo->descr = $request->input('descr');
+        $photo->descr = $request->input('descr');
         // $photo->src = $request->input('src');
         
         // $photo->exposure = $request->input('exposure');              //extract from exif
