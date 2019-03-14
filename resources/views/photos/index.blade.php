@@ -2,6 +2,7 @@
 <p> all photos</p>
 
 @foreach($photos as $photo)
-    {{$photo->id}}
+    {{ $photo->id }}
     <hr/>
 @endforeach
+{{ $photos->links() }}

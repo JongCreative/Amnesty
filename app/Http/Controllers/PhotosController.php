@@ -16,7 +16,7 @@ class PhotosController extends Controller
     {
         //dd (Photo::all());
         //dd(Photo::orderBy('created_at', 'DESC')->get());
-        $photo = Photo::orderBy('id', 'DESC')->get();
+        $photo = Photo::orderBy('id', 'DESC')->paginate(10);
         return view('photos.index')->with('photos', $photo);
     }
 
