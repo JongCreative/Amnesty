@@ -5,10 +5,10 @@
     @csrf
         <br /><input type="text" name="title" placeholder="title" value="{{ old('title') }}">
         <br /><input type="text" name="desc" placeholder="descr" value="{{ old('desc') }}">
-        {{-- <br /><input type="text" name="file" placeholder="src" value="{{ old('src') }}">
-
-
+        <br /><input type="text" name="file" placeholder="src" value="{{ old('src') }}">
         <br /><input type="text" name="focal" placeholder="focal" value="{{ old('focal') }}">
+
+    {{-- 
         <br /><input type="text" name="aperture" placeholder="aperture" value="{{ old('aperture') }}">
 
 

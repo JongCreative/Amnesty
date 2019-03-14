@@ -55,7 +55,7 @@ class PhotosController extends Controller
         // $photo->brand_model = $request->input('brand_model');        //extract from exif
         // $photo->capture_time = $request->input('capture_time');      //extract from exif
 
-        // $photo->focal = $request->input('focal');
+        $photo->focal = $request->input('focal');
         // $photo->aperture = $request->input('aperture');
         // $photo->save();
 
