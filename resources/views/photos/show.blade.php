@@ -3,3 +3,4 @@
 <br/ > {{ $photos->id }}
 <br/ > {{ $photos->src }}
 <br/ > {{ $photos->title }}
+<br/ > {{ $photos->descr }}
