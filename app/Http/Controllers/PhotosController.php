@@ -56,7 +56,7 @@ class PhotosController extends Controller
         // $photo->capture_time = $request->input('capture_time');      //extract from exif
 
         $photo->focal = $request->input('focal');
-        // $photo->aperture = $request->input('aperture');
+        $photo->aperture = $request->input('aperture');
         // $photo->save();
 
         return redirect('photos');
