@@ -15,7 +15,8 @@ class PhotosController extends Controller
     public function index()
     {
         //dd (Photo::all());
-        $photo = Photo::all();
+        //dd(Photo::orderBy('created_at', 'DESC')->get());
+        $photo = Photo::orderBy('id', 'DESC')->paginate(10);
         return view('photos.index')->with('photos', $photo);
     }
 
@@ -37,6 +38,27 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'descr' => 'required',
+            //'src' => 'required',
+        ]);
+
+        $photo = new Photo;
+        $photo->title = $request->input('title');
+        $photo->descr = $request->input('descr');
+        // $photo->src = $request->input('src');
+        
+        // $photo->exposure = $request->input('exposure');              //extract from exif
+        // $photo->flits = $request->input('flits');                    //extract from exif
+        // $photo->camera_brand = $request->input('camera_brand');      //extract from exif
+        // $photo->brand_model = $request->input('brand_model');        //extract from exif
+        // $photo->capture_time = $request->input('capture_time');      //extract from exif
+
+        $photo->focal = $request->input('focal');
+        $photo->aperture = $request->input('aperture');
+        // $photo->save();
+
         return redirect('photos');
     }
 
@@ -48,7 +70,8 @@ class PhotosController extends Controller
      */
     public function show(Photo $photo)
     {
-        return view('photos.show');
+        $photo = Photo::find($photo->id);
+        return view('photos.show')->with('photos', $photo);
     }
 
     /**
