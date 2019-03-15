@@ -3,6 +3,7 @@
 @section('content')
   <form method="POST" action="/admin/contest">
     @csrf
+    {{ method_field('PATCH') }}
     <label for="first_name" class="">Contest id: {{ $contestData->contest }}</label>
 
     <label for="region" class="">Region</label>

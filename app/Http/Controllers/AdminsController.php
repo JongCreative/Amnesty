@@ -15,4 +15,11 @@ class AdminsController extends Controller
     {
         return view('admin.editContest');
     }
+
+    public function contestUpdate(Request $request)
+    {
+    		//request('theme')
+    		\Config::write(['contest.theme' => request('theme')]);
+        return redirect('/admin');
+    }
 }

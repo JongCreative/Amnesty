@@ -175,7 +175,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ContestServiceProvider::class,
-
+        
+        SergeyMiracle\Config\ConfigServiceProvider::class,
     ],
 
     /*
