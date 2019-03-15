@@ -1,6 +1,6 @@
 
 // Body
-$body-bg: #fff;
+$body-bg: #766a62;
 
 // Typography
 $font-family-sans-serif: "Arial", sans-serif;
@@ -17,6 +17,17 @@ $dark_warm_grey: #766a62;
 $dark_hover: #363636;
 $light_hover: #dadada;
 $yellow_hover: #fff000;
+
+$nav-background: #c7c2ba;
+$nav-font-color: #000;
+$nav-font-hovercolor: #fff;
+$link-hover-color: #dadada;
+
+
+
+$content-width: 1000px;
+$breakpoint: 799px;
+$nav-height: 70px;
 
 .debug{
     border: solid 1px orange;
