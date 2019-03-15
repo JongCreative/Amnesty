@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage; // access storage for delete file
 
 class PhotosController extends Controller
 {
@@ -116,6 +117,8 @@ class PhotosController extends Controller
      */
     public function destroy(Photo $photo)
     {
-        return redirect('photos');
+        Storage::delete('public/'. config('contest.contest').$photo->src);
+        $photo->delete();
+        return redirect('photos')->with('success', 'successfully removed');
     }
 }
