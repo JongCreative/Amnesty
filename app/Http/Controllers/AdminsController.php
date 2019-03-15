@@ -18,7 +18,9 @@ class AdminsController extends Controller
 
     public function contestUpdate(Request $request)
     {
-    		//request('theme')
+    		\Config::write(['contest.endDate' => request('endDate')]);
+    		\Config::write(['contest.prize' => request('prize')]);
+    		\Config::write(['contest.region' => request('region')]);
     		\Config::write(['contest.theme' => request('theme')]);
         return redirect('/admin');
     }
