@@ -41,13 +41,24 @@ class PhotosController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'descr' => 'required',
-            //'src' => 'required',
+            //apache max upload 2mb
+            'src' => 'required|image|mimes:jpeg,jpg|max:1999|min:100',
         ]);
+
+        //Handle image format
+        $src = $request->hasFile('src');
+        $src = $request->File('src');
+        $filenameWithExt = $src->getClientOriginalName();
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        $extension = $src->guessClientExtension();
+        $filenameToStore = time() .'.'. $filename .'_'. $extension;
+        //Store to storage.app.public.folderNameDefinedInConfigFile
+        $path = $src->storeAs('public/'. config('contest.contest'), $filenameToStore);
 
         $photo = new Photo;
         $photo->title = $request->input('title');
         $photo->descr = $request->input('descr');
-        // $photo->src = $request->input('src');
+        $photo->src = $filenameToStore;
         
         // $photo->exposure = $request->input('exposure');              //extract from exif
         // $photo->flits = $request->input('flits');                    //extract from exif
@@ -57,7 +68,7 @@ class PhotosController extends Controller
 
         $photo->focal = $request->input('focal');
         $photo->aperture = $request->input('aperture');
-        // $photo->save();
+        $photo->save();
 
         return redirect('photos');
     }
