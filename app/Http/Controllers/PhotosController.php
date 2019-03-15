@@ -119,6 +119,6 @@ class PhotosController extends Controller
     {
         Storage::delete('public/'. config('contest.contest').$photo->src);
         $photo->delete();
-        return redirect('photos');
+        return redirect('photos')->with('success', 'successfully removed');
     }
 }
