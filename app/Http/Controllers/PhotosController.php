@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage; // access storage for delete file
 
 class PhotosController extends Controller
 {
@@ -51,7 +52,7 @@ class PhotosController extends Controller
         $filenameWithExt = $src->getClientOriginalName();
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
         $extension = $src->guessClientExtension();
-        $filenameToStore = time() .'.'. $filename .'_'. $extension;
+        $filenameToStore = time() .'.'. $filename .'.'. $extension;
         //Store to storage.app.public.folderNameDefinedInConfigFile
         $path = $src->storeAs('public/'. config('contest.contest'), $filenameToStore);
 
@@ -116,6 +117,8 @@ class PhotosController extends Controller
      */
     public function destroy(Photo $photo)
     {
+        Storage::delete('public/'. config('contest.contest').$photo->src);
+        $photo->delete();
         return redirect('photos');
     }
 }
