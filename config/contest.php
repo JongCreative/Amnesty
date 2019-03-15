@@ -5,6 +5,5 @@ return [
 	'region' => 'Noord-Brabant & Limburg',
 	'prize' => '€5000,-',
 	'theme' => 'Vluchten',
-	'contest' => '2018/2019',
-	'photoLocation' => 'vluchten'
+	'contest' => '1552561211',
 ];

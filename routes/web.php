@@ -26,6 +26,14 @@ Route::get('/jury', 'PagesController@jury')->name('jury');
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/faq', 'PagesController@faq')->name('faq');
 
+
+/**
+ * Admin Routes
+ */
+Route::get('/admin', 'AdminsController@index');
+Route::patch('/admin/contest', 'AdminsController@contestUpdate');
+Route::get('/admin/contest/edit', 'AdminsController@contestEdit');
+
 /**
  * Auth Routes
  */
