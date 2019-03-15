@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href="/css/app.css" rel="stylesheet">
 
         <title>Laravel</title>
 
@@ -11,26 +11,8 @@
         
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-                <a href="#" class="button">
+    <div>
+<a href="#" class="button">
                             <span>Ik doe mee</span>
                         </a>  
 
@@ -43,16 +25,44 @@
                         </a>
                         <h1>gewone h1 tekst</h1> 
                         <p>paragraaftekst</p> 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
+
+                        </div>
+ <nav>
+  <ul id="menu">
+    <li><img src="/img/Logo.png" height="50px"></li>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Inzendingen</a>
+      <ul class="hidden">
+        <li><a href="/photos">Gallery</a></li>
+        <li><a href="#">Winnaars</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Wedstrijd</a>
+      <ul class="hidden">
+        <li><a href="#">Voorwaarden</a></li>
+        <li><a href="#">Jury</a></li>
+        <li><a href="#">Sposoren</a></li>
+        <li><a href="#">Pers</a></li>
+      </ul>
+    </li>
+  @if (Route::has('login'))
+    @auth
+        <a href="{{ url('/home') }}">Home</a>
+    @else
+        <a href="{{ route('login') }}" class="button">Login</a>
+
+        @if (Route::has('register'))
+            <a href="{{ route('register') }} " class="button button_sm">Register</a>
+        @endif
+    @endauth
+  @endif
+  </ul>
+</nav>
+<p></p>
+<p></p>
+
+
+                       
+            
     </body>
 </html>

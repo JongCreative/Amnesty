@@ -4,11 +4,7 @@
 
 html {
   font-family: "Arial", sans-serif;
-}
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  background-color: #766a62;
 }
 
 .actionbox {
@@ -17,18 +13,16 @@ html {
 
 .button {
   color: #000000;
+  background-color: #fff;
   border: 1px solid #000000;
   text-transform: uppercase;
-  font-size: 1rem;
-  padding: 0.75rem 1.5rem;
+  padding: 16px 32px;
   display: inline-block;
-  line-height: 25px;
-  outline: 0;
   text-align: center;
   transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out, fill 0.25s ease-in-out;
 }
 .button:hover {
-  background-color: #dadada;
+  background-color: #c7c2ba;
 }
 
 .button_sm {
@@ -53,6 +47,64 @@ a {
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: left;
+  margin-right: 0px;
+}
+
+li a {
+  display: block;
+  min-width: 170px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Arial", sans-serif;
+  color: #000;
+  background: #c7c2ba;
+}
+
+li:hover a {
+  background: #dadada;
+}
+
+li:hover ul a {
+  background: #dadada;
+  color: #000;
+  height: 40px;
+  line-height: 40px;
+}
+
+li:hover ul a:hover {
+  background: #c7c2ba;
+}
+
+li ul {
+  display: none;
+}
+
+li ul li {
+  display: block;
+  float: none;
+}
+
+li ul li a {
+  width: auto;
+  min-width: 100px;
+  padding: 0 20px;
+}
+
+ul li a:hover + .hidden, .hidden:hover {
+  display: block;
 }
 
 /*# sourceMappingURL=app.css.map */
