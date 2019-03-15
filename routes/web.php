@@ -15,6 +15,35 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/**
+ * Single Pages
+ */
+Route::get('/', 'PagesController@index')->name('home');
+Route::get('/contestterms', 'PagesController@contestterms')->name('terms');
+Route::get('/press', 'PagesController@press')->name('press');
+Route::get('/sponsors', 'PagesController@sponsors')->name('sponsors');
+Route::get('/jury', 'PagesController@jury')->name('jury');
+Route::get('/contact', 'PagesController@contact')->name('contact');
+Route::get('/faq', 'PagesController@faq')->name('faq');
+
+
+/**
+ * Admin Routes
+ */
+Route::get('/admin', 'AdminsController@index');
+Route::patch('/admin/contest', 'AdminsController@contestUpdate');
+Route::get('/admin/contest/edit', 'AdminsController@contestEdit');
+
+/**
+ * Auth Routes
+ */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
+
+/*
+ * Single Pages Controller
+ */
+
+Route::resource('/photos', 'PhotosController');
+Route::resource('/user', 'UsersController');

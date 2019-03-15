@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4731429c7f25ab92eaa813447a972209",
+    "content-hash": "991b6a17de81713f38105ae2140398d2",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1392,6 +1392,48 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "sergeymiracle/config-writer",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SergeyMiracle/laravel-config-writer.git",
+                "reference": "1e40bbbe4bcb12a89e00aa2312cfff52062cd82d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SergeyMiracle/laravel-config-writer/zipball/1e40bbbe4bcb12a89e00aa2312cfff52062cd82d",
+                "reference": "1e40bbbe4bcb12a89e00aa2312cfff52062cd82d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~5.0.",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SergeyMiracle\\Config\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SergeyMiracle",
+                    "email": "sergeymiracle@gmail.com"
+                }
+            ],
+            "description": "Configuration extension",
+            "keywords": [
+                "config",
+                "laravel",
+                "write"
+            ],
+            "time": "2017-03-16T14:59:04+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
