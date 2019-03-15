@@ -52,7 +52,7 @@ class PhotosController extends Controller
         $filenameWithExt = $src->getClientOriginalName();
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
         $extension = $src->guessClientExtension();
-        $filenameToStore = time() .'.'. $filename .'.'. $extension;
+        $filenameToStore = time() .'_'. $filename .'.'. $extension;
         //Store to storage.app.public.folderNameDefinedInConfigFile
         $path = $src->storeAs('public/'. config('contest.contest'), $filenameToStore);
 
