@@ -41,7 +41,8 @@ class PhotosController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'descr' => 'required',
-            'src' => 'required',
+            //apache max upload 2mb
+            'src' => 'required|image|mimes:jpeg,jpg|max:1999',
         ]);
 
         //Handle image format
