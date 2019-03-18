@@ -44,7 +44,7 @@ Route::get('/home', 'HomeController@index');
 /**
  * Dashboard
  */
-Route::get('/dashboard', 'UsersController@dashboard');
+Route::get('/dashboard', 'dashboardController@index');
 
 /*
  * Resource Pages Controller
