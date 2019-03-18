@@ -21,6 +21,10 @@
     </div>
 
     <div class="">
+        <a href="/dashboard/password">Change Password</a>
+    </div>
+
+    <div class="">
         <div class="">About me</div>
         <div class=>{!! nl2br(e(Auth::user()->descr )) !!}</div>
         <a href="/dashboard/description">Edit</a>
