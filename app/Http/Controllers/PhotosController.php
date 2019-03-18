@@ -108,6 +108,11 @@ class PhotosController extends Controller
      */
     public function update(Request $request, Photo $photo)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'descr' => 'required',
+        ]);
+        
         $photo = Photo::find($photo->id);
         $photo->title = $request->input('title');
         $photo->descr = $request->input('descr');
