@@ -20,6 +20,12 @@
         <a href="/dashboard/email">Change</a>
     </div>
 
+    <div class="">
+        <div class="">About me</div>
+        <div class=>{!! nl2br(e(Auth::user()->descr )) !!}</div>
+        <a href="/dashboard/description">Edit</a>
+    </div>
+
     <div>
         <h2>Current Contest</h2>
         <div>
