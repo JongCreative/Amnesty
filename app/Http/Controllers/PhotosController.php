@@ -112,6 +112,7 @@ class PhotosController extends Controller
         $photo->title = $request->input('title');
         $photo->descr = $request->input('descr');
         $photo->focal = $request->input('focal');
+        $photo->aperture = $request->input('aperture');
         $photo->save();
         return redirect('photos');
     }

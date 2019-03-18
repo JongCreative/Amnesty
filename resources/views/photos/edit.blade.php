@@ -7,5 +7,6 @@
         <br /><input type="text" name="title" placeholder="title" value="{{ $photos->title }}">
         <br /><input type="text" name="descr" placeholder="descr" value="{{ $photos->descr }}">
         <br /><input type="text" name="focal" placeholder="focal" value="{{ $photos->focal }}">
+        <br /><input type="text" name="aperture" placeholder="aperture" value="{{ $photos->aperture }}">
         <br /><button type="submit">submit</button>
 </form>
