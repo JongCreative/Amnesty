@@ -6,5 +6,6 @@
     @csrf
         <br /><input type="text" name="title" placeholder="title" value="{{ $photos->title }}">
         <br /><input type="text" name="descr" placeholder="descr" value="{{ $photos->descr }}">
-        <button type="submit">submit</button>
+        <br /><input type="text" name="focal" placeholder="focal" value="{{ $photos->focal }}">
+        <br /><button type="submit">submit</button>
 </form>

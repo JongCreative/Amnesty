@@ -111,6 +111,7 @@ class PhotosController extends Controller
         $photo = Photo::find($photo->id);
         $photo->title = $request->input('title');
         $photo->descr = $request->input('descr');
+        $photo->focal = $request->input('focal');
         $photo->save();
         return redirect('photos');
     }
