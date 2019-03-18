@@ -30,7 +30,7 @@ Route::get('/faq', 'PagesController@faq')->name('faq');
 /**
  * Admin Routes
  */
-Route::get('/admin', 'AdminsController@index');
+Route::get('/admin', 'AdminsController@index')->middleware('auth');
 Route::patch('/admin/contest', 'AdminsController@contestUpdate');
 Route::get('/admin/contest/edit', 'AdminsController@contestEdit');
 
@@ -41,8 +41,19 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+/**
+ * Dashboard
+ */
+Route::get('/dashboard', 'dashboardController@index');
+Route::get('/dashboard/email', 'dashboardController@changeEmail');
+Route::patch('/dashboard/email', 'dashboardController@updateEmail');
+Route::get('/dashboard/description', 'dashboardController@changeDescr');
+Route::patch('/dashboard/description', 'dashboardController@updateDescr');
+Route::get('/dashboard/password', 'dashboardController@changePassword');
+Route::patch('/dashboard/password', 'dashboardController@updatePassword');
+
 /*
- * Single Pages Controller
+ * Resource Pages Controller
  */
 
 Route::resource('/photos', 'PhotosController');
