@@ -8,6 +8,18 @@
         Welcome {{ Auth::user()->name }}
     </div>
 
+    {{-- Success Handlers for Dashboard changes --}}
+    @if (session('success')) 
+        <div class="">
+            {{ session('success') }}
+        </div>
+     @endif
+
+    <div class="">
+        {{ Auth::user()->email }}
+        <a href="/dashboard/email">Change</a>
+    </div>
+
     <div>
         <h2>Current Contest</h2>
         <div>

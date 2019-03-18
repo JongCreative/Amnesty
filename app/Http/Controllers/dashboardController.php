@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Hash;
 use Illuminate\Http\Request;
 
 class dashboardController extends Controller
@@ -12,74 +13,49 @@ class dashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+    }
+
     public function index()
     {
         return view('users.dashboard');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function changeEmail()
     {
-        //
+        return view('users.changeEmail');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function updateEmail(Request $request)
     {
-        //
+       if (!(Hash::check($request->get('currentPassword'), \Auth::user()->password))){
+          return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
+        }
+
+        $validateData = $request->validate([
+          'currentPassword' => 'required',
+        ]);
+
+
+        //Change Password
+      
+        $user = \Auth::user();
+        $user->email = $request->get('email');
+        $user->save();
+
+        return redirect('/dashboard')->with("success","email changed successfully!");
+            return redirect('/dashboard');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $user)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
-    {
-        //
-    }
 }
