@@ -17,15 +17,6 @@ class dashboardController extends Controller
     {
         $this->middleware('auth');
     }
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
 
     public function index()
     {
@@ -121,7 +112,7 @@ class dashboardController extends Controller
         //Change Description
       
         $user = \Auth::user();
-        $user->password = bcrypt($request->get('newPassword'));
+        $user->password = Hash::make($request->get('newPassword'));
         $user->save();
 
         return redirect('/dashboard')->with("success","Password has changed successfully!");

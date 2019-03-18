@@ -30,7 +30,7 @@ Route::get('/faq', 'PagesController@faq')->name('faq');
 /**
  * Admin Routes
  */
-Route::get('/admin', 'AdminsController@index');
+Route::get('/admin', 'AdminsController@index')->middleware('auth');
 Route::patch('/admin/contest', 'AdminsController@contestUpdate');
 Route::get('/admin/contest/edit', 'AdminsController@contestEdit');
 
