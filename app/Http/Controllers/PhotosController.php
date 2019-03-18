@@ -95,7 +95,8 @@ class PhotosController extends Controller
      */
     public function edit(Photo $photo)
     {
-        return view('photos.edit');
+        $photo = Photo::find($photo->id);
+        return view('photos.edit')->with('photos', $photo);
     }
 
     /**
