@@ -41,8 +41,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+/**
+ * Dashboard
+ */
+Route::get('/dashboard', 'UsersController@dashboard');
+
 /*
- * Single Pages Controller
+ * Resource Pages Controller
  */
 
 Route::resource('/photos', 'PhotosController');
