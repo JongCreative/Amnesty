@@ -47,6 +47,8 @@ Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'dashboardController@index');
 Route::get('/dashboard/email', 'dashboardController@changeEmail');
 Route::patch('/dashboard/email', 'dashboardController@updateEmail');
+Route::get('/dashboard/description', 'dashboardController@changeDescr');
+Route::patch('/dashboard/description', 'dashboardController@updateDescr');
 
 /*
  * Resource Pages Controller

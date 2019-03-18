@@ -48,13 +48,43 @@ class dashboardController extends Controller
         ]);
 
 
-        //Change Password
+        //Change email
       
         $user = \Auth::user();
         $user->email = $request->get('email');
         $user->save();
 
         return redirect('/dashboard')->with("success","email changed successfully!");
+            return redirect('/dashboard');
+    }
+
+    /**
+     * Change Description
+     * @return view, or change the description and returns to dashboard with success message.
+     */
+    public function changeDescr()
+    {
+        return view('users.changeDescription');
+    }
+
+    public function updateDescr(Request $request)
+    {
+       if (!(Hash::check($request->get('currentPassword'), \Auth::user()->password))){
+          return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
+        }
+
+        $validateData = $request->validate([
+          'currentPassword' => 'required',
+        ]);
+
+
+        //Change Password
+      
+        $user = \Auth::user();
+        $user->descr = $request->get('descr');
+        $user->save();
+
+        return redirect('/dashboard')->with("success","About me has changed successfully!");
             return redirect('/dashboard');
     }
 
