@@ -5,6 +5,7 @@
 <br/ > {{ $photos->title }}
 <br/ > {{ $photos->descr }}
 
+<button><a href="/photos/{{$photos->id}}/edit">edit</a></button>
 <form class="form-insert" action="/photos/{{ $photos->id }}" method="POST">
     @method('DELETE')            
     @csrf

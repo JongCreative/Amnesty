@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Image;
 use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage; // access storage for delete file
@@ -52,7 +53,7 @@ class PhotosController extends Controller
         $filenameWithExt = $src->getClientOriginalName();
         $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
         $extension = $src->guessClientExtension();
-        $filenameToStore = time() .'_'. $filename .'.'. $extension;
+        $filenameToStore = uniqid($filename.'_',true).'.'. $extension;
         //Store to storage.app.public.folderNameDefinedInConfigFile
         $path = $src->storeAs('public/'. config('contest.contest'), $filenameToStore);
 
@@ -94,7 +95,8 @@ class PhotosController extends Controller
      */
     public function edit(Photo $photo)
     {
-        return view('photos.edit');
+        $photo = Photo::find($photo->id);
+        return view('photos.edit')->with('photos', $photo);
     }
 
     /**
@@ -106,6 +108,17 @@ class PhotosController extends Controller
      */
     public function update(Request $request, Photo $photo)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'descr' => 'required',
+        ]);
+        
+        $photo = Photo::find($photo->id);
+        $photo->title = $request->input('title');
+        $photo->descr = $request->input('descr');
+        $photo->focal = $request->input('focal');
+        $photo->aperture = $request->input('aperture');
+        $photo->save();
         return redirect('photos');
     }
 
