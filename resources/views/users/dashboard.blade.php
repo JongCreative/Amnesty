@@ -47,4 +47,12 @@
     </div>
 </div>
 
+<br/><br/>
+<h1>my submissions</h1>
+<br/><br/>
+
+@foreach ($photos as $photo)
+    {{ $photo->title }}
+@endforeach
+
 @endsection
