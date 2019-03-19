@@ -39,8 +39,6 @@ Route::get('/admin/contest/edit', 'AdminsController@contestEdit');
  */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
 /**
  * Dashboard
  */
