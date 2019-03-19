@@ -11,4 +11,5 @@
 
         <hr /><input type="reset" name="reset">
         <input type="submit">
+        <a href="/photos"> cancel </a>
 </form>

@@ -20,7 +20,9 @@ class dashboardController extends Controller
 
     public function index()
     {
-        return view('users.dashboard');
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        return view('users.dashboard')->with('photos', $user->photos);
     }
 
     public function changeEmail()

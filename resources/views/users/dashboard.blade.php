@@ -47,4 +47,16 @@
     </div>
 </div>
 
+<br/><br/>
+<h1>my submissions</h1>
+<br/><br/>
+
+@foreach ($photos as $photo)
+    {{ $photo->title }}
+    {{ $photo->descr }}
+    {{ $photo->focal }}
+    {{ $photo->aperture }}
+    <img src="/storage/1552561211/{{ $photo->src }}"/>
+@endforeach
+
 @endsection
