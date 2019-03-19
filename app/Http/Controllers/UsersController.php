@@ -79,6 +79,18 @@ class UsersController extends Controller
 
         $user->descr = $request->get('descr');
 
+        if ( $request->has('jury') ){
+            $user->jury = true;
+        } else {
+            $user->jury = false;
+        }
+
+        if ( $request->has('admin') ){
+            $user->admin = true;
+        } else {
+            $user->admin = false;
+        }
+
         $user->save();
         return redirect('/users/'. $id)->with("success","User has been updated");
     }
