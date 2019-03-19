@@ -56,6 +56,7 @@
     {{ $photo->descr }}
     {{ $photo->focal }}
     {{ $photo->aperture }}
+    <img src="/storage/1552561211/{{ $photo->src }}"/>
 @endforeach
 
 @endsection
