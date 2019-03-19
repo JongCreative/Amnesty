@@ -7,6 +7,8 @@ use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage; // access storage for delete file
 
+//use App\Http\Requests\UploadPhotosRequest;
+
 class PhotosController extends Controller
 {
     /**
@@ -60,6 +62,7 @@ class PhotosController extends Controller
         $photo = new Photo;
         $photo->title = $request->input('title');
         $photo->descr = $request->input('descr');
+        $photo->user_id = auth()->user()->id;
         $photo->src = $filenameToStore;
         
         // $photo->exposure = $request->input('exposure');              //extract from exif
