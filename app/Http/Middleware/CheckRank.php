@@ -23,11 +23,11 @@ class CheckRank
                     $access=true;
                 }
                 break;
-            // case 'jury':
-            //     if ($request->user()->admin || $request->user()->jury) {
-            //         $access=true;
-            //     }
-            //     break;
+            case 'jury':
+                if ($request->user()->admin || $request->user()->jury) {
+                    $access=true;
+                }
+                break;
             default:
                 $access=true;
                 break;
