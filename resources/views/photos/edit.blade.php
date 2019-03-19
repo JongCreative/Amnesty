@@ -8,5 +8,7 @@
         <br /><input type="text" name="descr" placeholder="descr" value="{{ $photos->descr }}">
         <br /><input type="text" name="focal" placeholder="focal" value="{{ $photos->focal }}">
         <br /><input type="text" name="aperture" placeholder="aperture" value="{{ $photos->aperture }}">
+        <br /><input type="reset" name="reset">
         <br /><button type="submit">submit</button>
+        <a href="/photos/{{$photos->id}}"> cancel </a>
 </form>
