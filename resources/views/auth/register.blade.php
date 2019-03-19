@@ -49,6 +49,12 @@
 
     <input id="password-confirm" type="password" class="" name="password_confirmation" required>
 
+    <input type="radio" name="terms" value="check" required>
+    <label>I agree with the terms of the contest.</label>
+
+    <input type="checkbox" name="newsletter">
+    <label>I want to register for the newsletter.</label>
+
     <button type="submit" class="">Register</button>
   </form>
 @endsection
