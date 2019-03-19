@@ -90,7 +90,7 @@ class UsersController extends Controller
         } else {
             $user->admin = false;
         }
-
+        
         if ( $request->has('banned') ){
             $user->jury = false;
             $user->admin = false;
@@ -111,6 +111,11 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = user::find($id);
+        $user->jury = false;
+        $user->admin = false;
+        $user->banned = true;
+        $user->save();
+        return redirect('/users/'. $id)->with("success","User has been banned");
     }
 }

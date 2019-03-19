@@ -34,6 +34,12 @@
     </div>
 
     <a href="/users/{{$user->id}}/edit">Edit user</a>
+    <form method="POST" action="/users/{{ $user->id }}">
+        @csrf
+        @method('DELETE')
+
+        <button type="submit" class="">Ban User</button>
+    </form>
     <a href="/users">Back</a>
 </div>
 
