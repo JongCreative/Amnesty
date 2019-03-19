@@ -26,7 +26,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return redirect('/users');
     }
 
     /**
@@ -37,7 +37,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return redirect('/users');
     }
 
     /**
@@ -75,7 +75,12 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = user::find($id);
+
+        $user->descr = $request->get('descr');
+
+        $user->save();
+        return redirect('/users/'. $id)->with("success","User has been updated");
     }
 
     /**
