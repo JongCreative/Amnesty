@@ -26,8 +26,10 @@ html, body {
   padding: 16px 32px;
   display: inline-block;
   text-align: center;
-  transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out, fill 0.25s ease-in-out;
+  -webkit-transition: background-color .25s ease-in-out,border-color .25s ease-in-out,color .25s ease-in-out,fill .25s ease-in-out;
+  transition: background-color .25s ease-in-out,border-color .25s ease-in-out,color .25s ease-in-out,fill .25s ease-in-out;
 }
+
 .button:hover {
   background-color: #fff;
 }
@@ -36,6 +38,7 @@ html, body {
   background-color: #000000;
   color: #fff;
 }
+
 .button_sm:hover {
   background-color: #363636;
 }
@@ -45,6 +48,7 @@ html, body {
   border-color: #FFFF00;
   color: #000000;
 }
+
 .button_act:hover {
   background-color: #fff000;
   border-color: #fff000;
@@ -57,9 +61,16 @@ a {
 }
 
 .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
   font-family: sans-serif;
   background-color: #fff;
@@ -68,9 +79,10 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 0.9rem;
+  font-size: .9rem;
   z-index: 5;
 }
+
 .nav li {
   float: left;
   min-width: 120px;
@@ -82,16 +94,20 @@ a {
   background-color: #fff;
   color: #000;
 }
+
 .nav li a {
   display: block;
   color: #000;
   text-decoration: none;
+  -webkit-transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out, fill 0.25s ease-in-out;
   transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out, fill 0.25s ease-in-out;
 }
+
 .nav li a:hover {
   background-color: #dadada;
   display: block;
 }
+
 .nav li .register {
   margin-top: 10px;
   height: 60px;
@@ -100,6 +116,7 @@ a {
   border: 1px solid #000000;
   display: block;
 }
+
 .nav li .login {
   margin-top: 10px;
   height: 60px;
@@ -110,6 +127,7 @@ a {
   color: #fff;
   display: block;
 }
+
 .nav li .login:hover {
   background-color: #363636;
 }
@@ -117,15 +135,26 @@ a {
 .nav li:hover ul {
   opacity: 1;
   top: 80px;
-  transform: translateY(0px);
-  transition: opacity 0.3s, transform 0.2s ease-in;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: opacity .3s,-webkit-transform .2s ease-in;
+  transition: opacity .3s,-webkit-transform .2s ease-in;
+  transition: opacity .3s,transform .2s ease-in;
+  transition: opacity .3s,transform .2s ease-in,-webkit-transform .2s ease-in;
   z-index: -2;
 }
 
 .nav_child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   list-style: none;
   margin: 0;
   width: 100%;
@@ -135,10 +164,15 @@ a {
   position: absolute;
   opacity: 0;
   top: 80px;
-  transform: translateY(-25px);
+  -webkit-transform: translateY(-25px);
+          transform: translateY(-25px);
   z-index: -1;
-  transition: opacity 0.3s, transform 0.2s ease-in;
+  -webkit-transition: opacity .3s,-webkit-transform .2s ease-in;
+  transition: opacity .3s,-webkit-transform .2s ease-in;
+  transition: opacity .3s,transform .2s ease-in;
+  transition: opacity .3s,transform .2s ease-in,-webkit-transform .2s ease-in;
 }
+
 .nav_child li {
   height: 40px;
   text-align: center;
@@ -149,13 +183,16 @@ a {
   color: #fff;
   z-index: -1;
 }
+
 .nav_child li a {
   display: block;
   color: #fff;
   text-decoration: none;
+  -webkit-transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out, fill 0.25s ease-in-out;
   transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out, fill 0.25s ease-in-out;
   z-index: -1;
 }
+
 .nav_child li a:hover {
   background-color: rgba(0, 0, 0, 0);
   display: block;
@@ -163,9 +200,11 @@ a {
 
 .forms_container {
   margin-top: 140px;
+  display: -ms-grid;
   display: grid;
   width: 80%;
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   padding: 20px, 0, 10px, 0;
 }
@@ -173,6 +212,7 @@ a {
 .form_container {
   padding: 10px;
 }
+
 .form_container .header {
   height: 100px;
   color: #fff;
@@ -180,23 +220,29 @@ a {
   font-size: 26px;
   font-weight: bold;
   text-align: center;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   line-height: 100px;
 }
+
 .form_container form {
   padding: 20px;
   background-color: #c7c2ba;
   color: #000000;
 }
-.form_container form input[type=text], .form_container form select {
+
+.form_container form input[type="text"], .form_container form select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
 .form_container form input[type=submit] {
   width: 100%;
   background-color: #FFFF00;
@@ -206,8 +252,8 @@ a {
   border: none;
   cursor: pointer;
 }
+
 .form_container form input[type=submit]:hover {
   background-color: #fff000;
 }
-
 /*# sourceMappingURL=app.css.map */

@@ -1,10 +1,18 @@
 // Variables
 @import 'variables';
 
-html{
+html, body{
   font-family: $font-family-sans-serif;
   background-color: $body-bg;
+  margin: 0 auto;
+  padding: 0px;
+  border: 0px;
 }
+
+.site {
+  margin: 0 auto;
+  width: 100%;
+  }
 
 .actionbox{
   background-color: $yellow;
@@ -14,7 +22,6 @@ html{
     color: $black;
     background-color: $white;
     border: 1px solid $black;
-    text-transform: uppercase;
  //   font-size: 1rem;
     padding: 16px 32px;
     display: inline-block;
@@ -24,7 +31,7 @@ html{
     transition: background-color .25s ease-in-out,border-color .25s ease-in-out,color .25s ease-in-out,fill .25s ease-in-out;
 
     &:hover{
-      background-color: $nav-background;
+      background-color: $nav-bg;
     }
 }
 
@@ -54,64 +61,173 @@ a {
   cursor: pointer;
 }
 
-ul {
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  font-family: sans-serif;
+  background-color: $nav-bg;
+  height: 80px;
+  width: 100%;
+ // border: solid 1px yellow;
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: .9rem;
+  z-index: 5;
+
+  li {
+      float: left;
+      min-width: 120px;
+      height: 80px;
+      text-align: center;
+      line-height: 80px;
+      text-decoration: none;
+      font-family: "Arial", sans-serif;
+      background-color: $nav-bg;
+      color: #000;
+      a {
+          display: block;
+          color: $nav-a-font;
+          text-decoration: none;  
+          transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out, fill 0.25s ease-in-out;
+
+      }
+      a:hover{
+          background-color: $nav-a-hover;
+          display: block;
+      }
+
+      .register {
+        margin-top: 10px;
+        height: 60px;
+        width: 90px;
+        line-height: 60px;
+        border: 1px solid $black;
+        display: block;
+      }
+
+      .login{
+        margin-top: 10px;
+        height: 60px;
+        width: 90px;
+        line-height: 60px;
+        border: 1px solid $black;
+        background-color: $black;
+        color: $white;
+        display: block;
+
+      }
+      .login:hover{
+          background-color:$dark-hover;
+      }
+
+          
+  }
 }
 
-li {
-   // display:inline-block;
-    float: left;
-    margin-right: 0px;
+.nav li:hover ul{
+  opacity: 1;
+  top: 80px;
+  transform: translateY(-0px);
+  transition: opacity .3s,transform .2s ease-in;
+  z-index: -2;
 }
 
-li a {
-    display:block;
-    min-width:170px;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: $font-family-sans-serif;
-    color: $nav-font-color;
-    background: $nav-background;
+.nav_child {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  background-color: $nav-child-bg;
+  height: 50px;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  top: 80px;
+  transform: translateY(-25px);
+  z-index: -1;
+  transition: opacity .3s,transform .2s ease-in;
+
+  li {
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      text-decoration: none;
+      font-family: "Arial", sans-serif;
+      background-color:  $nav-child-li-bg;
+      color: $white;
+      z-index: -1;
+      
+      a {
+          display: block;
+          color: $white;
+          text-decoration: none;  
+          transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out, fill 0.25s ease-in-out;
+         // cursor: pointer;
+         z-index: -1;
+      }
+      a:hover{
+        background-color: $nav-child-li-bg;
+        display: block;
+    }
+  }
+  }
+
+
+.forms_container{
+  margin-top: 140px;
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px, 0, 10px, 0;
 }
 
-li:hover a {
-    background: $link-hover-color;
-    //color: $nav-font-hovercolor;
+.form_container{ 
+  padding: 10px;
+
+    .header{
+      height: 100px;
+      color: $white;
+      background-color: $black;
+      font-size: 26px;
+      font-weight: bold;
+      text-align: center;
+      align-items: center;
+      line-height: 100px;
+    }
+
+    form{
+      padding: 20px;
+      background-color: $form-bg;
+      color: $black;
+      input[type="text"], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          width: 100%;
+          background-color: $yellow;
+          color: black;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: $yellow_hover;
+        }
+    }
 }
 
-li:hover ul a {
-  background: $link-hover-color;
-  color: $nav-font-color;
-  height: 40px;
-  line-height: 40px;
-}
-
-li:hover ul a:hover {
-    background: $nav-background;
-  //  color: #fff;
-}
-
-li ul {
-display: none;
-  
-}
-
-li ul li {
-    display: block;
-    float: none;
-}
-
-li ul li a {
-    width: auto;
-    min-width: 100px;
-    padding: 0 20px;
-}
-
-ul li a:hover + .hidden, .hidden:hover {
-    display: block;
-}
