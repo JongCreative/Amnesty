@@ -40,4 +40,9 @@ class User extends Authenticatable
     public function getNameAttribute(){
         return $this->first_name . ' ' . $this->last_name;
     }
+
+    public function photos(){
+        //a user can have more than 1 photo uploaded
+        return $this->hasMany('App\Photo');
+    }
 }
