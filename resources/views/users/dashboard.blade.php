@@ -55,6 +55,7 @@
     {{ $photo->title }}
     {{ $photo->descr }}
     {{ $photo->focal }}
+    {{ $photo->aperture }}
 @endforeach
 
 @endsection
