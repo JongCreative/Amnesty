@@ -53,6 +53,7 @@
 
 @foreach ($photos as $photo)
     {{ $photo->title }}
+    {{ $photo->descr }}
 @endforeach
 
 @endsection
