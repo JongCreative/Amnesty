@@ -7,6 +7,8 @@ use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage; // access storage for delete file
 
+//use App\Http\Requests\UploadPhotosRequest;
+
 class PhotosController extends Controller
 {
     /**
