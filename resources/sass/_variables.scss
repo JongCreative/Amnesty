@@ -1,6 +1,6 @@
 
 // Body
-$body-bg: #766a62;
+$body-bg: #363636;
 
 // Typography
 $font-family-sans-serif: "Arial", sans-serif;
@@ -18,10 +18,17 @@ $dark_hover: #363636;
 $light_hover: #dadada;
 $yellow_hover: #fff000;
 
-$nav-background: #c7c2ba;
-$nav-font-color: #000;
+$nav-bg: #fff;
+$nav-a-font: #000;
+$nav-a-hover: #dadada;
+
+$nav-child-bg: rgba(0,0,0,.7);
+$nav-child-li-bg: rgba(0,0,0,.0);
+
 $nav-font-hovercolor: #fff;
-$link-hover-color: #dadada;
+
+
+$form-bg: #c7c2ba;
 
 
 
