@@ -4,6 +4,12 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
+        @if (session('message')) 
+            <div class="">
+                {{ session('message') }}
+            </div>
+        @endif
+        
         <label for="email" class="">{{ __('E-Mail Address') }}</label>
         <input id="email" type="email" class="" name="email" value="{{ old('email') }}" required autofocus>
 
