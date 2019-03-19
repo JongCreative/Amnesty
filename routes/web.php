@@ -55,4 +55,4 @@ Route::patch('/dashboard/password', 'dashboardController@updatePassword');
  */
 
 Route::resource('/photos', 'PhotosController');
-Route::resource('/user', 'UsersController');
+Route::resource('/users', 'UsersController');

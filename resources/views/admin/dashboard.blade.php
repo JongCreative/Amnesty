@@ -30,6 +30,10 @@
             Contest end date: {{ $contestData->endDate }}
         </div>
     </div>
+
+    <div>
+        <a href="/users">List users</a>
+    </div>
 </div>
 
 @endsection
