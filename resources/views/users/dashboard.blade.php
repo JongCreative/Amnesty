@@ -54,6 +54,7 @@
 @foreach ($photos as $photo)
     {{ $photo->title }}
     {{ $photo->descr }}
+    {{ $photo->focal }}
 @endforeach
 
 @endsection
