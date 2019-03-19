@@ -39,8 +39,6 @@ Route::get('/admin/contest/edit', 'AdminsController@contestEdit');
  */
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
 /**
  * Dashboard
  */
@@ -57,4 +55,4 @@ Route::patch('/dashboard/password', 'dashboardController@updatePassword');
  */
 
 Route::resource('/photos', 'PhotosController');
-Route::resource('/user', 'UsersController');
+Route::resource('/users', 'UsersController');
