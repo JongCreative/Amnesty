@@ -14,7 +14,7 @@ class AddBanBooleanToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->boolean('banned')->default(false);
         });
     }
 
@@ -26,7 +26,7 @@ class AddBanBooleanToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('banned');
         });
     }
 }

@@ -91,6 +91,14 @@ class UsersController extends Controller
             $user->admin = false;
         }
 
+        if ( $request->has('banned') ){
+            $user->jury = false;
+            $user->admin = false;
+            $user->banned = true;
+        } else {
+            $user->banned = false;
+        }
+
         $user->save();
         return redirect('/users/'. $id)->with("success","User has been updated");
     }

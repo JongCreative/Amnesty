@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="">
-    <div class="">{{ $user->name }}</div>
+    <div class="">{{ $user->banned ? 'Banned User' : $user->name }}</div>
 
 
     {{-- Success Handlers for User changes --}}

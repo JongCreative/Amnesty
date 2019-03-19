@@ -19,6 +19,10 @@
         <input type="checkbox" name="admin" {{
             $user->admin ? ' checked="checked" ' : '' }} >
         <label for="admin" class=""> Admin </label>
+
+        <input type="checkbox" name="banned" {{
+            $user->banned ? ' checked="checked" ' : '' }} >
+        <label for="banned" class=""> Banned </label>
         
 
     <button type="submit" class="">Change About Me</button>
