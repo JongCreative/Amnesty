@@ -33,6 +33,8 @@ Route::get('/faq', 'PagesController@faq')->name('faq');
 Route::get('/admin', 'AdminsController@index')->middleware('auth');
 Route::patch('/admin/contest', 'AdminsController@contestUpdate');
 Route::get('/admin/contest/edit', 'AdminsController@contestEdit');
+Route::get('/admin/contest/create', 'AdminsController@contestCreate');
+Route::post('/admin/contest', 'AdminsController@contestStore');
 
 /**
  * Auth Routes
