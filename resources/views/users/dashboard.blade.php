@@ -5,7 +5,7 @@
     <div class="">Dashboard</div>
 
     <div class="">
-        Welcome {{ Auth::user()->name }}
+        Welcome {{ Auth::user()->name }} <a href="/dashboard/name">Change</a>
     </div>
 
     {{-- Success Handlers for Dashboard changes --}}
