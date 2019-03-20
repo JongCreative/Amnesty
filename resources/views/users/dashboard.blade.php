@@ -8,6 +8,11 @@
         Welcome {{ Auth::user()->name }} <a href="/dashboard/name">Change</a>
     </div>
 
+    @if ( Auth::user()->admin )
+        <div>
+            <a href="/admin">Admin Dashboard</a>
+        </div>
+    @endif
     <a href="/photos/create">Submit Photo</a>
 
     {{-- Success Handlers for Dashboard changes --}}
