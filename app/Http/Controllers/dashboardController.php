@@ -48,7 +48,6 @@ class dashboardController extends Controller
         $user->save();
 
         return redirect('/dashboard')->with("success","email changed successfully!");
-            return redirect('/dashboard');
     }
 
     /**
@@ -78,7 +77,6 @@ class dashboardController extends Controller
         $user->save();
 
         return redirect('/dashboard')->with("success","About me has changed successfully!");
-            return redirect('/dashboard');
     }
 
     /**
@@ -119,6 +117,32 @@ class dashboardController extends Controller
 
         return redirect('/dashboard')->with("success","Password has changed successfully!");
             return redirect('/dashboard');
+    }
+
+    public function changeName()
+    {
+        return view('users.changeName');
+    }
+
+    public function updateName(Request $request)
+    {
+       if (!(Hash::check($request->get('currentPassword'), \Auth::user()->password))){
+          return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
+        }
+
+        $validateData = $request->validate([
+          'currentPassword' => 'required',
+        ]);
+
+
+        //Change email
+      
+        $user = \Auth::user();
+        $user->first_name = $request->get('first_name');
+        $user->last_name = $request->get('last_name');
+        $user->save();
+
+        return redirect('/dashboard')->with("success","Name has been changed successfully!");
     }
 
 }

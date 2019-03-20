@@ -49,6 +49,8 @@ Route::get('/dashboard/description', 'dashboardController@changeDescr');
 Route::patch('/dashboard/description', 'dashboardController@updateDescr');
 Route::get('/dashboard/password', 'dashboardController@changePassword');
 Route::patch('/dashboard/password', 'dashboardController@updatePassword');
+Route::get('/dashboard/name', 'dashboardController@changeName');
+Route::patch('/dashboard/name', 'dashboardController@updateName');
 
 /*
  * Resource Pages Controller
