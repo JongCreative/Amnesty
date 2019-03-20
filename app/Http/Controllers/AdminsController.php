@@ -25,10 +25,11 @@ class AdminsController extends Controller
     	\Config::write(['contest.theme' => request('theme')]);
 
         $id = \Config::get('contest.contest');
-        
+
         $contest = contest::find($id);
 
         $contest->theme = request('theme');
+        $contest->region = request('region');
 
         $contest->save();
 
