@@ -142,7 +142,7 @@ class dashboardController extends Controller
         $user->last_name = $request->get('last_name');
         $user->save();
 
-        return redirect('/dashboard')->with("success","email changed successfully!");
+        return redirect('/dashboard')->with("success","Name has been changed successfully!");
     }
 
 }
