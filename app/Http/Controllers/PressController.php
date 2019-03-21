@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Press;
 use Illuminate\Http\Request;
+use App\Http\Requests\PressRequest;
 
 class PressController extends Controller
 {
@@ -14,7 +15,7 @@ class PressController extends Controller
      */
     public function index()
     {
-        $press = Press::orderBy('id', 'desc')->paginate(20);
+        $press = Press::orderBy('date', 'desc')->paginate(20);
         \Session::flash('backUrl', '/press');
         return view('press.index', compact('press') );
     }
@@ -35,7 +36,7 @@ class PressController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PressRequest $request)
     {
         $http = array('https://', 'http://');
         $press = new Press;
@@ -77,7 +78,7 @@ class PressController extends Controller
      * @param  \App\Press  $press
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Press $press)
+    public function update(PressRequest $request, Press $press)
     {
         //
     }
