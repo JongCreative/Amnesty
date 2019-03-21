@@ -64,13 +64,6 @@ class PhotosController extends Controller
         $photo->descr = $request->input('descr');
         $photo->user_id = auth()->user()->id;
         $photo->src = $filenameToStore;
-        
-        // $photo->exposure = $request->input('exposure');              //extract from exif
-        // $photo->flits = $request->input('flits');                    //extract from exif
-        // $photo->camera_brand = $request->input('camera_brand');      //extract from exif
-        // $photo->brand_model = $request->input('brand_model');        //extract from exif
-        // $photo->capture_time = $request->input('capture_time');      //extract from exif
-
         $photo->focal = $request->input('focal');
         $photo->aperture = $request->input('aperture');
         $photo->save();
@@ -116,11 +109,11 @@ class PhotosController extends Controller
             'descr' => 'required',
         ]);
         
-        $photo = Photo::find($photo->id);
-        $photo->title = $request->input('title');
-        $photo->descr = $request->input('descr');
-        $photo->focal = $request->input('focal');
-        $photo->aperture = $request->input('aperture');
+        $photo              = Photo::find($photo->id);
+        $photo->title       = $request->input('title');
+        $photo->descr       = $request->input('descr');
+        $photo->focal       = $request->input('focal');
+        $photo->aperture    = $request->input('aperture');
         $photo->save();
         return redirect('photos');
     }
