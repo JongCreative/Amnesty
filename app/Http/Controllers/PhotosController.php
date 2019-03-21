@@ -97,7 +97,7 @@ class PhotosController extends Controller
             }
         }
 
-        return redirect('photos');
+        return redirect('photos')->with('success', ' Thank you for joining the contest! View all your submissions on your own dashboard!');
     }
 
     /**
