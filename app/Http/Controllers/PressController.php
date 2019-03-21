@@ -27,6 +27,9 @@ class PressController extends Controller
      */
     public function create()
     {
+        if (\Session::has('backUrl')) {
+            \Session::keep('backUrl');
+        }
         return view('press.create' );
     }
 
@@ -45,8 +48,15 @@ class PressController extends Controller
         $press->link = str_replace($http, '', request('link'));
         $press->date = request('date');
 
+        if( \Session::has('backUrl') )
+        {
+            $url = \Session::get('backUrl');
+        } else {
+            $url = '/admin';
+        }
+
         $press->save();
-        return redirect('/press')->with('success', 'New press article added.');
+        return redirect($url)->with('success', 'New press article added.');
     }
 
     /**
