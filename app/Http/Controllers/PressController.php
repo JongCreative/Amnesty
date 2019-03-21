@@ -68,7 +68,7 @@ class PressController extends Controller
      */
     public function edit(Press $press)
     {
-        //
+        return view('press.edit', compact('press'));
     }
 
     /**
@@ -80,7 +80,15 @@ class PressController extends Controller
      */
     public function update(PressRequest $request, Press $press)
     {
-        //
+        $http = array('https://', 'http://');
+
+        $press->title = request('title');
+        $press->source = request('src');
+        $press->link = str_replace($http, '', request('link'));
+        $press->date = request('date');
+
+        $press->save();
+        return redirect('/press/'.$press->id)->with('success', 'New press article added.');
     }
 
     /**
