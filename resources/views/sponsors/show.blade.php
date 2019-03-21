@@ -15,6 +15,12 @@
     <div class="">{!! $sponsor->contribution !!}</div>
 
     <a href="/sponsors/{{ $sponsor->id }}/edit">Edit sponsor</a>
+
+    <form method="POST" action="/sponsors/{{$sponsor->id}}">
+        @csrf
+        @method('DELETE')
+      	<input type="submit" value="DELETE">
+    </form>
 </div>
 
 @endsection

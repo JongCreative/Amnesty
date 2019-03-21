@@ -91,6 +91,7 @@ class SponsorsController extends Controller
      */
     public function destroy(Sponsor $sponsor)
     {
-        //
+        $sponsor->delete();
+        return redirect('/sponsors')->with('success', 'Sponsor deleted');
     }
 }
