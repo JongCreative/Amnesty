@@ -63,7 +63,7 @@
     {{ $photo->descr }}
     {{ $photo->focal }}
     {{ $photo->aperture }}
-    <img src="/storage/{{ $contestData->contest }}/{{ $photo->src }}"/>
+    <img src="/storage/{{ $photo->src }}"/>
 @endforeach
 
 @endsection
