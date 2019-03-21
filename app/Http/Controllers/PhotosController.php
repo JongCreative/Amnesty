@@ -42,31 +42,35 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'title' => 'required',
-            'descr' => 'required',
-            //apache max upload 2mb
-            'src' => 'required|image|mimes:jpeg,jpg|max:850|min:100',
-        ]);
+        if ($sources = $request->File('src')) {
+            foreach ($sources as $src) {
+                $this->validate($request, [
+                    'title' => 'required',
+                    'descr' => 'required',
+                    //apache max upload 2mb
+                    'src' => 'required|image|mimes:jpeg,jpg|max:850|min:100',
+                    ]);
 
-        //Handle image format
-        $src = $request->hasFile('src');
-        $src = $request->File('src');
-        $filenameWithExt = $src->getClientOriginalName();
-        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-        $extension = $src->guessClientExtension();
-        $filenameToStore = uniqid($filename.'_',true).'.'. $extension;
-        //Store to storage.app.public.folderNameDefinedInConfigFile
-        $path = $src->storeAs('public/'. config('contest.contest'), $filenameToStore);
+                //Handle image format
+                $src = $request->hasFile('src');
+                $src = $request->File('src');
+                $filenameWithExt = $src->getClientOriginalName();
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $extension = $src->guessClientExtension();
+                $filenameToStore = uniqid($filename.'_', true).'.'. $extension;
+                //Store to storage.app.public.folderNameDefinedInConfigFile
+                $path = $src->storeAs('public/'. config('contest.contest'), $filenameToStore);
 
-        $photo = new Photo;
-        $photo->title = $request->input('title');
-        $photo->descr = $request->input('descr');
-        $photo->user_id = auth()->user()->id;
-        $photo->src = $filenameToStore;
-        $photo->focal = $request->input('focal');
-        $photo->aperture = $request->input('aperture');
-        $photo->save();
+                $photo = new Photo;
+                $photo->title = $request->input('title');
+                $photo->descr = $request->input('descr');
+                $photo->user_id = auth()->user()->id;
+                $photo->src = $filenameToStore;
+                $photo->focal = $request->input('focal');
+                $photo->aperture = $request->input('aperture');
+                $photo->save();
+            }
+        }
 
         return redirect('photos');
     }
