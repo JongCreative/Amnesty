@@ -88,7 +88,7 @@ class PressController extends Controller
         $press->date = request('date');
 
         $press->save();
-        return redirect('/press/'.$press->id)->with('success', 'New press article added.');
+        return redirect('/press/'.$press->id)->with('success', 'Press article updated.');
     }
 
     /**
@@ -99,6 +99,7 @@ class PressController extends Controller
      */
     public function destroy(Press $press)
     {
-        //
+        $press->delete();
+        return redirect('/press')->with('success', 'Press article successfully deleted');
     }
 }
