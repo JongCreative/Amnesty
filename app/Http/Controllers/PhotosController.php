@@ -59,6 +59,7 @@ class PhotosController extends Controller
                 $exifModel          = Image::make($src)->exif('Model');
                 $exifCapture        = Image::make($src)->exif('DateTimeOriginal');
                 $exifFocal          = Image::make($src)->exif('FocalLength');
+                $exifAperture       = Image::make($src)->exif('ApertureValue');
 
                 // Handle filename
                 $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
