@@ -26,7 +26,7 @@ class PressController extends Controller
      */
     public function create()
     {
-        //
+        return view('press.create' );
     }
 
     /**
@@ -37,7 +37,15 @@ class PressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $http = array('https://', 'http://');
+        $press = new Press;
+        $press->title = request('title');
+        $press->source = request('src');
+        $press->link = str_replace($http, '', request('link'));
+        $press->date = request('date');
+
+        $press->save();
+        return redirect('/press')->with('success', 'New press article added.');
     }
 
     /**

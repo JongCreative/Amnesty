@@ -86,7 +86,7 @@ class SponsorsController extends Controller
      * @param  \App\Sponsor  $sponsor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sponsor $sponsor)
+    public function update(SponsorRequest $request, Sponsor $sponsor)
     {
         $sponsor->name = request('name');
         $sponsor->contribution = request('contribution');

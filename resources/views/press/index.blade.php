@@ -16,10 +16,10 @@
     @foreach($press as $pressArticle)
         
         <div class="">{{ $pressArticle->title }}</div>
-        <div class="">{{ $pressArticle->src }}</div>
+        <div class="">{{ $pressArticle->source }}</div>
         <div class="">{{ date('d-m-Y', strtotime($pressArticle->date)) }}</div>
-        <div class=""><a href="http://{{ $pressArticle->link }}">View article</a></div>
-        
+        <div class=""><a href="https://{{ $pressArticle->link }}">View article</a></div>
+
         <a href="press/{{ $pressArticle->id }}">Show single article</a>
 
     @endforeach
