@@ -10,7 +10,9 @@
         </div>
      @endif
 
-    <a href="/press/create">Add new press article</a>
+    @if (Auth::user()->admin)
+        <a href="/press/create">Add new press article</a>
+    @endif
 
     {{-- Show all sponsors --}}
     @foreach($press as $pressArticle)
@@ -20,7 +22,9 @@
         <div class="">{{ date('d-m-Y', strtotime($pressArticle->date)) }}</div>
         <div class=""><a href="https://{{ $pressArticle->link }}">View article</a></div>
 
-        <a href="press/{{ $pressArticle->id }}">Show single article</a>
+        @if (Auth::user()->admin)
+            <a href="press/{{ $pressArticle->id }}">Show single article</a>
+        @endif
 
     @endforeach
 

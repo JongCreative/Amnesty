@@ -8,11 +8,11 @@
         <div class="success">
             {{ session('success') }}
         </div>
-     @endif
+    @endif
 
-     @if (Auth::user()->admin)
+    @if (Auth::user()->admin)
      		<a href="/sponsors/create">Add new Sponsor</a>
-     @endif
+    @endif
 
     {{-- Show all sponsors --}}
     @foreach($sponsors as $sponsor)
