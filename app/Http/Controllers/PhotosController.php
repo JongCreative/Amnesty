@@ -46,7 +46,7 @@ class PhotosController extends Controller
             'title' => 'required',
             'descr' => 'required',
             //apache max upload 2mb
-            'src' => 'required|image|mimes:jpeg,jpg|max:1999|min:100',
+            'src' => 'required|image|mimes:jpeg,jpg|max:850|min:100',
         ]);
 
         //Handle image format
