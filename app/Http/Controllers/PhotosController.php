@@ -86,6 +86,7 @@ class PhotosController extends Controller
                 $photo->flits           = $exifFlash;
                 $photo->camera_brand    = $exifBrand;
                 $photo->brand_model     = $exifModel;
+                $photo->capture_time    = $exifCapture;
                 
                 $photo->save();
             }
