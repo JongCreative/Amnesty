@@ -3,8 +3,8 @@
 @section('content')
   <form method="POST" action="/admin/contest">
     @csrf
-    {{ method_field('PATCH') }}
-    <label for="id" class="">Contest id: {{ $contestData->contest }}</label>
+
+    <label for="warning" class="">WARNING, THIS WILL START A NEW CONTEST AND ENDS THE CURRENT ONE. </label>
 
     <label for="region" class="">Region</label>
 
@@ -19,7 +19,9 @@
     <label for="endDate" class="">End Date</label>
     <input id="endDate" type="date" class="" name="endDate" value="{{ $contestData->endDate }}" required>
 
-    <button type="submit" class="">Edit</button>
+    <label for="warning" class="">WARNING, THIS WILL START A NEW CONTEST AND ENDS THE CURRENT ONE. </label>
+    
+    <button type="submit" class="">Start new contest</button>
 </form>
 
 @endsection

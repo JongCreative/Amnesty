@@ -8,6 +8,11 @@
         Welcome {{ Auth::user()->name }} <a href="/dashboard/name">Change</a>
     </div>
 
+    @if ( Auth::user()->admin )
+        <div>
+            <a href="/admin">Admin Dashboard</a>
+        </div>
+    @endif
     <a href="/photos/create">Submit Photo</a>
 
     {{-- Success Handlers for Dashboard changes --}}
@@ -58,7 +63,7 @@
     {{ $photo->descr }}
     {{ $photo->focal }}
     {{ $photo->aperture }}
-    <img src="/storage/1552561211/{{ $photo->src }}"/>
+    <img src="/storage/{{ $contestData->contest }}/{{ $photo->src }}"/>
 @endforeach
 
 @endsection

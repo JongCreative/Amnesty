@@ -11,7 +11,7 @@
     <div class="site">
         <ul class="nav">
             <li><img src="img/Logo.png" height="80px"></li>
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="#">Inzendingen</a>
                 <ul class="nav_child">
                     <li><a href="#">Gallery</a></li>
@@ -20,13 +20,13 @@
             <li><a href="#">Wedstrijd</a>
                 <ul class="nav_child">
                     <li><a href="#">Voorwaarden</a></li>
-                    <li><a href="#">Jury</a></li>
+                    <li><a href="{{ route('jury') }}">Jury</a></li>
                     <li><a href="#">Sposoren</a></li>
                     <li><a href="#">Pers</a></li>
                 </ul></li>
  @if (Route::has('login'))
     @auth
-        <li><a href="{{ url('/home') }}">Home</a></li>
+        <li><a href="/dashboard">Home</a></li>
     @else
         <li><a href="{{ route('login') }}" class="register">login</a></li>
 

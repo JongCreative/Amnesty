@@ -12,6 +12,9 @@
     <div>
         <a href="/admin/contest/edit">change contest data</a>
     </div>
+    <div>
+        <a href="/admin/contest/create">Start new Contest</a>
+    </div>
 
     <div>
         <div>
