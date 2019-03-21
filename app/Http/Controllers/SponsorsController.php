@@ -64,7 +64,7 @@ class SponsorsController extends Controller
      */
     public function edit(Sponsor $sponsor)
     {
-        //
+        return view('sponsors.edit', compact('sponsor') );
     }
 
     /**
@@ -76,7 +76,11 @@ class SponsorsController extends Controller
      */
     public function update(Request $request, Sponsor $sponsor)
     {
-        //
+        $sponsor->name = request('name');
+        $sponsor->contribution = request('contribution');
+        $sponsor->save();
+
+        return redirect('/sponsors/'.$sponsor->id)->with('success', 'Sponsor Updated');    
     }
 
     /**

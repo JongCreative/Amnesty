@@ -11,7 +11,7 @@
 
     {{-- Success Handler --}}
     @if (session('success')) 
-        <div class="">
+        <div class="success">
             {{ session('success') }}
         </div>
      @endif
