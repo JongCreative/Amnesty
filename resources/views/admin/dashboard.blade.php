@@ -16,12 +16,14 @@
         </div>
      @endif
 
-    {{-- Sponsors --}}
+    {{-- Creation links --}}
     <div>
         <div>
             <a href="/sponsors/create">Add new Sponsor</a>
+            <a href="/press/create">Add new press article</a>
         </div>
     </div>
+
 
     {{-- Contest Data --}}
     <div>
