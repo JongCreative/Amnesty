@@ -53,7 +53,7 @@ class SponsorsController extends Controller
      */
     public function show(Sponsor $sponsor)
     {
-        //
+        return view('sponsors.show', compact('sponsor') );
     }
 
     /**
