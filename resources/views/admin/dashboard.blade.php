@@ -9,6 +9,21 @@
         Welcome {{ Auth::user()->name }}
     </div>
 
+    {{-- Success Handler --}}
+    @if (session('success')) 
+        <div class="">
+            {{ session('success') }}
+        </div>
+     @endif
+
+    {{-- Sponsors --}}
+    <div>
+        <div>
+            <a href="/sponsors/create">Add new Sponsor</a>
+        </div>
+    </div>
+
+    {{-- Contest Data --}}
     <div>
         <a href="/admin/contest/edit">change contest data</a>
     </div>
