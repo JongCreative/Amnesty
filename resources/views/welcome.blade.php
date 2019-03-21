@@ -8,7 +8,6 @@
         <title>Laravel</title>       
     </head>
     <body>
-    <div class="site">
         <ul class="nav">
             <li><img src="img/Logo.png" height="80px"></li>
             <li><a href="#">Home</a></li>
@@ -28,15 +27,175 @@
     @auth
         <li><a href="{{ url('/home') }}">Home</a></li>
     @else
-        <li><a href="{{ route('login') }}" class="register">login</a></li>
+        <li><a href="{{ route('login') }}" class="login">login</a></li>
 
         @if (Route::has('register'))
-           <li><a href="{{ route('register') }} " class="login">Register</a></li>
+           <li><a href="{{ route('register') }} " class="register">Register</a></li>
         @endif
     @endauth
   @endif
-        </ul>     
-    </div>  
+        </ul>
+
+<div class="debug">
+<label><input type="checkbox"> Debug</label>
+</div>
+
+<div class="parallax">
+    <div id="group1" class="parallax_group">
+        <div class="parallax_layer parallax_layer_back">
+        </div>
+        <div class="parallax_layer parallax_layer_base">
+            <div class="hpblok">
+                <div class="subtitle">Amnesty International Fotowedstijd</div>
+                <div class="title">Hoe ziet vluchten er voor jou uit?</div><br>
+                <p>Deze eerste editie 2019 heeft als thema "vluchten". Met mooie prijzen en maandelijkse winnaars. Iederereen mag mee doen. Van professionals tot hobbyisten. De sluitingsdatum voor de hoofdprijs is 31 decmeber 2019.</p>
+                <div class="button">Doe mee!</div>
+            </div>
+        </div>
+    </div>
+    <div id="group2" class="parallax_group">
+      <div class="parallax_layer parallax_layer_base">
+  <!-- start content parallax -->
+        <div class="textheader">
+          <div class="title">Amnesty International fotowedstrijd<br>
+          <div class="sub">Vluchten</div></div>
+          <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
+        </div>
+          <div class="content_wrapper">
+                <div class="block">
+                  <div class="title">De wedstrijd</div>
+                  <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <div class="button">Deelnemen</div>
+                </div>
+                <div class="block">
+                <div class="title">Series</div>
+                <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <div class="button">Deelnemen</div>
+                </div>
+                <div class="block">
+                  <div class="title">Enkele foto's</div>
+                  <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>              
+                  <div class="button">Deelnemen</div>
+                </div>
+          </div>
+          <div class="textheader">
+        <div class="title">Elke maand een winnaar<br>
+        <div class="sub">Augustus: Venetie</div></div>
+        <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
+        <div class="button">Deelnemen</div>
+      </div>   
+  <!-- end content parallax -->          
+      </div>
+    </div>
+    <div id="group3" class="parallax_group">
+        <div class="parallax_layer parallax_layer_base">
+        <div class="title">Base Layer</div>
+        </div>
+        <div class="parallax_layer parallax_layer_back">
+        <div class="title">Background Layer</div>
+        </div>
+    </div>
+    <div id="group4" class="parallax_group">
+        <div class="parallax_layer parallax_layer_base">
+  <!-- start content parallax -->
+        <div class="textheader">
+          <div class="title">De prijzen<br>
+          <div class="sub">Prachtige prijzen</div></div>
+          <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
+        </div>
+          <div class="content_wrapper">
+                <div class="block">
+                  <div class="title">Hoofdprijs</div>
+                  <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <div class="button">meer info</div>
+                </div>
+                <div class="block">
+                <div class="title">2e prijs</div>
+                <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <div class="button">meer info</div>
+                </div>
+                <div class="block">
+                  <div class="title">3e prijs</div>
+                  <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>              
+                  <div class="button">meer info</div>
+                </div>
+          </div>
+        <div class="textheader">
+        <div class="title">Winnaar van de maand<br>
+        <div class="sub">Elke maand een stedentrip</div></div>
+        <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
+        <div class="button">Venetie</div>
+      </div>
+  <!-- end content parallax -->
+        </div>
+    </div>
+    <div id="group5" class="parallax_group">
+        <div class="parallax_layer parallax_layer_back">
+        <div class="title">Background Layer</div>
+        </div>
+        <div class="parallax_layer parallax_layer_base">
+        <div class="title">Base Layer</div>
+        </div>
+    </div>
+    <div id="group6" class="parallax_group">
+        <div class="parallax_layer parallax_layer_base">
+  <!-- start content parallax -->
+  <div class="textheader">
+          <div class="title">De Jury<br>
+          <div class="sub">Lorem ipsum dolor sit amet</div></div>
+          <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
+        </div>
+          <div class="content_wrapper">
+                <div class="block">
+                  <div class="title">Jury 1</div>
+                  <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <!--<div class="button">meer info</div>-->
+                </div>
+                <div class="block">
+                <div class="title">Jury 1</div>
+                <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <!--<div class="button">meer info</div>-->
+                </div>
+                <div class="block">
+                  <div class="title">Jury 1</div>
+                  <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>              
+                  <!--<div class="button">meer info</div>-->
+                </div>
+          </div>
+          <div class="content_wrapper">
+                <div class="block">
+                  <div class="title">Jury 1</div>
+                  <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <!--<div class="button">meer info</div>-->
+                </div>
+                <div class="block">
+                <div class="title">Jury 1</div>
+                <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <!--<div class="button">meer info</div>-->
+                </div>
+                <div class="block">
+                  <div class="title">Jury 1</div>
+                  <div class="sub">Lorem ipsum dolor sit amet</div>
+                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>              
+                  <!--<div class="button">meer info</div>-->
+                </div>
+          </div>
+  <!-- end content parallax -->
+        </div>
+    </div>
+</div>
+  
 <div class="forms_container">
   <div class="form_container">
     <div class="header">Deelnemen</div>
@@ -104,5 +263,25 @@
 <a href="#" class="button"><span>Ik doe mee</span></a>  
 <a href="#" class="button button_sm"><span>registreren</span></a>  
 <a href="#" class="button button_act"><span>ik doe mee</span></a>                         
+
+
+<script>
+    var debugInput = document.querySelector("input");
+    function updateDebugState() {
+        document.body.classList.toggle('debug-on', debugInput.checked);
+    }
+    debugInput.addEventListener("click", updateDebugState);
+    updateDebugState();
+    </script>
+
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-10812217-1', 'auto');
+ga('send', 'pageview');
+</script>   
+
 </body>
 </html>
