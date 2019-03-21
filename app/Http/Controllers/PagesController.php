@@ -23,10 +23,6 @@ class PagesController extends Controller
         return view('welcome');
     }
 
-    public function sponsors()
-    {
-        return view('welcome');
-    }
 
     public function contact()
     {

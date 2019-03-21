@@ -6,7 +6,7 @@
     @foreach($juryMembers as $juryMember)
         <a href="users/{{ $juryMember->id }}">
             <div class="">{{ $juryMember->name }}</div>
-            <div class="">{!! $juryMember->descr !!}</div>
+            <div class="">{!! nl2br(e($juryMember->descr)) !!}</div>
         </a>
     @endforeach
 
