@@ -67,7 +67,7 @@ class PhotosController extends Controller
                 
                 // Manipulated photo - stored to public.storage
                 $resizedUpload      = Image::make($src);
-                $resizedUpload->resize(300, null, function ($c) 
+                $resizedUpload->resize(2048, null, function ($c) 
                 {
                     $c->aspectRatio();
                     $c->upsize();
