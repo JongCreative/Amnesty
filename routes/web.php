@@ -20,7 +20,6 @@ Route::get('/', function () {
  */
 Route::get('/', 'PagesController@index')->name('home');
 Route::get('/contestterms', 'PagesController@contestterms')->name('terms');
-Route::get('/press', 'PagesController@press')->name('press');
 Route::get('/jury', 'PagesController@jury')->name('jury');
 Route::get('/contact', 'PagesController@contact')->name('contact');
 Route::get('/faq', 'PagesController@faq')->name('faq');
@@ -60,3 +59,4 @@ Route::patch('/dashboard/name', 'dashboardController@updateName');
 Route::resource('/photos', 'PhotosController');
 Route::resource('/users', 'UsersController');
 Route::resource('/sponsors', 'SponsorsController');
+Route::resource('/press', 'PressController');
