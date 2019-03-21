@@ -16,6 +16,7 @@ class SponsorsController extends Controller
     public function index()
     {
         $sponsors = Sponsor::orderBy('id', 'desc')->paginate(20);
+        \Session::flash('backUrl', '/sponsors');
         return view('sponsors.index', compact('sponsors') );
     }
 
@@ -26,6 +27,9 @@ class SponsorsController extends Controller
      */
     public function create()
     {
+        if (\Session::has('backUrl')) {
+            \Session::keep('backUrl');
+        }
         return view('sponsors.create');
     }
 
@@ -37,12 +41,20 @@ class SponsorsController extends Controller
      */
     public function store(SponsorRequest $request)
     {
+
         $sponsor = new Sponsor;
         $sponsor->name = request('name');
         $sponsor->contribution = request('contribution');
         $sponsor->save();
 
-        return redirect('/admin')->with('success', 'New sponsor added');
+        if( \Session::has('backUrl') )
+        {
+            $url = \Session::get('backUrl');
+        } else {
+            $url = '/admin';
+        }
+
+        return redirect($url)->with('success', 'New sponsor added');
     }
 
     /**

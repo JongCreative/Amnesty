@@ -12,7 +12,7 @@
      @endif
 
     <div class="">{{ $sponsor->name }}</div>
-    <div class="">{!! $sponsor->contribution !!}</div>
+    <div class="">{!! nl2br(e($sponsor->contribution)) !!}</div>
 
     <a href="/sponsors/{{ $sponsor->id }}/edit">Edit sponsor</a>
 
