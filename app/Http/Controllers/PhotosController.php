@@ -54,7 +54,7 @@ class PhotosController extends Controller
 
                 // Generate exif data from uploaded image
                 $exifExposure       = Image::make($src)->exif('ExposureTime');
-                
+
                 // Handle filename
                 $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
                 $filenameToStore    = config('contest.contest').'_'.$filename;
@@ -72,12 +72,13 @@ class PhotosController extends Controller
 
                 // Store in database
                 $photo = new Photo;
-                $photo->title = $request->input('title');
-                $photo->descr = $request->input('descr');
-                $photo->user_id = auth()->user()->id;
-                $photo->src = $filenameToStore;
-                $photo->focal = $request->input('focal');
-                $photo->aperture = $request->input('aperture');
+                $photo->user_id         = auth()->user()->id;
+                $photo->title           = $request->input('title');
+                $photo->descr           = $request->input('descr');
+                $photo->focal           = $request->input('focal');
+                $photo->aperture        = $request->input('aperture');
+                $photo->src             = $filenameToStore;
+                $photo->exposure        = $exifExposure;
                 $photo->save();
             }
         }
