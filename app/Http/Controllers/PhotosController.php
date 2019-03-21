@@ -43,24 +43,23 @@ class PhotosController extends Controller
     public function store(Request $request)
     {
         if ($sources = $request->File('src')) {
-            foreach ($sources as $src) {
+            foreach ($sources as $src) 
+            {
                 $this->validate($request, [
                     'title' => 'required',
                     'descr' => 'required',
-                    //apache max upload 2mb
-                    'src' => 'required|image|mimes:jpeg,jpg|max:850|min:100',
+                    'src'   => 'required',
+                    'src.*' => 'image|mimes:jpeg,jpg|max:850|min:100',
                     ]);
+                
+                // Handle filename
+                $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
+                $filenameToStore    = config('contest.contest').'_'.$filename;                
 
-                //Handle image format
-                $src = $request->hasFile('src');
-                $src = $request->File('src');
-                $filenameWithExt = $src->getClientOriginalName();
-                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-                $extension = $src->guessClientExtension();
-                $filenameToStore = uniqid($filename.'_', true).'.'. $extension;
                 //Store to storage.app.public.folderNameDefinedInConfigFile
-                $path = $src->storeAs('public/'. config('contest.contest'), $filenameToStore);
+                $OriginalUpload     = $src->storeAs('public/'. config('contest.contest'), $filenameToStore);
 
+                // Store in database
                 $photo = new Photo;
                 $photo->title = $request->input('title');
                 $photo->descr = $request->input('descr');
