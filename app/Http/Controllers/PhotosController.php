@@ -56,6 +56,7 @@ class PhotosController extends Controller
                 $exifExposure       = Image::make($src)->exif('ExposureTime');
                 $exifFlash          = Image::make($src)->exif('Flash');
                 $exifBrand          = Image::make($src)->exif('Make');
+                $exifModel          = Image::make($src)->exif('Model');
 
                 // Handle filename
                 $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
