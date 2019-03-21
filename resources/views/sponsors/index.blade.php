@@ -9,6 +9,8 @@
             {{ session('success') }}
         </div>
      @endif
+     
+     <a href="/sponsors/create">Add new Sponsor</a>
 
     {{-- Show all sponsors --}}
     @foreach($sponsors as $sponsor)
