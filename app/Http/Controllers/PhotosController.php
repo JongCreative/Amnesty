@@ -54,6 +54,7 @@ class PhotosController extends Controller
 
                 // Generate exif data from uploaded image
                 $exifExposure       = Image::make($src)->exif('ExposureTime');
+                $exifFlash          = Image::make($src)->exif('Flash');
 
                 // Handle filename
                 $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
@@ -79,6 +80,7 @@ class PhotosController extends Controller
                 $photo->aperture        = $request->input('aperture');
                 $photo->src             = $filenameToStore;
                 $photo->exposure        = $exifExposure;
+                
                 $photo->save();
             }
         }
