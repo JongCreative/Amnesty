@@ -82,6 +82,7 @@ class PhotosController extends Controller
                 $photo->src             = $filenameToStore;
                 $photo->exposure        = $exifExposure;
                 $photo->flits           = $exifFlash;
+                $photo->camera_brand    = $exifBrand;
                 
                 $photo->save();
             }
