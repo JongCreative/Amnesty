@@ -8,7 +8,7 @@
 
 @foreach($photos as $photo)
     {{ $photo->id }}
-    <a href="/photos/{{ $photo->id }}"><img src="/storage/1552561211/{{ $photo->src }}"/></a>
+    <a href="/photos/{{ $photo->id }}"><img src="/storage/{{ $photo->src }}"/></a>
     <hr/>
 @endforeach
 </p>

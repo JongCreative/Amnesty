@@ -42,17 +42,23 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
-        if ($sources = $request->File('src')) {
+        if ($sources = $request->File('src')) 
+        {
             foreach ($sources as $src) 
             {
                 $this->validate($request, [
                     'title' => 'required',
                     'descr' => 'required',
                     'src'   => 'required',
-                    'src.*' => 'image|mimes:jpeg,jpg|max:850|min:100',
+                    'src.*' => 'image|mimes:jpeg,jpg|max:5000|min:100',
                     ]);
 
+                // Handle filename
+                $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
+                $filenameToStore    = config('contest.contest').'_'.$filename;
+
                 // Generate exif data from uploaded image
+                $exif               = Image::make($src)->exif();
                 $exifExposure       = Image::make($src)->exif('ExposureTime');
                 $exifFlash          = Image::make($src)->exif('Flash');
                 $exifBrand          = Image::make($src)->exif('Make');
@@ -60,10 +66,6 @@ class PhotosController extends Controller
                 $exifCapture        = Image::make($src)->exif('DateTimeOriginal');
                 $exifFocal          = Image::make($src)->exif('FocalLength');
                 $exifAperture       = Image::make($src)->exif('ApertureValue');
-
-                // Handle filename
-                $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
-                $filenameToStore    = config('contest.contest').'_'.$filename;
                 
                 // Manipulated photo - stored to public.storage
                 $resizedUpload      = Image::make($src);
