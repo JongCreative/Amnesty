@@ -80,6 +80,7 @@ class PhotosController extends Controller
                 $photo->aperture        = $request->input('aperture');
                 $photo->src             = $filenameToStore;
                 $photo->exposure        = $exifExposure;
+                $photo->flits           = $exifFlash;
                 
                 $photo->save();
             }
