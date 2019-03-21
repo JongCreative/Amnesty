@@ -10,7 +10,9 @@
         </div>
      @endif
 
-     <a href="/sponsors/create">Add new Sponsor</a>
+     @if (Auth::user()->admin)
+     		<a href="/sponsors/create">Add new Sponsor</a>
+     @endif
 
     {{-- Show all sponsors --}}
     @foreach($sponsors as $sponsor)
