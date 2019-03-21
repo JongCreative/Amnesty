@@ -54,8 +54,16 @@ class PhotosController extends Controller
                 
                 // Handle filename
                 $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
-                $filenameToStore    = config('contest.contest').'_'.$filename;                
-
+                $filenameToStore    = config('contest.contest').'_'.$filename;
+                
+                // Manipulated photo - stored to public.storage
+                $resizedUpload      = Image::make($src);
+                $resizedUpload->resize(300, null, function ($c) 
+                {
+                    $c->aspectRatio();
+                    $c->upsize();
+                })->save(public_path('\storage/'. $filenameToStore));
+                
                 //Store to storage.app.public.folderNameDefinedInConfigFile
                 $OriginalUpload     = $src->storeAs('public/'. config('contest.contest'), $filenameToStore);
 
