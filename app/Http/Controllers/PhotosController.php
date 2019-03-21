@@ -88,6 +88,7 @@ class PhotosController extends Controller
                 $photo->camera_brand    = $exifBrand;
                 $photo->brand_model     = $exifModel;
                 $photo->capture_time    = $exifCapture;
+                $photo->focal           = $exifFocal;
                 
                 $photo->save();
             }
