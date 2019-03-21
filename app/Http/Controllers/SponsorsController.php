@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sponsor;
 use Illuminate\Http\Request;
+use App\Http\Requests\SponsorRequest;
 
 class SponsorsController extends Controller
 {
@@ -34,7 +35,7 @@ class SponsorsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SponsorRequest $request)
     {
         $sponsor = new Sponsor;
         $sponsor->name = request('name');
