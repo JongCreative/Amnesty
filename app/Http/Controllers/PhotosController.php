@@ -51,6 +51,9 @@ class PhotosController extends Controller
                     'src'   => 'required',
                     'src.*' => 'image|mimes:jpeg,jpg|max:850|min:100',
                     ]);
+
+                // Generate exif data from uploaded image
+                $exifExposure       = Image::make($src)->exif('ExposureTime');
                 
                 // Handle filename
                 $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
