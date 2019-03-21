@@ -14,13 +14,16 @@
     <div class="">{{ $sponsor->name }}</div>
     <div class="">{!! nl2br(e($sponsor->contribution)) !!}</div>
 
-    <a href="/sponsors/{{ $sponsor->id }}/edit">Edit sponsor</a>
+    @if (Auth::user()->admin)
+        <a href="/sponsors/{{ $sponsor->id }}/edit">Edit sponsor</a>
 
-    <form method="POST" action="/sponsors/{{$sponsor->id}}">
-        @csrf
-        @method('DELETE')
-      	<input type="submit" value="DELETE">
-    </form>
+        <form method="POST" action="/sponsors/{{$sponsor->id}}">
+            @csrf
+            @method('DELETE')
+          	<input type="submit" value="DELETE">
+        </form>
+    @endif
+    
 </div>
 
 @endsection
