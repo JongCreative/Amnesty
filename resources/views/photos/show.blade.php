@@ -10,4 +10,5 @@
     @method('DELETE')            
     @csrf
     <button type="submit" value="delete">delete</button>
+    <a href="/photos"> return to gallery </a>
 </form>
