@@ -57,7 +57,7 @@ class PressController extends Controller
      */
     public function show(Press $press)
     {
-        //
+        return view('press.show', compact('press'));
     }
 
     /**
