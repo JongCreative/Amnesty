@@ -2,12 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use Image;
 use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage; // access storage for delete file
 
+use App\Http\Requests\UploadPhotosRequest;
+
 class PhotosController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -37,41 +50,64 @@ class PhotosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UploadPhotosRequest $request)
     {
-        $this->validate($request, [
-            'title' => 'required',
-            'descr' => 'required',
-            //apache max upload 2mb
-            'src' => 'required|image|mimes:jpeg,jpg|max:1999|min:100',
-        ]);
+        if ($sources = $request->File('src')) 
+        {
+            foreach ($sources as $src) 
+            {
+                // $this->validate($request, [
+                //     'title' => 'required',
+                //     'descr' => 'required',
+                //     'src'   => 'required',
+                //     'src.*' => 'image|mimes:jpeg,jpg|max:5000|min:10',
+                //     ]);
 
-        //Handle image format
-        $src = $request->hasFile('src');
-        $src = $request->File('src');
-        $filenameWithExt = $src->getClientOriginalName();
-        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-        $extension = $src->guessClientExtension();
-        $filenameToStore = time() .'.'. $filename .'.'. $extension;
-        //Store to storage.app.public.folderNameDefinedInConfigFile
-        $path = $src->storeAs('public/'. config('contest.contest'), $filenameToStore);
+                // Handle filename
+                $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
+                $filenameToStore    = config('contest.contest').'_'.$filename;
 
-        $photo = new Photo;
-        $photo->title = $request->input('title');
-        $photo->descr = $request->input('descr');
-        $photo->src = $filenameToStore;
-        
-        // $photo->exposure = $request->input('exposure');              //extract from exif
-        // $photo->flits = $request->input('flits');                    //extract from exif
-        // $photo->camera_brand = $request->input('camera_brand');      //extract from exif
-        // $photo->brand_model = $request->input('brand_model');        //extract from exif
-        // $photo->capture_time = $request->input('capture_time');      //extract from exif
+                // Generate exif data from uploaded image
+                $exif               = Image::make($src)->exif();
+                $exifExposure       = Image::make($src)->exif('ExposureTime');
+                $exifFlash          = Image::make($src)->exif('Flash');
+                $exifBrand          = Image::make($src)->exif('Make');
+                $exifModel          = Image::make($src)->exif('Model');
+                $exifCapture        = Image::make($src)->exif('DateTimeOriginal');
+                $exifFocal          = Image::make($src)->exif('FocalLength');
+                $exifAperture       = Image::make($src)->exif('ApertureValue');
+                
+                // Manipulated photo - stored to public.storage
+                $resizedUpload      = Image::make($src);
+                $resizedUpload->resize(2048, null, function ($c) 
+                {
+                    $c->aspectRatio();
+                    $c->upsize();
+                })->save(public_path('\storage/'. $filenameToStore));
+                
+                //Store to storage.app.public.folderNameDefinedInConfigFile
+                $OriginalUpload     = $src->storeAs('public/'. config('contest.contest'), $filenameToStore);
 
-        $photo->focal = $request->input('focal');
-        $photo->aperture = $request->input('aperture');
-        $photo->save();
+                // Store in database
+                $photo = new Photo;
+                $photo->user_id         = auth()->user()->id;
+                $photo->title           = $request->input('title');
+                $photo->descr           = $request->input('descr');
+                $photo->focal           = $request->input('focal');
+                $photo->aperture        = $request->input('aperture');
+                $photo->src             = $filenameToStore;
+                $photo->exposure        = $exifExposure;
+                $photo->flits           = $exifFlash;
+                $photo->camera_brand    = $exifBrand;
+                $photo->brand_model     = $exifModel;
+                $photo->capture_time    = $exifCapture;
+                $photo->focal           = $exifFocal;
+                $photo->aperture        = $exifAperture;
+                $photo->save();
+            }
+        }
 
-        return redirect('photos');
+        return redirect('photos')->with('success', ' Thank you for joining the contest! View all your submissions on your own dashboard!');
     }
 
     /**
@@ -94,7 +130,13 @@ class PhotosController extends Controller
      */
     public function edit(Photo $photo)
     {
-        return view('photos.edit');
+        $photo = Photo::find($photo->id);
+
+        //check for correct user_id
+        if(auth()->user()->id != $photo->id){
+            return redirect('photos')->with('error', 'Please login first');
+        }
+        return view('photos.edit')->with('photos', $photo);
     }
 
     /**
@@ -106,6 +148,17 @@ class PhotosController extends Controller
      */
     public function update(Request $request, Photo $photo)
     {
+        $this->validate($request, [
+            'title' => 'required',
+            'descr' => 'required',
+        ]);
+        
+        $photo              = Photo::find($photo->id);
+        $photo->title       = $request->input('title');
+        $photo->descr       = $request->input('descr');
+        $photo->focal       = $request->input('focal');
+        $photo->aperture    = $request->input('aperture');
+        $photo->save();
         return redirect('photos');
     }
 
@@ -117,6 +170,13 @@ class PhotosController extends Controller
      */
     public function destroy(Photo $photo)
     {
+        $photo = Photo::find($photo->id);
+        
+        //check for correct user_id
+        if(auth()->user()->id != $photo->id){
+            return redirect('photos')->with('error', 'Please login first');
+        }
+
         Storage::delete('public/'. config('contest.contest').$photo->src);
         $photo->delete();
         return redirect('photos')->with('success', 'successfully removed');

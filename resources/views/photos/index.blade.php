@@ -1,9 +1,19 @@
-{{session('success')}}
-<h1>photos.index</h1>
-<p> all photos</p>
+@extends('layouts.daisy')
+
+@section('content')
+
+<h1>Gallery</h1>
+
+<a href="/photos/create" class="button button_act"><span>ik doe mee</span></a>
+
+<br /><p>
 
 @foreach($photos as $photo)
-    <a href="/photos/{{ $photo->id }}">{{ $photo->src }}</a>
+    {{ $photo->title }}
+    <a href="/photos/{{ $photo->id }}"><img src="/storage/{{ $photo->src }}" style="max-width:100%"/></a>
     <hr/>
 @endforeach
+</p>
 {{ $photos->links() }}
+
+@endsection

@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password',
+        'first_name', 'last_name', 'email', 'password', 'banned',
     ];
 
     /**
@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'jury', 'admin', 'banned',
     ];
 
     /**
@@ -39,5 +39,10 @@ class User extends Authenticatable
 
     public function getNameAttribute(){
         return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function photos(){
+        //a user can have more than 1 photo uploaded
+        return $this->hasMany('App\Photo');
     }
 }

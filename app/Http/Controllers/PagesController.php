@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -22,10 +23,6 @@ class PagesController extends Controller
         return view('welcome');
     }
 
-    public function sponsors()
-    {
-        return view('welcome');
-    }
 
     public function contact()
     {
@@ -35,6 +32,12 @@ class PagesController extends Controller
     public function faq()
     {
         return view('welcome');
+    }
+
+    public function jury()
+    {
+        $juryMembers = user::where('jury', true)->get();
+        return view('jury', compact('juryMembers') );
     }
    
 }
