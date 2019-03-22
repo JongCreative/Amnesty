@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="forms_container">
-    <div class="form_container">
-        <div class="header">New Press Article</div>
+<div class="forms_container" style="display: flex; justify-content: center; width: 100%">
+    <div class="form_container" style="max-width: 500px;">
+        <div class="header">Edit Press Article</div>
         <form method="POST" action="/press/{{$press->id}}">
             @csrf
             @method('PATCH')
@@ -38,10 +38,10 @@
                     {{ $errors->first('date') }}
                 </div>
             @endif
-            <label for="date">Publish Date</label>
+            <label for="date" style="display: block;">Publish Date</label>
             <input id="date" type="date" name="date" value="{{ old('date') ? old('date') : $press->date }}">      
             
-            <input type="submit" value="Add Press Article">
+            <input type="submit" value="Update Press Article">
         </form>
 
     </div>
