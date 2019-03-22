@@ -26,26 +26,29 @@
                 </ul></li></div>
  @if (Route::has('login'))
     @auth
-    <li><a href="/dashboard">Dashboard</a></li>
-                        <li><a  href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </li>
+    <div>
+<li><a href="/dashboard" class="dashboard">Dashboard</a></li>
+                    <li><a  href="{{ route('logout') }}" class="logout"
+                                onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+    </div>
     @else
-    <div class=>
+    <div class>
         <li><a href="{{ route('login') }}" class="login">login</a></li>
 
         @if (Route::has('register'))
            <li><a href="{{ route('register') }} " class="register">Register</a></li>
         @endif
+        </div>
     @endauth
   @endif
-        </ul></div>
+        </ul>
 
 <div class="debug">
 <label><input type="checkbox"> Debug</label>
@@ -207,8 +210,6 @@
         </div>
     </div>
     <div id="group7" class="parallax_group">
-        <div class="parallax_layer parallax_layer_base">
-        </div>
         <div class="parallax_layer parallax_layer_back">
         </div>
     </div>
@@ -291,15 +292,5 @@
     debugInput.addEventListener("click", updateDebugState);
     updateDebugState();
     </script>
-
-    <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-10812217-1', 'auto');
-ga('send', 'pageview');
-</script>   
-
 </body>
 </html>

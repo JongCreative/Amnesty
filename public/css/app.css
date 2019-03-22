@@ -2,25 +2,6 @@
   border: solid 1px orangered;
 }
 
-html, body {
-  font-family: "Arial", sans-serif;
-  background-color: #363636;
-  overflow: hidden;
-}
-
-body {
-  font: 100%;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.actionbox {
-  background-color: #FFFF00;
-}
-
 .button {
   font-size: 0.9rem;
   font-weight: bold;
@@ -100,7 +81,7 @@ a {
   background-color: #dadada;
   display: block;
 }
-.nav li .register {
+.nav li .register, .nav li .logout {
   margin-top: 10px;
   height: 60px;
   width: 90px;
@@ -108,10 +89,10 @@ a {
   border: 1px solid #000000;
   display: block;
 }
-.nav li .register:hover {
+.nav li .register:hover, .nav li .logout:hover {
   background-color: #dadada;
 }
-.nav li .login {
+.nav li .login, .nav li .dashboard {
   margin-top: 10px;
   height: 60px;
   width: 90px;
@@ -121,7 +102,7 @@ a {
   color: #fff;
   display: block;
 }
-.nav li .login:hover {
+.nav li .login:hover, .nav li .dashboard:hover {
   background-color: #363636;
 }
 
@@ -174,8 +155,69 @@ a {
   display: block;
 }
 
+.forms_container {
+  margin-top: 140px;
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px, 0, 10px, 0;
+}
+
+.form_container {
+  padding: 10px;
+}
+.form_container .header {
+  height: 100px;
+  color: #fff;
+  background-color: #000000;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  line-height: 100px;
+}
+.form_container form {
+  padding: 20px;
+  background-color: #c7c2ba;
+  color: #000000;
+}
+.form_container form input[type=text], .form_container form select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.form_container form input[type=submit] {
+  width: 100%;
+  background-color: #FFFF00;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+.form_container form input[type=submit]:hover {
+  background-color: #fff000;
+}
+.form_container form .button {
+  width: 100%;
+  background-color: #FFFF00;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+.form_container form .button:hover {
+  background-color: #fff000;
+}
+
 /* Debugger 
---------------------------------------------- */
+  --------------------------------------------- */
 .debug {
   position: fixed;
   top: 80px;
@@ -422,53 +464,23 @@ a {
   text-align: center;
 }
 
-.forms_container {
-  margin-top: 140px;
-  display: grid;
-  width: 80%;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
-  padding: 20px, 0, 10px, 0;
+html, body {
+  font-family: "Arial", sans-serif;
+  background-color: #363636;
+  overflow: hidden;
 }
 
-.form_container {
-  padding: 10px;
+body {
+  font: 100%;
 }
-.form_container .header {
-  height: 100px;
-  color: #fff;
-  background-color: #000000;
-  font-size: 26px;
-  font-weight: bold;
-  text-align: center;
-  align-items: center;
-  line-height: 100px;
+
+* {
+  margin: 0;
+  padding: 0;
 }
-.form_container form {
-  padding: 20px;
-  background-color: #c7c2ba;
-  color: #000000;
-}
-.form_container form input[type=text], .form_container form select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-.form_container form input[type=submit] {
-  width: 100%;
+
+.actionbox {
   background-color: #FFFF00;
-  color: black;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-}
-.form_container form input[type=submit]:hover {
-  background-color: #fff000;
 }
 
 /*# sourceMappingURL=app.css.map */
