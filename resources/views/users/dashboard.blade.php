@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="forms_container" style="display: flex; justify-content: center; width: 100%; margin-top: 10px;">
-    <div class="form_container" style="max-width: 1000px;">
+    <div class="form_container" style="max-width: 100%; min-width: 75%">
         <div class="header">Dashboard</div>
         <div style="padding: 20px; background-color: #c7c2ba">
             <div style="margin: 8px 0;">
@@ -54,19 +54,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="header">My submissions</div>
+        <div style="padding: 20px; background-color: #c7c2ba">
+            @foreach ($photos as $photo)
+                {{ $photo->title }}
+                {{ $photo->descr }}
+                {{ $photo->focal }}
+                {{ $photo->aperture }}
+                <img src="/storage/{{ $photo->src }}"/>
+            @endforeach
+        </div>
+
     </div>
 </div>
-
-<br/><br/>
-<h1>my submissions</h1>
-<br/><br/>
-
-@foreach ($photos as $photo)
-    {{ $photo->title }}
-    {{ $photo->descr }}
-    {{ $photo->focal }}
-    {{ $photo->aperture }}
-    <img src="/storage/{{ $photo->src }}"/>
-@endforeach
 
 @endsection

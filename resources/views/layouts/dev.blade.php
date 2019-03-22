@@ -19,6 +19,11 @@
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link href="/css/app.css" rel="stylesheet">
+    <Style>
+        body{
+            overflow: visible;
+        }
+    </Style>
 </head>
 <body>
     <div class="site">
