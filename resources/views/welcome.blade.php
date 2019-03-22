@@ -10,6 +10,7 @@
     <body>
         <ul class="nav">
             <li><img src="img/Logo.png" height="80px"></li>
+            <div>
             <li><a href="/">Home</a></li>
             <li><a href="#">Inzendingen</a>
                 <ul class="nav_child">
@@ -22,11 +23,12 @@
                     <li><a href="{{ route('jury') }}">Jury</a></li>
                     <li><a href="#">Sposoren</a></li>
                     <li><a href="#">Pers</a></li>
-                </ul></li>
+                </ul></li></div>
  @if (Route::has('login'))
     @auth
         <li><a href="/dashboard">Home</a></li>
     @else
+    <div class=>
         <li><a href="{{ route('login') }}" class="login">login</a></li>
 
         @if (Route::has('register'))
@@ -34,7 +36,7 @@
         @endif
     @endauth
   @endif
-        </ul>
+        </ul></div>
 
 <div class="debug">
 <label><input type="checkbox"> Debug</label>
@@ -92,10 +94,8 @@
     </div>
     <div id="group3" class="parallax_group">
         <div class="parallax_layer parallax_layer_base">
-        <div class="title">Base Layer</div>
         </div>
         <div class="parallax_layer parallax_layer_back">
-        <div class="title">Background Layer</div>
         </div>
     </div>
     <div id="group4" class="parallax_group">
@@ -137,10 +137,8 @@
     </div>
     <div id="group5" class="parallax_group">
         <div class="parallax_layer parallax_layer_back">
-        <div class="title">Background Layer</div>
         </div>
         <div class="parallax_layer parallax_layer_base">
-        <div class="title">Base Layer</div>
         </div>
     </div>
     <div id="group6" class="parallax_group">
@@ -155,39 +153,44 @@
                 <div class="block">
                   <div class="title">Jury 1</div>
                   <div class="sub">Lorem ipsum dolor sit amet</div>
-                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <div><img src="/img/jury1.jpg" alt="" height="200"></div>                  
+                  <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                   <!--<div class="button">meer info</div>-->
                 </div>
                 <div class="block">
-                <div class="title">Jury 1</div>
+                <div class="title">Jury 2</div>
                 <div class="sub">Lorem ipsum dolor sit amet</div>
-                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <div><img src="/img/jury2.jpg" alt="" height="200"></div>                  
+                  <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                   <!--<div class="button">meer info</div>-->
                 </div>
                 <div class="block">
-                  <div class="title">Jury 1</div>
+                  <div class="title">Jury 3</div>
                   <div class="sub">Lorem ipsum dolor sit amet</div>
-                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>              
-                  <!--<div class="button">meer info</div>-->
-                </div>
+                  <div><img src="/img/jury3.jpg" alt="" height="200"></div>                  
+                  <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  </div>
           </div>
           <div class="content_wrapper">
                 <div class="block">
-                  <div class="title">Jury 1</div>
+                  <div class="title">Jury 4</div>
                   <div class="sub">Lorem ipsum dolor sit amet</div>
-                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <div><img src="/img/jury4.jpg" alt="" height="200"></div>                  
+                  <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                   <!--<div class="button">meer info</div>-->
                 </div>
                 <div class="block">
-                <div class="title">Jury 1</div>
+                <div class="title">Jury 5</div>
                 <div class="sub">Lorem ipsum dolor sit amet</div>
-                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <div><img src="/img/jury5.jpg" alt="" height="200"></div>                  
+                  <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                   <!--<div class="button">meer info</div>-->
                 </div>
                 <div class="block">
-                  <div class="title">Jury 1</div>
-                  <div class="sub">Lorem ipsum dolor sit amet</div>
-                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>              
+                  <div class="title">Jury 6</div>
+                  <div class="sub">Lorem ipsum dolor sit amet</div><div>
+                  <img src="/img/jury6.jpg" alt="" height="200"></div>                  
+                  <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                   <!--<div class="button">meer info</div>-->
                 </div>
           </div>
