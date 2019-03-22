@@ -218,8 +218,8 @@ a {
   position: relative;
   height: 500px;
   /* fallback for older browsers */
-  height: 90vh;
-  margin-top: -5vh;
+  height: 100vh;
+  margin-top: 0vh;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
@@ -303,6 +303,18 @@ a {
   background: #dadada;
 }
 
+#group7 {
+  z-index: 2;
+}
+
+#group7 .parallax_layer_back {
+  background: url(/img/);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 /* content parallax */
 .hpblok_container {
   position: relative;
@@ -312,7 +324,7 @@ a {
 
 .hpblok {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 70%;
   width: 60%;
   text-align: left;
