@@ -19,6 +19,11 @@
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link href="/css/app.css" rel="stylesheet">
+    <Style>
+        body{
+            overflow: visible;
+        }
+    </Style>
 </head>
 <body>
     <div class="site">
@@ -33,13 +38,22 @@
             <li><a href="#">Wedstrijd</a>
                 <ul class="nav_child">
                     <li><a href="#">Voorwaarden</a></li>
-                    <li><a href="{{ route('jury') }}">Jury</a></li>
-                    <li><a href="#">Sponsoren</a></li>
-                    <li><a href="#">Pers</a></li>
+                    <li><a href="{/jury">Jury</a></li>
+                    <li><a href="/sponsors">Sponsoren</a></li>
+                    <li><a href="/press">Pers</a></li>
                 </ul></li>
                 @if (Route::has('login'))
                     @auth
-                        <li><a href="/dashboard">Home</a></li>
+                        <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a  href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
                     @else
                         <li><a href="{{ route('login') }}" class="register">login</a></li>
 

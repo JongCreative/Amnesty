@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="forms_container">
-    <div class="form_container">
+<div class="forms_container" style="display: flex; justify-content: center; width: 100%">
+    <div class="form_container" style="max-width: 500px;">
         <div class="header">New Press Article</div>
         <form method="POST" action="/press">
             @csrf
@@ -37,7 +37,7 @@
                     {{ $errors->first('date') }}
                 </div>
             @endif
-            <label for="date">Publish Date</label>
+            <label for="date" style="display: block;">Publish Date</label>
             <input id="date" type="date" name="date" value="{{ old('date') ? old('date') : date('Y-m-d') }}">      
             
             <input type="submit" value="Add Press Article">

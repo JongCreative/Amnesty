@@ -1,29 +1,33 @@
-@extends('layouts.app')
+@extends('layouts.dev')
 
 @section('content')
-<div class="">
-		<a href="/sponsors">Back</a>
+<div class="forms_container" style="display: flex; justify-content: center; width: 100%; margin-top: 10px;">
+    <div class="form_container" style="max-width: 100%; min-width: 75%">
+        <div class="header">{{ $sponsor->name }}</div>
+        <div style="padding: 20px; background-color: #c7c2ba">
 
-    {{-- Success Handler --}}
-    @if (session('success')) 
-        <div class="success">
-            {{ session('success') }}
+            {{-- Success Handlers for User changes --}}
+            @if (session('success')) 
+                <div class="">
+                    {{ session('success') }}
+                </div>
+             @endif
+            <div class="">{!! nl2br(e($sponsor->contribution)) !!}</div>
+
+            @if (Auth::user()->admin)
+                <div style="margin: 8px 0;">
+                    <a href="/sponsors/{{ $sponsor->id }}/edit">Edit sponsor</a>
+
+                    <form method="POST" action="/sponsors/{{$sponsor->id}}">
+                        @csrf
+                        @method('DELETE')
+                      	<input type="submit" value="DELETE SPONSOR" style="background: red; color: white; max-width: 300px">
+                    </form>
+                </div>
+            @endif
         </div>
-     @endif
+    </div>
 
-    <div class="">{{ $sponsor->name }}</div>
-    <div class="">{!! nl2br(e($sponsor->contribution)) !!}</div>
-
-    @if (Auth::user()->admin)
-        <a href="/sponsors/{{ $sponsor->id }}/edit">Edit sponsor</a>
-
-        <form method="POST" action="/sponsors/{{$sponsor->id}}">
-            @csrf
-            @method('DELETE')
-          	<input type="submit" value="DELETE">
-        </form>
-    @endif
-    
 </div>
 
 @endsection
