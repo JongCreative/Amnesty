@@ -16,10 +16,10 @@ class PhotosController extends Controller
      *
      * @return void
      */
-    public function __construct()
+/*     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
-    }
+    } */
 
     /**
      * Display a listing of the resource.
@@ -133,9 +133,9 @@ class PhotosController extends Controller
         $photo = Photo::find($photo->id);
 
         //check for correct user_id
-        if(auth()->user()->id != $photo->id){
+/*         if(auth()->user()->id != $photo->id){
             return redirect('photos')->with('error', 'Please login first');
-        }
+        } */
         return view('photos.edit')->with('photos', $photo);
     }
 
@@ -173,9 +173,9 @@ class PhotosController extends Controller
         $photo = Photo::find($photo->id);
         
         //check for correct user_id
-        if(auth()->user()->id != $photo->id){
+/*         if(auth()->user()->id != $photo->id){
             return redirect('photos')->with('error', 'Please login first');
-        }
+        } */
 
         Storage::delete('public/'. config('contest.contest').$photo->src);
         $photo->delete();

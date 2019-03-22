@@ -2,11 +2,11 @@
 
 @section('content')
 
-<h1>photos.create</h1>
+<h1>upload een foto</h1>
 
-<div class="form_container">
+<div class="form_container" style="max-width:1000px; background:white">
     <div class="header">Deelnemen</div>
-    <form class="form-insert" action="/photos" enctype="multipart/form-data" method="POST">
+    <form  class="form-insert" action="/photos" enctype="multipart/form-data" method="POST">
         @csrf
         
         <input type="file" name="src[]" placeholder="src" value="{{ old('src') }}" multiple>
@@ -17,8 +17,8 @@
         <input type="text" name="aperture" placeholder="aperture" value="{{ old('aperture') }}">
 
         <hr />
-        <input type="reset" name="reset">
-        <input type="submit">
+        <input class="button button_act" type="reset" name="reset">
+        <input class="button button_act" type="submit">
         <a href="/photos"> cancel </a>
     </form>    
 </div>
