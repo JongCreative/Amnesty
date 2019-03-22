@@ -4,7 +4,7 @@
 
 <div class="forms_container" style="display: flex; justify-content: center; width: 100%">
     <div class="form_container" style="max-width: 500px;">
-        <div class="header">Edit Sponsor</div>
+        <div class="header">Register</div>
   
         <form method="POST" action="{{ route('register') }}">
             @csrf

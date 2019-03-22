@@ -4,7 +4,7 @@
 
 <div class="forms_container" style="display: flex; justify-content: center; width: 100%">
     <div class="form_container" style="max-width: 500px;">
-        <div class="header">New Sponsor</div>
+        <div class="header">Login</div>
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
@@ -40,7 +40,7 @@
             </label>
 
             <input type="submit" value="{{ __('Login') }}">
-            
+
             @if (Route::has('password.request'))
                 <a class="" href="{{ route('password.request') }}">
                     {{ __('Forgot Your Password?') }}
