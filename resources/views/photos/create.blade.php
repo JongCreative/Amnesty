@@ -23,7 +23,7 @@
                 </section>
                 <section style="flex: 1; display:flex; flex-direction: row;">
                     <input style="flex: 1" class="button button_act" type="reset" name="reset">
-                    <input style="flex: 1" class="button button_act" type="submit">
+                    <button style="flex: 1" class="button button_act" type="submit">submit</button>
                     <a style="flex: 1" href="/photos"> cancel </a>
                 </section>
             </form>
