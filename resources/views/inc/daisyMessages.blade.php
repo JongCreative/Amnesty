@@ -8,6 +8,8 @@
 {{session('success')}}
 @endif
 
-{{-- @if ($errors->has('src'))
-    {{ $errors->first('src')}}
-@endif --}}
+@if (session('error'))
+    <article class="alert alert-danger">
+        {{session('error')}}
+    </article>
+@endif
