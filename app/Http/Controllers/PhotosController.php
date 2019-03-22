@@ -12,6 +12,16 @@ use Illuminate\Support\Facades\Storage; // access storage for delete file
 class PhotosController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -121,6 +131,11 @@ class PhotosController extends Controller
     public function edit(Photo $photo)
     {
         $photo = Photo::find($photo->id);
+
+        //check for correct user_id
+        if(auth()->user()->id != $photo->id){
+            return redirect('photos')->with('error', 'Please login first');
+        }
         return view('photos.edit')->with('photos', $photo);
     }
 
@@ -155,6 +170,13 @@ class PhotosController extends Controller
      */
     public function destroy(Photo $photo)
     {
+        $photo = Photo::find($photo->id);
+        
+        //check for correct user_id
+        if(auth()->user()->id != $photo->id){
+            return redirect('photos')->with('error', 'Please login first');
+        }
+
         Storage::delete('public/'. config('contest.contest').$photo->src);
         $photo->delete();
         return redirect('photos')->with('success', 'successfully removed');
