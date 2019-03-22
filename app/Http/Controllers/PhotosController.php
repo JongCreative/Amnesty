@@ -7,7 +7,7 @@ use App\Photo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage; // access storage for delete file
 
-//use App\Http\Requests\UploadPhotosRequest;
+use App\Http\Requests\UploadPhotosRequest;
 
 class PhotosController extends Controller
 {
@@ -16,10 +16,10 @@ class PhotosController extends Controller
      *
      * @return void
      */
-/*     public function __construct()
+    public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
-    } */
+    }
 
     /**
      * Display a listing of the resource.
@@ -50,18 +50,18 @@ class PhotosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UploadPhotosRequest $request)
     {
         if ($sources = $request->File('src')) 
         {
             foreach ($sources as $src) 
             {
-                $this->validate($request, [
-                    'title' => 'required',
-                    'descr' => 'required',
-                    'src'   => 'required',
-                    'src.*' => 'image|mimes:jpeg,jpg|max:5000|min:100',
-                    ]);
+                // $this->validate($request, [
+                //     'title' => 'required',
+                //     'descr' => 'required',
+                //     'src'   => 'required',
+                //     'src.*' => 'image|mimes:jpeg,jpg|max:5000|min:10',
+                //     ]);
 
                 // Handle filename
                 $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
@@ -133,9 +133,9 @@ class PhotosController extends Controller
         $photo = Photo::find($photo->id);
 
         //check for correct user_id
-/*         if(auth()->user()->id != $photo->id){
+        if(auth()->user()->id != $photo->id){
             return redirect('photos')->with('error', 'Please login first');
-        } */
+        }
         return view('photos.edit')->with('photos', $photo);
     }
 
@@ -173,9 +173,9 @@ class PhotosController extends Controller
         $photo = Photo::find($photo->id);
         
         //check for correct user_id
-/*         if(auth()->user()->id != $photo->id){
+        if(auth()->user()->id != $photo->id){
             return redirect('photos')->with('error', 'Please login first');
-        } */
+        }
 
         Storage::delete('public/'. config('contest.contest').$photo->src);
         $photo->delete();

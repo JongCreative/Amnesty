@@ -6,8 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/css/app.css" rel="stylesheet">
     <title>{{config('app.name')}}</title>
+
+    <Style>
+        html,body{
+            overflow: visible;
+        }
+    </Style>
+    
 </head>
-<body style="max-height: 100vh; max-width: 100%;overflow-x: hidden;">
+<body>
     <main class="positioning_main">
 
         <div class="positioning positioning1">

@@ -62,7 +62,7 @@
                 {{ $photo->descr }}
                 {{ $photo->focal }}
                 {{ $photo->aperture }}
-                <img src="/storage/{{ $photo->src }}"/>
+                <img src="/storage/{{ $photo->src }}" style="width:100%"/>
             @endforeach
         </div>
 
