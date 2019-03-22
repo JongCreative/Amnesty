@@ -26,7 +26,16 @@
                 </ul></li></div>
  @if (Route::has('login'))
     @auth
-        <li><a href="/dashboard">Home</a></li>
+    <li><a href="/dashboard">Dashboard</a></li>
+                        <li><a  href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </li>
     @else
     <div class=>
         <li><a href="{{ route('login') }}" class="login">login</a></li>
@@ -195,6 +204,12 @@
                 </div>
           </div>
   <!-- end content parallax -->
+        </div>
+    </div>
+    <div id="group7" class="parallax_group">
+        <div class="parallax_layer parallax_layer_base">
+        </div>
+        <div class="parallax_layer parallax_layer_back">
         </div>
     </div>
 </div>
