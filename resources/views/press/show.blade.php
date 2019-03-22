@@ -23,7 +23,7 @@
                 <form method="POST" action="/press/{{$press->id}}">
                     @csrf
                     @method('DELETE')
-                  	<input type="submit" value="DELETE" style="background: red; color: white; max-width: 300px">
+                  	<input type="submit" value="DELETE PRESS ARTICLE" style="background: red; color: white; max-width: 300px">
                 </form>
             </div>
         </div>
