@@ -295,7 +295,7 @@ a {
     z-index: 2; 
   }
   #group5 .parallax_layer_back {
-    background-image: url(/img/devlucht.jpg);
+    background-image: url(/img/venice.JPG);
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -323,7 +323,7 @@ a {
     position: absolute;
     top: 40%;
     left: 70%;
-    width: 80%;
+    width: 60%;
     text-align: left;
     background-color: $hpblok-bg;
     padding: 20px 70px 20px 70px;
@@ -395,7 +395,7 @@ a {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        padding:10px;
+        padding: 20px 10px 20px 10px ;
         background-color: $white;
 
             .block{
@@ -403,13 +403,16 @@ a {
               align-items: center;
               margin-top: 5px;
               flex-direction: column;
-              width: 30%;
+              width: 25%;
+              letter-spacing: 0.5px;
               padding: 5px;
+              background-color: $block-bg;
 
               .title{
                 font-size: smaller;
                 font-weight: bold;
                 padding: 5px;
+                text-align: center;
               }
 
               .sub{
@@ -422,6 +425,7 @@ a {
               .txt{
                 font-size: 40%;
                 padding: 5px;
+                text-align: center;
               }
             }
       }
