@@ -12,4 +12,5 @@
 
 </div>
 
+{{ $users->links() }}
 @endsection

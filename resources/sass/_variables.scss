@@ -1,6 +1,10 @@
 
 // Body
 $body-bg: #363636;
+$parallax-bg-a: #363636;
+$parallax-bg-b: #dadada;
+
+$contentwrapper-bg-a: #dadada;
 
 // Typography
 $font-family-sans-serif: "Arial", sans-serif;
@@ -30,12 +34,9 @@ $nav-font-hovercolor: #fff;
 
 $form-bg: #c7c2ba;
 
-
-
-$content-width: 1000px;
-$breakpoint: 799px;
-$nav-height: 70px;
+$hpblok-bg:rgba(0,0,0,.85);
+$hpblok-title-bg: rgba(255, 255, 255, 0.6);
 
 .debug{
-    border: solid 1px orange;
+border: solid 1px orangered;
 }
