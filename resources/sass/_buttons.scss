@@ -1,0 +1,39 @@
+.button {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: $black;
+    background-color: $white;
+    border: 1px solid $black;
+    padding: 16px 32px;
+    display: inline-block;
+    text-align: center;
+    transition: background-color .25s ease-in-out,border-color .25s ease-in-out,color .25s ease-in-out,fill .25s ease-in-out;
+
+    &:hover{
+      background-color: $nav-a-hover;
+    }
+}
+
+.button_sm {
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: $black;
+    color: $white;
+  
+    &:hover {
+      background-color: $dark_hover;
+    }
+  }
+  
+  .button_act {
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: $yellow;
+    border-color: $yellow;
+    color: $black;
+  
+    &:hover {
+      background-color: $yellow_hover;
+      border-color: $yellow_hover;
+    }
+   }
