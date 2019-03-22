@@ -38,9 +38,9 @@
             <li><a href="#">Wedstrijd</a>
                 <ul class="nav_child">
                     <li><a href="#">Voorwaarden</a></li>
-                    <li><a href="{{ route('jury') }}">Jury</a></li>
-                    <li><a href="#">Sponsoren</a></li>
-                    <li><a href="#">Pers</a></li>
+                    <li><a href="{/jury">Jury</a></li>
+                    <li><a href="/sponsors">Sponsoren</a></li>
+                    <li><a href="/press">Pers</a></li>
                 </ul></li>
                 @if (Route::has('login'))
                     @auth
