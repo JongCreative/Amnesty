@@ -19,6 +19,10 @@
             <label for="endDate" style="display: block;">End Date</label>
             <input id="endDate" type="date" class="" name="endDate" value="{{ $contestData->endDate }}" required>
 
+            <label for="mainPrize" class="">Main Prize</label>
+            <input id="mainPrize" type="text" class="" name="mainPrize" value="{{ $contestData->mainPrize }}" required>
+            <textarea name="mainDescr">{{ $contestData->mainDescr }}</textarea>
+
             <input type="submit" value="Edit Contest Data">
         </form>
     </div>
