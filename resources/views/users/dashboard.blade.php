@@ -44,13 +44,16 @@
                     Contest region: {{ $contestData->region  }}
                 </div>
                 <div>
-                    Contest prize: {{ $contestData->prize  }}
-                </div>
-                <div>
                     Contest theme: {{ $contestData->theme }}
                 </div>
                 <div>
                     Contest end date: {{ $contestData->endDate }}
+                </div>
+                <div>
+                    Main prize: {{ $contestData->mainPrize }}
+                    <div>
+                        {{ $contestData->mainDescr }}
+                    </div>
                 </div>
             </div>
         </div>

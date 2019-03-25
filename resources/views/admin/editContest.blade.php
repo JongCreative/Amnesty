@@ -13,9 +13,6 @@
 
             <input id="region" type="text" class="" name="region" value="{{ $contestData->region }}" required autofocus>
 
-            <label for="prize" class="">Prize</label>
-            <input id="prize " type="text" class="" name="prize" value="{{ $contestData->prize }}" required>
-
             <label for="theme" class="">Theme</label>
             <input id="theme" type="text" class="" name="theme" value="{{ $contestData->theme }}" required>
 
