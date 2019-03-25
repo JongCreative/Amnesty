@@ -56,13 +56,6 @@ class PhotosController extends Controller
         {
             foreach ($sources as $src) 
             {
-                // $this->validate($request, [
-                //     'title' => 'required',
-                //     'descr' => 'required',
-                //     'src'   => 'required',
-                //     'src.*' => 'image|mimes:jpeg,jpg|max:5000|min:10',
-                //     ]);
-
                 // Handle filename
                 $filename           = uniqid() .'.'.$src->getClientOriginalExtension();
                 $filenameToStore    = config('contest.contest').'_'.$filename;
@@ -133,7 +126,7 @@ class PhotosController extends Controller
         $photo = Photo::find($photo->id);
 
         //check for correct user_id
-        if(auth()->user()->id != $photo->id){
+        if(auth()->user()->id != $photo->user_id){
             return redirect('photos')->with('error', 'Please login first');
         }
         return view('photos.edit')->with('photos', $photo);
@@ -173,7 +166,7 @@ class PhotosController extends Controller
         $photo = Photo::find($photo->id);
         
         //check for correct user_id
-        if(auth()->user()->id != $photo->id){
+        if(auth()->user()->id != $photo->user_id){
             return redirect('photos')->with('error', 'Please login first');
         }
 
