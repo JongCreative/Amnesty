@@ -11,7 +11,7 @@
         <ul class="nav">
             <li><img src="img/Logo.png" height="80px"></li>
             <div>
-            <li><a href="/">Home</a></li>
+            <li><a href="/home">Home</a></li>
             <li><a href="/photos">Inzendingen</a>
                 <ul class="nav_child">
                     <li><a href="#">Gallery</a></li>
