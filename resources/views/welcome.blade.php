@@ -11,11 +11,11 @@
         <ul class="nav">
             <li><img src="img/Logo.png" height="80px"></li>
             <div>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/photos">Inzendingen</a>
+            <li><a href="/">Home</a></li>
+            <li>Inzendingen
                 <ul class="nav_child">
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Winnaars</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/winners">Winnaars</a></li>
                 </ul></li>
             <li><a href="#">Wedstrijd</a>
                 <ul class="nav_child">
