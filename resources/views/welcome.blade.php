@@ -21,7 +21,7 @@
                 <ul class="nav_child">
                     <li><a href="/terms">Voorwaarden</a></li>
                     <li><a href="{{ route('jury') }}">Jury</a></li>
-                    <li><a href="#">Sposoren</a></li>
+                    <li><a href="/sponsors">Sposoren</a></li>
                     <li><a href="#">Pers</a></li>
                 </ul></li></div>
  @if (Route::has('login'))
