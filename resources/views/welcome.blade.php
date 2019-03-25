@@ -17,9 +17,9 @@
                     <li><a href="/gallery">Gallery</a></li>
                     <li><a href="/winners">Winnaars</a></li>
                 </ul></li>
-            <li><a href="#">Wedstrijd</a>
+            <li>Wedstrijd
                 <ul class="nav_child">
-                    <li><a href="#">Voorwaarden</a></li>
+                    <li><a href="/terms">Voorwaarden</a></li>
                     <li><a href="{{ route('jury') }}">Jury</a></li>
                     <li><a href="#">Sposoren</a></li>
                     <li><a href="#">Pers</a></li>
