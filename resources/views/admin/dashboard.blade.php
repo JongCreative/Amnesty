@@ -40,9 +40,6 @@
                     Contest region: {{ $contestData->region  }}
                 </div>
                 <div>
-                    Contest prize: {{ $contestData->prize  }}
-                </div>
-                <div>
                     Contest theme: {{ $contestData->theme }}
                 </div>
                 <div>
