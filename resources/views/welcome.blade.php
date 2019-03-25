@@ -12,7 +12,7 @@
             <li><img src="img/Logo.png" height="80px"></li>
             <div>
             <li><a href="/">Home</a></li>
-            <li><a href="#">Inzendingen</a>
+            <li><a href="/photos">Inzendingen</a>
                 <ul class="nav_child">
                     <li><a href="#">Gallery</a></li>
                     <li><a href="#">Winnaars</a></li>
