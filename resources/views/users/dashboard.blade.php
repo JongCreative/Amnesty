@@ -52,7 +52,7 @@
                 <div>
                     Main prize: {{ $contestData->mainPrize }}
                     <div>
-                        {{ $contestData->mainDescr }}
+                        {!! nl2br(e($contestData->mainDescr)) !!}
                     </div>
                 </div>
             </div>

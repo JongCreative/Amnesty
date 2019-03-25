@@ -69,13 +69,13 @@ class dashboardController extends Controller
           'currentPassword' => 'required',
         ]);
 
-
+        dd($request);
         //Change Description
       
         $user = \Auth::user();
         $user->descr = $request->get('descr');
         $user->save();
-
+        
         return redirect('/dashboard')->with("success","About me has changed successfully!");
     }
 
