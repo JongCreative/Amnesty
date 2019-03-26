@@ -7,19 +7,22 @@
         <div style="padding: 20px; background-color: #c7c2ba">
 
             {{-- Success Handler --}}
-            @if (session('success')) 
-                <div class="success">
-                    {{ session('success') }}
-                </div>
-             @endif
+            @if (session('success'))
+            <div class="success">
+                {{ session('success') }}
+            </div>
+            @endif
 
             {{-- Show all sponsors --}}
             @foreach($sponsors as $sponsor)
-                <div style="display: inline-block; margin: 16px;">
-                    <a href="sponsors/{{ $sponsor->id }}">
-                        <div class="">{{ $sponsor->name }}</div></a>
-                        <div class="">{!! nl2br(e($sponsor->contribution)) !!}</div>
-                </div>
+            <div style="display: inline-block; margin: 16px;">
+                <a href="sponsors/{{ $sponsor->id }}">
+                    <div class="">{{ $sponsor->name }}</div>
+                    <div class=""><img src="/img/logo/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}'s logo" /></div>
+                </a>
+                <div>{{ $sponsor->title }}</div>
+                <div class="">{!! nl2br(e($sponsor->contribution)) !!}</div>
+            </div>
             @endforeach
 
             {{ $sponsors->links() }}
