@@ -84,6 +84,7 @@ class PhotosController extends Controller
                 // Store in database
                 $photo = new Photo;
                 $photo->user_id         = auth()->user()->id;
+                $photo->series_id       = series()->id;
                 $photo->title           = $request->input('title');
                 $photo->descr           = $request->input('descr');
                 $photo->focal           = $request->input('focal');
