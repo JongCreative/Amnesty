@@ -10,11 +10,11 @@
             </div>
 
             {{-- Success Handler --}}
-            @if (session('success')) 
-                <div class="success">
-                    {{ session('success') }}
-                </div>
-             @endif
+            @if (session('success'))
+            <div class="success">
+                {{ session('success') }}
+            </div>
+            @endif
 
             {{-- Creation links --}}
             <div style="margin: 8px 0;">
@@ -61,6 +61,7 @@
                     3rd place prize: {{ $contestData->thirdPrize }}
                     <div>
                         {!! nl2br(e($contestData->thirdDescr)) !!}
+
                     </div>
                 </div>
             </div>
