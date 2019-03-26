@@ -18,16 +18,17 @@
             <label for="name">Name</label>
             <input id="name" type="text" name="name" value="{{ old('name') ? old('name') : $sponsor->name }}" autofocus>
 
-            <label for="title">Title</label>
-            <input id="title" type="text" name="title" value="{{ old('title') ? old('title') : $sponsor->title }}">
+<label for="title">Title</label>
+<input id="title" type="text" name="title" value="{{ old('title') ? old('title') : $sponsor->title }}">
 
-            @if ($errors->has('logo'))
-            <div class="error">
-                {{ $errors->first('logo') }}
-            </div>
-            @endif
-            <label>Update Logo:</label>
-            <input type="file" name="logo">
+@if ($errors->has('logo'))
+<div class="error">
+    {{ $errors->first('logo') }}
+</div>
+@endif
+<label>Update Logo:</label>
+<input type="file" name="logo">
+
 
             @if ($errors->has('contribution'))
             <div class="error">

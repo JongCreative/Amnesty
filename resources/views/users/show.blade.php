@@ -7,26 +7,38 @@
         <div style="padding: 20px; background-color: #c7c2ba">
 
             {{-- Success Handlers for User changes --}}
-            @if (session('success')) 
-                <div class="">
-                    {{ session('success') }}
-                </div>
-             @endif
+            @if (session('success'))
+            <div class="">
+                {{ session('success') }}
+            </div>
+            @endif
+
+            <div>{{ $user->title }}</div>
+            <div>
+                <img src="/img/avatar/{{ $user->avatar }}" alt="{{ $user->name }}'s avatar" />
+            </div>
+            <form action="/users/{{ $user->id }}/avatar" method="POST">
+
+                {{ method_field('DELETE') }}
+                {{ csrf_field() }}
+
+                <input type="submit" class="button" value="Delete Avatar" />
+            </form>
 
             <div style="margin: 8px 0;">
                 {{ $user->email }}
             </div>
 
             @if ($user->jury)
-                <div style="margin: 8px 0;">
-                    Jury
-                </div>
+            <div style="margin: 8px 0;">
+                Jury
+            </div>
             @endif
 
             @if ($user->admin)
-                <div style="margin: 8px 0;">
-                    Admin
-                </div>
+            <div style="margin: 8px 0;">
+                Admin
+            </div>
             @endif
 
             <div style="margin: 8px 0;">
