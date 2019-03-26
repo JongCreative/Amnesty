@@ -17,6 +17,13 @@
             <div>
                 <img src="/img/avatar/{{ $user->avatar }}" alt="{{ $user->name }}'s avatar" />
             </div>
+            <form action="/users/{{ $user->id }}/avatar" method="POST">
+
+                {{ method_field('DELETE') }}
+                {{ csrf_field() }}
+
+                <input type="submit" class="button" value="Delete Avatar" />
+            </form>
 
             <div style="margin: 8px 0;">
                 {{ $user->email }}

@@ -53,7 +53,9 @@ Route::get('/dashboard/name', 'dashboardController@changeName');
 Route::patch('/dashboard/name', 'dashboardController@updateName');
 Route::get('/dashboard/avatar', 'dashboardController@avatar');
 Route::patch('/dashboard/avatar', 'dashboardController@updateAvatar');
-
+Route::patch('/dashboard/avatar', 'dashboardController@updateAvatar');
+Route::delete('/users/{user}/avatar', 'UsersController@deleteAvatar');
+Route::get('/users/{user}/avatar', 'dashboardController@avatar');
 /*
  * Resource Pages Controller
  */

@@ -141,4 +141,18 @@ class UsersController extends Controller
         $user->save();
         return redirect('/users/'. $id)->with("success","User has been banned");
     }
+
+    public function deleteAvatar($id)
+    {
+        $user = user::find($id);
+        if ($user->avatar != 'default.png')
+        {
+          $destinationPath = '/img/avatars/';
+          \File::delete(public_path($destinationPath . $user->avatar));
+        }
+        $user->avatar = 'default.png';
+        $user->save();
+
+        return redirect('/users/' . $id);
+    }
 }
