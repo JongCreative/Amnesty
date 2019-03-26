@@ -140,6 +140,7 @@ class dashboardController extends Controller
         $user = \Auth::user();
         $user->first_name = $request->get('first_name');
         $user->last_name = $request->get('last_name');
+        $user->title = $request->get('title');
         $user->save();
 
         return redirect('/dashboard')->with("success","Name has been changed successfully!");
