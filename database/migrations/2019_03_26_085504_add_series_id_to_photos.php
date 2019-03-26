@@ -14,7 +14,7 @@ class AddSeriesIdToPhotos extends Migration
     public function up()
     {
         Schema::table('photos', function (Blueprint $table) {
-            $table->BigInteger('series_id')->unsigned()->index()->default(0);
+            $table->BigInteger('series_id')->unsigned()->default(0);
             $table->foreign('series_id')
                     ->references('id')
                     ->on('series');
