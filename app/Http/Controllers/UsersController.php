@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Image;
+use App\Http\Requests\UploadAvatarRequest;
 
 class UsersController extends Controller
 {
@@ -75,10 +77,11 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UploadAvatarRequest $request, $id)
     {
         $user = user::find($id);
 
+        $user->title = $request->get('title');
         $user->descr = $request->get('descr');
 
         if ( $request->has('jury') ){
@@ -99,6 +102,24 @@ class UsersController extends Controller
             $user->banned = true;
         } else {
             $user->banned = false;
+        }
+
+        if($request->hasFile('avatar')) 
+        {
+
+            $destinationPath = '/img/avatar/';
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(256,256)->save( public_path($destinationPath . $filename ));
+
+            if ($user->avatar != 'default.png')
+            {
+
+              \File::delete(public_path($destinationPath . $user->avatar));
+            }
+            
+            $user->avatar = $filename;
+
         }
 
         $user->save();

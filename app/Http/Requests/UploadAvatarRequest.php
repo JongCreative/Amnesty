@@ -24,14 +24,13 @@ class UploadAvatarRequest extends FormRequest
     public function rules()
     {
         return [
-            'avatar' => 'required|max:1024|Mimes:jpeg,png'
+            'avatar' => 'max:1024|Mimes:jpeg,png'
         ];
     }
 
     public function messages()
     {
         return [
-            'avatar.required' => 'You haven\'t chosen an avatar.',
             'avatar.max' => 'Your Avatar is too large, must be less than :max kb.',
             'avatar.Mimes' => 'We only accept :values.',
         ];
