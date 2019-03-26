@@ -1,0 +1,31 @@
+/* START GLOBAL BODY.
+________________________________________________________*/
+
+.positioning_main {
+    display: flex;
+    flex-direction: column;
+}
+.positioning {
+    background-color: #c7c2ba;
+}
+
+/* END GLOBAL BODY.
+________________________________________________________*/
+
+/* START FORM.
+________________________________________________________*/
+
+.content_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+.form_wrapper {
+    max-width: 100%;
+    min-width: 75%;
+}
+
+/* END FORM.
+________________________________________________________*/
