@@ -7,14 +7,15 @@
         <div style="padding: 20px; background-color: #c7c2ba">
 
             {{-- Success Handlers for User changes --}}
-            @if (session('success')) 
-                <div class="">
-                    {{ session('success') }}
-                </div>
-             @endif
+            @if (session('success'))
+            <div class="">
+                {{ session('success') }}
+            </div>
+            @endif
 
             <div class="">{{ $press->source }}</div>
             <div class="">{{ date('d-m-Y', strtotime($press->date)) }}</div>
+            <div class="">{!! nl2br(e( $press->descr))!!}</div>
             <div class="">https://{{ $press->link }}</div>
 
             <div style="margin: 8px 0;">
@@ -23,12 +24,12 @@
                 <form method="POST" action="/press/{{$press->id}}">
                     @csrf
                     @method('DELETE')
-                  	<input type="submit" value="DELETE PRESS ARTICLE" style="background: red; color: white; max-width: 300px">
+                    <input type="submit" value="DELETE PRESS ARTICLE" style="background: red; color: white; max-width: 300px">
                 </form>
             </div>
         </div>
     </div>
-    
+
 </div>
 
 @endsection

@@ -88,7 +88,7 @@ class PhotosController extends Controller
                 if (isset($series_id)) {
                     $photo->series_id = series()->id;
                 }
-                
+
                 $photo->title           = $request->input('title');
                 $photo->descr           = $request->input('descr');
                 $photo->focal           = $request->input('focal');
