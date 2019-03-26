@@ -9,9 +9,14 @@ class ContestComposer
 
     public $endDate;
     public $region;
-    public $prize;
     public $theme;
     public $contest;
+    public $mainPrize;
+    public $mainDescr;
+    public $secondPrize;
+    public $secondDescr;
+    public $thirdPrize;
+    public $thirdDescr;
 
     /**
      * Create a new profile composer.
@@ -24,9 +29,14 @@ class ContestComposer
         // Dependencies automatically resolved by service container...
         $this->endDate = config('contest.endDate');
         $this->region = config('contest.region');
-        $this->prize = config('contest.prize');
         $this->theme = config('contest.theme');
         $this->contest = config('contest.contest');
+        $this->mainPrize = config('contest.main_prize');
+        $this->mainDescr = config('contest.main_description');
+        $this->secondPrize = config('contest.second_prize');
+        $this->secondDescr = config('contest.second_description');
+        $this->thirdPrize = config('contest.third_prize');
+        $this->thirdDescr = config('contest.third_description');
     }
 
     /**

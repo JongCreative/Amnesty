@@ -20,7 +20,8 @@
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link href="/css/app.css" rel="stylesheet">
     <Style>
-        html,body{
+        html,
+        body{
             overflow: visible;
         }
     </Style>

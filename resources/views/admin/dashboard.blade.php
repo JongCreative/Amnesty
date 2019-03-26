@@ -40,13 +40,28 @@
                     Contest region: {{ $contestData->region  }}
                 </div>
                 <div>
-                    Contest prize: {{ $contestData->prize  }}
-                </div>
-                <div>
                     Contest theme: {{ $contestData->theme }}
                 </div>
                 <div>
                     Contest end date: {{ $contestData->endDate }}
+                </div>
+                <div>
+                    Main prize: {{ $contestData->mainPrize }}
+                    <div>
+                        {!! nl2br(e($contestData->mainDescr)) !!}
+                    </div>
+                </div>
+                <div>
+                    2nd place prize: {{ $contestData->secondPrize }}
+                    <div>
+                        {!! nl2br(e($contestData->secondDescr)) !!}
+                    </div>
+                </div>
+                <div>
+                    3rd place prize: {{ $contestData->thirdPrize }}
+                    <div>
+                        {!! nl2br(e($contestData->thirdDescr)) !!}
+                    </div>
                 </div>
             </div>
 
