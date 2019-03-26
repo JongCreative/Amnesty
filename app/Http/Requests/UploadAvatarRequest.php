@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SponsorRequest extends FormRequest
+class UploadAvatarRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,19 +24,15 @@ class SponsorRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'contribution' => 'required',
-            'logo' => 'max:1024|Mimes:jpeg,png'
+            'avatar' => 'max:1024|Mimes:jpeg,png'
         ];
     }
 
     public function messages()
     {
         return [
-            'name.required' => 'Please fill in the name of the sponsor.',
-            'contribution.required' => 'Please fill how the sponsor contributed.',
-            'logo.max' => 'Your logo is too large, must be less than :max kb.',
-            'logo.Mimes' => 'We only accept :values.',
+            'avatar.max' => 'Your Avatar is too large, must be less than :max kb.',
+            'avatar.Mimes' => 'We only accept :values.',
         ];
     }
 }

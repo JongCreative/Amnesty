@@ -81,7 +81,8 @@ a {
   background-color: #dadada;
   display: block;
 }
-.nav li .register, .nav li .logout {
+.nav li .register,
+.nav li .logout {
   margin-top: 10px;
   height: 60px;
   width: 90px;
@@ -89,10 +90,12 @@ a {
   border: 1px solid #000000;
   display: block;
 }
-.nav li .register:hover, .nav li .logout:hover {
+.nav li .register:hover,
+.nav li .logout:hover {
   background-color: #dadada;
 }
-.nav li .login, .nav li .dashboard {
+.nav li .login,
+.nav li .dashboard {
   margin-top: 10px;
   height: 60px;
   width: 90px;
@@ -102,20 +105,20 @@ a {
   color: #fff;
   display: block;
 }
-.nav li .login:hover, .nav li .dashboard:hover {
+.nav li .login:hover,
+.nav li .dashboard:hover {
   background-color: #363636;
 }
 
 .nav li:hover ul {
   opacity: 1;
-  top: 80px;
-  transform: translateY(0px);
-  transition: opacity 0.3s, transform 0.2s ease-in;
+  display: flex;
   z-index: -2;
+  animation: NavFadeIn 0.5s;
 }
 
 .nav_child {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: center;
   list-style: none;
@@ -126,10 +129,8 @@ a {
   left: 0;
   position: absolute;
   opacity: 0;
-  top: 80px;
-  transform: translateY(-25px);
+  top: 100%;
   z-index: -1;
-  transition: opacity 0.3s, transform 0.2s ease-in;
 }
 .nav_child li {
   height: 40px;
@@ -155,6 +156,16 @@ a {
   display: block;
 }
 
+@keyframes NavFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .forms_container {
   margin-top: 140px;
   display: grid;

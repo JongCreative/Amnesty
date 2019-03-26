@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Image;
+use App\Http\Requests\UploadAvatarRequest;
 
 class UsersController extends Controller
 {
@@ -15,7 +17,9 @@ class UsersController extends Controller
 
     public function index()
     {
-        $users = User::orderBy('id', 'asc')->paginate(20);
+        $users = User::where('id', '!=', 0)
+            ->orderBy('id', 'asc')
+            ->paginate(20);
         return view('users.index', compact('users'));
     }
 
@@ -73,10 +77,11 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UploadAvatarRequest $request, $id)
     {
         $user = user::find($id);
 
+        $user->title = $request->get('title');
         $user->descr = $request->get('descr');
 
         if ( $request->has('jury') ){
@@ -99,6 +104,24 @@ class UsersController extends Controller
             $user->banned = false;
         }
 
+        if($request->hasFile('avatar')) 
+        {
+
+            $destinationPath = '/img/avatar/';
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(256,256)->save( public_path($destinationPath . $filename ));
+
+            if ($user->avatar != 'default.png')
+            {
+
+              \File::delete(public_path($destinationPath . $user->avatar));
+            }
+            
+            $user->avatar = $filename;
+
+        }
+
         $user->save();
         return redirect('/users/'. $id)->with("success","User has been updated");
     }
@@ -117,5 +140,19 @@ class UsersController extends Controller
         $user->banned = true;
         $user->save();
         return redirect('/users/'. $id)->with("success","User has been banned");
+    }
+
+    public function deleteAvatar($id)
+    {
+        $user = user::find($id);
+        if ($user->avatar != 'default.png')
+        {
+          $destinationPath = '/img/avatars/';
+          \File::delete(public_path($destinationPath . $user->avatar));
+        }
+        $user->avatar = 'default.png';
+        $user->save();
+
+        return redirect('/users/' . $id);
     }
 }

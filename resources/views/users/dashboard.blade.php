@@ -6,22 +6,41 @@
         <div class="header">Dashboard</div>
         <div style="padding: 20px; background-color: #c7c2ba">
             <div style="margin: 8px 0;">
-                Welcome {{ Auth::user()->name }} <a href="/dashboard/name" style="display: block;">Change name</a>
+                Welcome {{ Auth::user()->name }}
+
+                <div>{{ Auth::user()->title }}</div>
+                <a href="/dashboard/name" style="display: block;">Change name and title</a>
             </div>
 
+            <div>
+                <img src="/img/avatar/{{Auth::user()->avatar}}" alt="Avatar" />
+            </div>
+            <form enctype="multipart/form-data" action="/dashboard/avatar" method="POST">
+
+                {{ method_field('PATCH') }}
+                {{ csrf_field() }}
+                @if ($errors->has('avatar'))
+                <label class='alert alert_error'>{{ $errors->first('avatar') }}</label>
+                @endif
+                <label>Update Avatar:</label>
+                <input type="file" name="avatar">
+                <input type="submit" class="button" value="Change Avatar" />
+            </form>
+
+
             @if ( Auth::user()->admin )
-                <div style="margin: 8px 0;">
-                    <a href="/admin">Admin Dashboard</a>
-                </div>
+            <div style="margin: 8px 0;">
+                <a href="/admin">Admin Dashboard</a>
+            </div>
             @endif
             <a href="/photos/create">Submit Photo</a>
 
             {{-- Success Handlers for Dashboard changes --}}
-            @if (session('success')) 
-                <div style="margin: 8px 0;">
-                    {{ session('success') }}
-                </div>
-             @endif
+            @if (session('success'))
+            <div style="margin: 8px 0;">
+                {{ session('success') }}
+            </div>
+            @endif
 
             <div style="margin: 8px 0;">
                 {{ Auth::user()->email }}
@@ -52,7 +71,7 @@
                 <div>
                     Main prize: {{ $contestData->mainPrize }}
                     <div>
-                        {{ $contestData->mainDescr }}
+                        {!! nl2br(e($contestData->mainDescr)) !!}
                     </div>
                 </div>
             </div>
@@ -61,11 +80,11 @@
         <div class="header">My submissions</div>
         <div style="padding: 20px; background-color: #c7c2ba">
             @foreach ($photos as $photo)
-                {{ $photo->title }}
-                {{ $photo->descr }}
-                {{ $photo->focal }}
-                {{ $photo->aperture }}
-                <img src="/storage/{{ $photo->src }}" style="width:100%"/>
+            {{ $photo->title }}
+            {{ $photo->descr }}
+            {{ $photo->focal }}
+            {{ $photo->aperture }}
+            <img src="/storage/{{ $photo->src }}" style="width:100%" />
             @endforeach
         </div>
 

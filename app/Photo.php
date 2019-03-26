@@ -14,4 +14,9 @@ class Photo extends Model
         //when a photo gets uploaded it belongs to a user
         return $this->belongsTo('App\User');
     }
+
+    public function series(){
+        //when a photo gets uploaded can belongs to a series
+        return $this->belongsTo('App\Series');
+    }
 }

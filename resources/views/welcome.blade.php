@@ -121,20 +121,20 @@
           <div class="content_wrapper">
                 <div class="block">
                   <div class="title">Hoofdprijs</div>
-                  <div class="sub">Lorem ipsum dolor sit amet</div>
-                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <div class="sub">{{ $contestData->mainPrize }}</div>
+                  <div class="txt">{!! nl2br(e($contestData->mainDescr)) !!}</div>
                   <div class="button">meer info</div>
                 </div>
                 <div class="block">
                 <div class="title">2e prijs</div>
-                <div class="sub">Lorem ipsum dolor sit amet</div>
-                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                <div class="sub">{{ $contestData->secondPrize }}</div>
+                  <div class="txt">{!! nl2br(e($contestData->secondDescr)) !!}</div>
                   <div class="button">meer info</div>
                 </div>
                 <div class="block">
                   <div class="title">3e prijs</div>
-                  <div class="sub">Lorem ipsum dolor sit amet</div>
-                  <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>              
+                  <div class="sub">{{ $contestData->thirdPrize }}</div>
+                  <div class="txt">{!! nl2br(e($contestData->thirdDescr)) !!}</div>              
                   <div class="button">meer info</div>
                 </div>
           </div>
