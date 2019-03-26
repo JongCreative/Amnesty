@@ -15,6 +15,17 @@
             <div>
                 <img src="/img/avatar/{{Auth::user()->avatar}}" alt="Avatar" />
             </div>
+            <form enctype="multipart/form-data" action="/dashboard/avatar" method="POST">
+
+                {{ method_field('PATCH') }}
+                {{ csrf_field() }}
+                @if ($errors->has('avatar'))
+                <label class='alert alert_error'>{{ $errors->first('avatar') }}</label>
+                @endif
+                <label>Update Avatar:</label>
+                <input type="file" name="avatar">
+                <input type="submit" class="button" value="Change Avatar" />
+            </form>
 
 
             @if ( Auth::user()->admin )

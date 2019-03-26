@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Hash;
+use Image;
 use Illuminate\Http\Request;
+use App\Http\Requests\UploadAvatarRequest;
 
 class dashboardController extends Controller
 {
@@ -144,6 +146,37 @@ class dashboardController extends Controller
         $user->save();
 
         return redirect('/dashboard')->with("success","Name has been changed successfully!");
+    }
+
+    public function avatar()
+    {
+        abort(404);
+    }
+
+    public function updateAvatar(UploadAvatarRequest $request)
+    {
+      if($request->hasFile('avatar')) 
+      {
+
+        $destinationPath = '/img/avatar/';
+        $avatar = $request->file('avatar');
+        $filename = time() . '.' . $avatar->getClientOriginalExtension();
+        Image::make($avatar)->resize(256,256)->save( public_path($destinationPath . $filename ));
+
+        $user = \Auth::user();
+        if ($user->avatar != 'default.png')
+        {
+
+          \File::delete(public_path($destinationPath . $user->avatar));
+        }
+        
+        $user->avatar = $filename;
+        $user->save();
+        return redirect('/dashboard')->with('Succes', 'Avatar has been updated');
+      } else {
+        return redirect('/dashboard');
+      }
+
     }
 
 }
