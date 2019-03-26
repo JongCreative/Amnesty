@@ -12,17 +12,17 @@
             <li><img src="img/Logo.png" height="80px"></li>
             <div>
             <li><a href="/">Home</a></li>
-            <li><a href="#">Inzendingen</a>
+            <li>Inzendingen
                 <ul class="nav_child">
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Winnaars</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/winners">Winnaars</a></li>
                 </ul></li>
-            <li><a href="#">Wedstrijd</a>
+            <li>Wedstrijd
                 <ul class="nav_child">
-                    <li><a href="#">Voorwaarden</a></li>
-                    <li><a href="{{ route('jury') }}">Jury</a></li>
-                    <li><a href="#">Sposoren</a></li>
-                    <li><a href="#">Pers</a></li>
+                    <li><a href="/terms">Voorwaarden</a></li>
+                    <li><a href="/jury">Jury</a></li>
+                    <li><a href="/sponsors">Sposoren</a></li>
+                    <li><a href="/press">Pers</a></li>
                 </ul></li></div>
  @if (Route::has('login'))
     @auth
