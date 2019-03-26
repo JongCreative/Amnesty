@@ -31,8 +31,8 @@
                 @if (Auth::user()->admin)
                 <a href="press/{{ $pressArticle->id }}">Show single article</a>
                 @endif
-            </div>
 
+            </div>
             @endforeach
 
             {{ $press->links() }}

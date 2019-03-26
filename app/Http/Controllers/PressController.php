@@ -45,6 +45,7 @@ class PressController extends Controller
         $press = new Press;
         $press->title = request('title');
         $press->source = request('src');
+        $press->descr = request('descr');
         $press->link = str_replace($http, '', request('link'));
         $press->date = request('date');
 
@@ -94,6 +95,7 @@ class PressController extends Controller
 
         $press->title = request('title');
         $press->source = request('src');
+        $press->descr = request('descr');
         $press->link = str_replace($http, '', request('link'));
         $press->date = request('date');
 
