@@ -1,13 +1,100 @@
-@extends('layouts.daisy')
+@extends('layouts.app')
 
 @section('content')
 
-<h1>Gallery</h1>
+<div class="pagetitle">Inzendingen</div>
 
-<a href="/photos/create" class="button button_act"><span>ik doe mee</span></a>
+<div class="content_container">
+    <div class="content_top">
+        <div class="left">Enkele foto's</div>
+        <div class="right">Series</div>
+    </div>     
+</div>
+<div class="main_items_container">
+    <div class="items_container_left">
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+        <div class="item_card">
+            <img src="{{url('/img/devlucht.jpg')}}" alt="">
+            <div class="item_title">Dit is een mooie foto</div>
+            <div class="item_creator">Pietje Puk</div>
+        </div>
+    </div>
+</div>
 
-<br /><p>
 
+
+
+
+<p>
 @foreach($photos as $photo)
     {{ $photo->title }}
     <a href="/photos/{{ $photo->id }}"><img src="/storage/{{ $photo->src }}" style="max-width:100%"/></a>
@@ -17,3 +104,4 @@
 {{ $photos->links() }}
 
 @endsection
+
