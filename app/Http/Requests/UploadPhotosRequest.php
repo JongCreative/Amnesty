@@ -25,7 +25,7 @@ class UploadPhotosRequest extends FormRequest
     {
         return [
             'src'       => 'required',
-            'src.*'     => 'image|mimes:jpeg,jpg|max:5000|min:1000',
+            'src.*'     => 'image|mimes:jpeg,jpg|max:5000|min:10',
             'title'     => 'required',
             'descr'     => 'required',
         ];

@@ -61,7 +61,6 @@
                     3rd place prize: {{ $contestData->thirdPrize }}
                     <div>
                         {!! nl2br(e($contestData->thirdDescr)) !!}
-
                     </div>
                 </div>
             </div>
