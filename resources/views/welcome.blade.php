@@ -170,52 +170,19 @@
           </div>
           <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
         </div>
+
         <div class="content_wrapper">
+          @foreach($juryMembers as $jury)
           <div class="block">
-            <div class="title">Jury 1</div>
-            <div class="sub">Lorem ipsum dolor sit amet</div>
-            <div><img src="/img/jury1.jpg" alt="" height="200"></div>
-            <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            <div class="title">{{ $jury->name }}</div>
+            <div class="sub">{{ $jury->title }}</div>
+            <div><img src="/img/avatar/{{ $jury->avatar }}" alt="{{ $jury->name }}" height="200"></div>
+            <div class="txt">{!! nl2br(e($jury->descr)) !!}</div>
             <!--<div class="button">meer info</div>-->
           </div>
-          <div class="block">
-            <div class="title">Jury 2</div>
-            <div class="sub">Lorem ipsum dolor sit amet</div>
-            <div><img src="/img/jury2.jpg" alt="" height="200"></div>
-            <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-            <!--<div class="button">meer info</div>-->
-          </div>
-          <div class="block">
-            <div class="title">Jury 3</div>
-            <div class="sub">Lorem ipsum dolor sit amet</div>
-            <div><img src="/img/jury3.jpg" alt="" height="200"></div>
-            <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-          </div>
+          @endforeach
         </div>
-        <div class="content_wrapper">
-          <div class="block">
-            <div class="title">Jury 4</div>
-            <div class="sub">Lorem ipsum dolor sit amet</div>
-            <div><img src="/img/jury4.jpg" alt="" height="200"></div>
-            <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-            <!--<div class="button">meer info</div>-->
-          </div>
-          <div class="block">
-            <div class="title">Jury 5</div>
-            <div class="sub">Lorem ipsum dolor sit amet</div>
-            <div><img src="/img/jury5.jpg" alt="" height="200"></div>
-            <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-            <!--<div class="button">meer info</div>-->
-          </div>
-          <div class="block">
-            <div class="title">Jury 6</div>
-            <div class="sub">Lorem ipsum dolor sit amet</div>
-            <div>
-              <img src="/img/jury6.jpg" alt="" height="200"></div>
-            <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-            <!--<div class="button">meer info</div>-->
-          </div>
-        </div>
+
         <!-- end content parallax -->
       </div>
     </div>
