@@ -34,7 +34,7 @@
 .parallax {
   height: 500px;
   /* fallback for older browsers */
-  height: 100vh;
+  height: calc(100vh - 80px);
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-perspective: 300px;
@@ -88,19 +88,20 @@
   z-index: 4;
 }
 
-  .landingpage{
-    overflow: hidden;
-  }
+.landingpage {
+  overflow: hidden;
+}
 
-  .parallax {
-    height: 500px; /* fallback for older browsers */
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-perspective: 300px;
-    perspective: 300px;
-    font-size: 200%;
-  }
+.parallax {
+  height: 500px;
+  /* fallback for older browsers */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
+  font-size: 200%;
+}
 
 #group3 {
   z-index: 2;
@@ -272,41 +273,41 @@
       text-align: center;
     }
 
-      .parallax_content_wrapper{        
+    .parallax_content_wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 20px 10px 20px 10px;
+      background-color: $white;
+
+      .block {
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 20px 10px 20px 10px ;
-        background-color: $white;
+        align-items: center;
+        margin-top: 5px;
+        flex-direction: column;
+        width: 25%;
+        letter-spacing: 0.5px;
+        padding: 5px;
+        background-color: $block-bg;
 
-            .block{
-              display: flex;
-              align-items: center;
-              margin-top: 5px;
-              flex-direction: column;
-              width: 25%;
-              letter-spacing: 0.5px;
-              padding: 5px;
-              background-color: $block-bg;
+        .title {
+          font-size: smaller;
+          font-weight: bold;
+          padding: 5px;
+          text-align: center;
+        }
 
-              .title{
-                font-size: smaller;
-                font-weight: bold;
-                padding: 5px;
-                text-align: center;
-              }
+        .sub {
+          font-weight: bold;
+          font-size: 60%;
+          padding: 5px;
+          text-align: center;
+        }
 
-              .sub{
-                font-weight: bold;
-                font-size: 60%;
-                padding: 5px;
-                text-align: center;
-              }
-
-              .txt{
-                font-size: 40%;
-                padding: 5px;
-                text-align: center;
-              }
-            }
+        .txt {
+          font-size: 40%;
+          padding: 5px;
+          text-align: center;
+        }
       }
+    }
