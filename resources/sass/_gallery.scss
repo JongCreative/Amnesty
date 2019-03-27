@@ -39,6 +39,10 @@ grid-template-columns: auto auto;
 .items_container_left{
   margin: 0 auto;
   display: grid;
+  width: max-content;
+  width: intrinsic; 
+  width: -moz-max-content;    /* Firefox/Gecko */
+  width: -webkit-max-content; /* Chrome */
   grid-template-columns: repeat(auto-fill, 200px);
   grid-gap: 10px;
   grid-auto-flow: dense;

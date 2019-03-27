@@ -249,6 +249,10 @@ a {
 }
 
 /* start parallax */
+.landingpage {
+  overflow: hidden;
+}
+
 .parallax {
   height: 500px;
   /* fallback for older browsers */
@@ -507,6 +511,12 @@ a {
 .items_container_left {
   margin: 0 auto;
   display: grid;
+  width: max-content;
+  width: intrinsic;
+  width: -moz-max-content;
+  /* Firefox/Gecko */
+  width: -webkit-max-content;
+  /* Chrome */
   grid-template-columns: repeat(auto-fill, 200px);
   grid-gap: 10px;
   grid-auto-flow: dense;
@@ -547,7 +557,6 @@ a {
 html, body {
   font-family: "Arial", sans-serif;
   background-color: #363636;
-  overflow: hidden;
 }
 
 body {

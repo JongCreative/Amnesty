@@ -54,6 +54,7 @@
 <label><input type="checkbox"> Debug</label>
 </div>
 
+<div class=landingpage>
 <div class="parallax">
     <div id="group1" class="parallax_group">
         <div class="parallax_layer parallax_layer_back">
@@ -213,6 +214,7 @@
         <div class="parallax_layer parallax_layer_back">
         </div>
     </div>
+</div>
 </div>
   
 <div class="forms_container">
