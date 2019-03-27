@@ -23,6 +23,10 @@
             <input id="mainPrize" type="text" class="" name="mainPrize" value="{{ $contestData->mainPrize }}" required>
             <textarea name="mainDescr">{{ $contestData->mainDescr }}</textarea>
 
+            <label for="secondPrize" class="">2nd Place prize</label>
+            <input id="secondPrize" type="text" class="" name="secondPrize" value="{{ $contestData->secondPrize }}" required>
+            <textarea name="secondDescr">{{ $contestData->secondDescr }}</textarea>
+
             <input type="submit" value="Edit Contest Data">
         </form>
     </div>
