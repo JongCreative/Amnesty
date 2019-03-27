@@ -66,7 +66,8 @@
         <div class="hpblok">
           <div class="subtitle">Amnesty International Fotowedstijd</div>
           <div class="title">Hoe ziet vluchten er voor jou uit?</div><br>
-          <p>Deze eerste editie 2019 heeft als thema "vluchten". Met mooie prijzen en maandelijkse winnaars. Iederereen mag mee doen. Van professionals tot hobbyisten. De sluitingsdatum voor de hoofdprijs is 31 decmeber 2019.</p>
+          <p>Deze eerste editie 2019 heeft als thema "vluchten". Met mooie prijzen en maandelijkse winnaars. Iederereen mag mee doen. Van professionals tot hobbyisten. </p>
+          <p>De sluitingsdatum voor de hoofdprijs is {{ $contestData->endDate }}</p>
           <div class="button">Doe mee!</div>
         </div>
       </div>
@@ -78,7 +79,7 @@
           <div class="title">Amnesty International fotowedstrijd<br>
             <div class="sub">{{ $contestData->theme }}</div>
           </div>
-          <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
+          <div class="txt">Wedstrijd eindigt op {{ $contestData->endDate }}</div>
         </div>
         <div class="content_wrapper">
           <div class="block">

@@ -27,7 +27,6 @@ class ContestComposer {
 	 */
 	public function __construct() {
 		// Dependencies automatically resolved by service container...
-		$this->endDate = config('contest.endDate');
 		$this->region = config('contest.region');
 		$this->theme = config('contest.theme');
 		$this->contest = config('contest.contest');
@@ -40,9 +39,14 @@ class ContestComposer {
 		$this->monthPrize = config('contest.month_prize');
 		$this->monthDescr = config('contest.month_description');
 
-		$month = date('m');
-		setlocale(LC_TIME, 'nl_NL');
-		$monthName = ucfirst(strftime('%B', mktime(0, 0, 0, $month)));
+		/**
+		 * Formatted dates
+		 */
+
+		setlocale(LC_ALL, 'nl_NL');
+		$this->endDate = strftime('%d %B %Y', strtotime(config('contest.endDate')));
+
+		$monthName = ucfirst(strftime('%B', mktime(0, 0, 0, date('m'))));
 		$this->currentPrize = $monthName . ': ' . $this->monthPrize;
 	}
 
