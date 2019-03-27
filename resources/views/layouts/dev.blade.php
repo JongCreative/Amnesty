@@ -16,11 +16,11 @@
 </head>
 
 <body>
-    <div class="main_container">
-        <section class="main_positioning main_positioning1-2">
+    <div class="main_positioning">
+        <section class="positioning positioning1">
             @include('inc.navbar')
         </section>
-        <section class="main_positioning main_positioning2-2">
+        <section class="positioning positioning2">
             <main>
                 <div class="page pagetitle">
                     @yield('pagetitle')

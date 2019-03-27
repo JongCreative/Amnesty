@@ -75,7 +75,7 @@
           <div class="sub">Vluchten</div></div>
           <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
         </div>
-          <div class="content_wrapper">
+          <div class="parallax_content_wrapper">
                 <div class="block">
                   <div class="title">De wedstrijd</div>
                   <div class="sub">Lorem ipsum dolor sit amet</div>
@@ -118,7 +118,7 @@
           <div class="sub">Prachtige prijzen</div></div>
           <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
         </div>
-          <div class="content_wrapper">
+          <div class="parallax_content_wrapper">
                 <div class="block">
                   <div class="title">Hoofdprijs</div>
                   <div class="sub">{{ $contestData->mainPrize }}</div>
@@ -161,7 +161,7 @@
           <div class="sub">Lorem ipsum dolor sit amet</div></div>
           <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
         </div>
-          <div class="content_wrapper">
+          <div class="parallax_content_wrapper">
                 <div class="block">
                   <div class="title">Jury 1</div>
                   <div class="sub">Lorem ipsum dolor sit amet</div>
@@ -183,7 +183,7 @@
                   <div class="txt">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                   </div>
           </div>
-          <div class="content_wrapper">
+          <div class="parallax_content_wrapper">
                 <div class="block">
                   <div class="title">Jury 4</div>
                   <div class="sub">Lorem ipsum dolor sit amet</div>
