@@ -9,7 +9,7 @@
 html, body{
   font-family: $font-family-sans-serif;
   background-color: $body-bg;
- // overflow: hidden;
+  //overflow: hidden;
 }
 
 body {
@@ -38,3 +38,4 @@ body {
   background-color: $yellow;
 }
 
+@import 'layout';
