@@ -23,7 +23,6 @@
                 <div><a href="/users">List users</a></div>
             </div>
 
-
             {{-- Contest Data --}}
             <div style="margin: 8px 0;">
                 <a href="/admin/contest/edit">change contest data</a>
@@ -63,11 +62,17 @@
                         {!! nl2br(e($contestData->thirdDescr)) !!}
                     </div>
                 </div>
+
+                <div>
+                    This months prize: {{ $contestData->monthPrize }}
+                    <div>
+                        {!! nl2br(e($contestData->monthDescr)) !!}
+                    </div>
+                </div>
             </div>
 
         </div>
     </div>
 </div>
-
 
 @endsection

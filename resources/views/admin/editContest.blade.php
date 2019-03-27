@@ -31,6 +31,10 @@
             <input id="thirdPrize" type="text" class="" name="thirdPrize" value="{{ $contestData->thirdPrize }}" required>
             <textarea name="thirdDescr">{{ $contestData->thirdDescr }}</textarea>
 
+            <label for="monthPrize" class="">Month prize</label>
+            <input id="monthPrize" type="text" class="" name="monthPrize" value="{{ $contestData->monthPrize }}" required>
+            <textarea name="monthDescr">{{ $contestData->monthDescr }}</textarea>
+
             <input type="submit" value="Edit Contest Data">
         </form>
     </div>

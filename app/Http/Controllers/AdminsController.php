@@ -25,6 +25,8 @@ class AdminsController extends Controller {
 		\Config::write(['contest.second_description' => request('secondDescr')]);
 		\Config::write(['contest.third_prize' => request('thirdPrize')]);
 		\Config::write(['contest.third_description' => request('thirdDescr')]);
+		\Config::write(['contest.month_prize' => request('monthPrize')]);
+		\Config::write(['contest.month_description' => request('monthDescr')]);
 
 		$id = \Config::get('contest.contest');
 

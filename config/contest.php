@@ -11,6 +11,6 @@ return [
 	'second_description' => 'Canada, het land van ongerepte natuur en wildlife en geschikt voor individuele auto- en campervakanties. Bruisende steden als Vancouver, Montreal en Toronto zijn echte trekpleisters. De afwisselende landschappen variëren van de imposante Rocky Mountains met gletsjermeren, woeste rivieren en besneeuwde bergpieken tot sfeervolle dorpjes in Atlantic Canada. Voor wie rust en ruimte zoekt is de noordelijke provincie Yukon een aanrader. De vriendelijke bevolking heet je van harte welkom in het populaire vakantieland: Canada!',
 	'third_prize' => 'Reis naar Parijs',
 	'third_description' => 'Beklim de Eiffeltoren, shop een outfit in de wijk Le Marais of bekijk de Sacre Coeur en de Notre Dame vanaf het water tijdens een rondvaart over de Seine. Deze rivier is het middelpunt van Parijs en deelt de Franse hoofdstad letterlijk door tweeën.',
-	'month_prize' => 'Reis naar Canada',
-	'month_description' => 'Welcome in Canada.',
+	'month_prize' => 'Stedentrip naar New York City',
+	'month_description' => "New York, wie wil er níet heen? 's Werelds meest bruisende stad, die alles heeft en waar alles groot, groter, grootst is. Of het nu gaat om de wolkenkrabbers, de mensenmassa’s, de maaltijden, de warenhuizen, de shows op Broadway, de videoschermen op Times Square of de bekers Coca Cola: New York is een stad van records en enthousiaste overdrijving.",
 ];
