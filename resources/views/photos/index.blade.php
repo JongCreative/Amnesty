@@ -10,8 +10,8 @@
         <div class="right">Series</div>
     </div>     
 </div>
-<div class="main_items_container">
-    <div class="items_container_left">
+<div class="items_container_left"> 
+  
         <div class="item_card">
             <img src="{{url('/img/devlucht.jpg')}}" alt="">
             <div class="item_title">Dit is een mooie foto</div>
@@ -87,7 +87,7 @@
             <div class="item_title">Dit is een mooie foto</div>
             <div class="item_creator">Pietje Puk</div>
         </div>
-    </div>
+    
 </div>
 
 

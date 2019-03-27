@@ -2,6 +2,10 @@
   border: solid 1px orangered;
 }
 
+.debug2 {
+  border: solid 1px orangered;
+}
+
 .button {
   font-size: 0.9rem;
   font-weight: bold;
@@ -500,17 +504,13 @@ a {
   padding: 5px 10px 5px 0;
 }
 
-.main_items_container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 .items_container_left {
-  width: 80%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 10px;
+  grid-auto-flow: dense;
+  padding: 10px;
   background-color: #c7c2ba;
 }
 
@@ -523,8 +523,6 @@ a {
 .item_card {
   display: flex;
   flex-direction: column;
-  margin-left: 1%;
-  margin-top: 1%;
 }
 .item_card img {
   width: 200px;
@@ -539,7 +537,7 @@ a {
   background-color: #574e48;
 }
 .item_card .item_creator {
-  font-size: 0.9em;
+  font-size: 1em;
   color: #fff;
   padding: 5px;
   text-align: center;

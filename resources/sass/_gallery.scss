@@ -36,15 +36,13 @@ grid-template-columns: auto auto;
   }
 }
 
-.main_items_container{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
 .items_container_left{
+  margin: 0 auto;
   display: grid;
-  
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 10px;
+  grid-auto-flow: dense;
+  padding: 10px;
   background-color: $page-left;
 }
 
@@ -57,8 +55,6 @@ grid-template-columns: auto auto;
 .item_card{
   display: flex;
   flex-direction: column;
-  margin-left: 1%;
-  margin-top: 1%;
 
     img{
       width: 200px;
@@ -75,7 +71,7 @@ grid-template-columns: auto auto;
     }
 
     .item_creator{
-      font-size: 0.9em;
+      font-size: 1em;
       color: $white;
       padding: 5px;
       text-align: center;
