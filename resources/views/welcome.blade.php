@@ -58,7 +58,8 @@
     <label><input type="checkbox"> Debug</label>
   </div>
 
-  <div class="parallax">
+<div class=landingpage>
+<div class="parallax">
     <div id="group1" class="parallax_group">
       <div class="parallax_layer parallax_layer_back">
       </div>
@@ -81,7 +82,7 @@
           </div>
           <div class="txt">Wedstrijd eindigt op {{ $contestData->endDate }}</div>
         </div>
-        <div class="content_wrapper">
+        <div class="parallax_content_wrapper">
           <div class="block">
             <div class="title">De wedstrijd</div>
             <div class="sub">Lorem ipsum dolor sit amet</div>
@@ -111,6 +112,7 @@
         <!-- end content parallax -->
       </div>
     </div>
+   
     <div id="group3" class="parallax_group">
       <div class="parallax_layer parallax_layer_base">
       </div>
@@ -126,24 +128,25 @@
           </div>
           <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
         </div>
-        <div class="content_wrapper">
-          <div class="block">
-            <div class="title">Hoofdprijs</div>
-            <div class="sub">{{ $contestData->mainPrize }}</div>
-            <div class="txt">{!! nl2br(e($contestData->mainDescr)) !!}</div>
-            <div class="button">meer info</div>
-          </div>
-          <div class="block">
-            <div class="title">2e prijs</div>
-            <div class="sub">{{ $contestData->secondPrize }}</div>
-            <div class="txt">{!! nl2br(e($contestData->secondDescr)) !!}</div>
-            <div class="button">meer info</div>
-          </div>
-          <div class="block">
-            <div class="title">3e prijs</div>
-            <div class="sub">{{ $contestData->thirdPrize }}</div>
-            <div class="txt">{!! nl2br(e($contestData->thirdDescr)) !!}</div>
-            <div class="button">meer info</div>
+          <div class="parallax_content_wrapper">
+                <div class="block">
+                  <div class="title">Hoofdprijs</div>
+                  <div class="sub">{{ $contestData->mainPrize }}</div>
+                  <div class="txt">{!! nl2br(e($contestData->mainDescr)) !!}</div>
+                  <div class="button">meer info</div>
+                </div>
+                <div class="block">
+                <div class="title">2e prijs</div>
+                <div class="sub">{{ $contestData->secondPrize }}</div>
+                  <div class="txt">{!! nl2br(e($contestData->secondDescr)) !!}</div>
+                  <div class="button">meer info</div>
+                </div>
+                <div class="block">
+                  <div class="title">3e prijs</div>
+                  <div class="sub">{{ $contestData->thirdPrize }}</div>
+                  <div class="txt">{!! nl2br(e($contestData->thirdDescr)) !!}</div>              
+                  <div class="button">meer info</div>
+                </div>
           </div>
         </div>
         <div class="textheader">
@@ -172,7 +175,7 @@
           <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
         </div>
 
-        <div class="content_wrapper">
+        <div class="parallax_content_wrapper">
           @foreach($juryMembers as $jury)
           <div class="block">
             <div class="title">{{ $jury->name }}</div>
@@ -191,75 +194,6 @@
       <div class="parallax_layer parallax_layer_back">
       </div>
     </div>
-  </div>
-
-  <div class="forms_container">
-    <div class="form_container">
-      <div class="header">Deelnemen</div>
-      <form>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker<br>
-        <p></p>
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        <label for="country">Select</label>
-        <select id="select iets" name="select iets">
-          <option value="1">eerste optie</option>
-          <option value="2">tweede optie</option>
-          <option value="3">derde optie</option>
-        </select>
-        <p></p>
-        <input type="radio" name="check" value="check"> ik ga accoord
-        <p></p>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-    <div class="form_container">
-      <div class="header">Registreren</div>
-      <form>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker<br>
-        <p></p>
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        <label for="country">Select</label>
-        <select id="select iets" name="select iets">
-          <option value="1">eerste optie</option>
-          <option value="2">tweede optie</option>
-          <option value="3">derde optie</option>
-        </select>
-        <p></p>
-        <input type="radio" name="check" value="check"> ik ga accoord
-        <p></p>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-    <div class="form_container">
-      <div class="header">Upload</div>
-      <form>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker<br>
-        <p></p>
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        <label for="country">Select</label>
-        <select id="select iets" name="select iets">
-          <option value="1">eerste optie</option>
-          <option value="2">tweede optie</option>
-          <option value="3">derde optie</option>
-        </select>
-        <p></p>
-        <input type="radio" name="check" value="check"> ik ga accoord
-        <p></p>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-  </div>
-  </div>
-
-  <a href="#" class="button"><span>Ik doe mee</span></a>
-  <a href="#" class="button button_sm"><span>registreren</span></a>
-  <a href="#" class="button button_act"><span>ik doe mee</span></a>
 
   <script>
   var debugInput = document.querySelector("input");
