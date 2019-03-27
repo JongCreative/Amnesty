@@ -576,4 +576,25 @@ body {
   background-color: #FFFF00;
 }
 
+/* START GLOBAL BODY.
+________________________________________________________*/
+.main_positioning {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.positioning {
+  background-color: #c7c2ba;
+  padding: 1px;
+}
+
+.positioning2 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* END GLOBAL BODY.
+________________________________________________________*/
+
 /*# sourceMappingURL=app.css.map */

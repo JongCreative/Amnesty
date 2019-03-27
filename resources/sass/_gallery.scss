@@ -43,8 +43,10 @@ grid-template-columns: auto auto;
 }
 
 .items_container_left{
-  display: grid;
-  
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   background-color: $page-left;
 }
 

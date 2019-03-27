@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
+@section('pagetitle', 'Inzendingen')
+
 @section('content')
-
-<div class="pagetitle">Inzendingen</div>
-
 <div class="content_container">
     <div class="content_top">
         <div class="left">Enkele foto's</div>
