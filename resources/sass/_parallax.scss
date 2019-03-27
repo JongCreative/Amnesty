@@ -30,6 +30,10 @@
 
   /* start parallax */
 
+  .landingpage{
+    overflow: hidden;
+  }
+
   .parallax {
     height: 500px; /* fallback for older browsers */
     height: 100vh;
