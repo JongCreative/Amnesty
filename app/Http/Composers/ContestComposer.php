@@ -39,6 +39,11 @@ class ContestComposer {
 		$this->thirdDescr = config('contest.third_description');
 		$this->monthPrize = config('contest.month_prize');
 		$this->monthDescr = config('contest.month_description');
+
+		$month = date('m');
+		setlocale(LC_TIME, 'nl_NL');
+		$monthName = ucfirst(strftime('%B', mktime(0, 0, 0, $month)));
+		$this->currentPrize = $monthName . ': ' . $this->monthPrize;
 	}
 
 	/**
@@ -47,6 +52,7 @@ class ContestComposer {
 	 * @param  View  $view
 	 * @return void
 	 */
+
 	public function compose(View $view) {
 		$view->with('contestData', $this);
 	}
