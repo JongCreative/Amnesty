@@ -472,18 +472,6 @@ a {
   text-align: center;
 }
 
-.pagetitle {
-  height: 100px;
-  margin-top: 50px;
-  color: #fff;
-  background-color: #000000;
-  font-size: 26px;
-  font-weight: bold;
-  text-align: center;
-  align-items: center;
-  line-height: 100px;
-}
-
 .content_container {
   display: flex;
   flex-direction: column;
@@ -570,6 +558,18 @@ body {
 * {
   margin: 0;
   padding: 0;
+}
+
+.pagetitle {
+  height: 100px;
+  margin-top: 50px;
+  color: #fff;
+  background-color: #000000;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  line-height: 100px;
 }
 
 .actionbox {
