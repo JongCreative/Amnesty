@@ -6,6 +6,12 @@ use App\Contest;
 use Illuminate\Http\Request;
 
 class AdminsController extends Controller {
+
+	public function __construct() {
+		$this->middleware('auth');
+		$this->middleware('CheckRank:admin');
+	}
+
 	public function index() {
 		return view('admin.dashboard');
 	}
