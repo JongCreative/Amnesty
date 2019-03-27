@@ -508,29 +508,33 @@ a {
   padding: 5px 10px 5px 0;
 }
 
-.items_container_left {
+.grid_left {
+  max-width: 1000px;
   margin: 0 auto;
   display: grid;
-  width: max-content;
-  width: intrinsic;
-  width: -moz-max-content;
-  /* Firefox/Gecko */
-  width: -webkit-max-content;
-  /* Chrome */
+  justify-content: center;
   grid-template-columns: repeat(auto-fill, 200px);
-  grid-gap: 10px;
-  grid-auto-flow: dense;
-  padding: 10px;
+  grid-gap: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: #c7c2ba;
 }
 
-.items_container_right {
-  display: flex;
-  flex-wrap: wrap;
+.grid_right {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: #b1aca5;
 }
 
 .item_card {
+  width: 200px;
+  height: 200px;
   display: flex;
   flex-direction: column;
 }
