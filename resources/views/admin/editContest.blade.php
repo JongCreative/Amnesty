@@ -23,6 +23,18 @@
             <input id="mainPrize" type="text" class="" name="mainPrize" value="{{ $contestData->mainPrize }}" required>
             <textarea name="mainDescr">{{ $contestData->mainDescr }}</textarea>
 
+            <label for="secondPrize" class="">2nd Place prize</label>
+            <input id="secondPrize" type="text" class="" name="secondPrize" value="{{ $contestData->secondPrize }}" required>
+            <textarea name="secondDescr">{{ $contestData->secondDescr }}</textarea>
+
+            <label for="thirdPrize" class="">3rd Place prize</label>
+            <input id="thirdPrize" type="text" class="" name="thirdPrize" value="{{ $contestData->thirdPrize }}" required>
+            <textarea name="thirdDescr">{{ $contestData->thirdDescr }}</textarea>
+
+            <label for="monthPrize" class="">Month prize</label>
+            <input id="monthPrize" type="text" class="" name="monthPrize" value="{{ $contestData->monthPrize }}" required>
+            <textarea name="monthDescr">{{ $contestData->monthDescr }}</textarea>
+
             <input type="submit" value="Edit Contest Data">
         </form>
     </div>

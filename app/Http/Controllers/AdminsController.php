@@ -2,66 +2,71 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Contest;
+use Illuminate\Http\Request;
 
-class AdminsController extends Controller
-{
-    public function index()
-    {	
-        return view('admin.dashboard');
-    }
+class AdminsController extends Controller {
 
-    public function contestEdit()
-    {
-        return view('admin.editContest');
-    }
+	public function __construct() {
+		$this->middleware('auth');
+		$this->middleware('CheckRank:admin');
+	}
 
-    public function contestUpdate(Request $request)
-    {
-    	\Config::write(['contest.endDate' => request('endDate')]);
-    	\Config::write(['contest.region' => request('region')]);
-    	\Config::write(['contest.theme' => request('theme')]);
+	public function index() {
+		return view('admin.dashboard');
+	}
 
-        \Config::write(['contest.main_prize' => request('mainPrize')]);
-        \Config::write(['contest.main_description' => request('mainDescr')]);
+	public function contestEdit() {
+		return view('admin.editContest');
+	}
 
+	public function contestUpdate(Request $request) {
+		\Config::write(['contest.endDate' => request('endDate')]);
+		\Config::write(['contest.region' => request('region')]);
+		\Config::write(['contest.theme' => request('theme')]);
 
-        $id = \Config::get('contest.contest');
+		\Config::write(['contest.main_prize' => request('mainPrize')]);
+		\Config::write(['contest.main_description' => request('mainDescr')]);
+		\Config::write(['contest.second_prize' => request('secondPrize')]);
+		\Config::write(['contest.second_description' => request('secondDescr')]);
+		\Config::write(['contest.third_prize' => request('thirdPrize')]);
+		\Config::write(['contest.third_description' => request('thirdDescr')]);
+		\Config::write(['contest.month_prize' => request('monthPrize')]);
+		\Config::write(['contest.month_description' => request('monthDescr')]);
 
-        $contest = contest::find($id);
+		$id = \Config::get('contest.contest');
 
-        $contest->theme = request('theme');
-        $contest->region = request('region');
+		$contest = contest::find($id);
 
-        $contest->save();
+		$contest->theme = request('theme');
+		$contest->region = request('region');
 
-        return redirect('/admin');
-    }
+		$contest->save();
 
-    public function contestCreate()
-    {
-        return view('admin.CreateContest');
-    }
+		return redirect('/admin');
+	}
 
-    public function contestStore(Request $request)
-    {
-        $id = time();
+	public function contestCreate() {
+		return view('admin.CreateContest');
+	}
 
-        \Config::write(['contest.contest' => $id]);
-        \Config::write(['contest.endDate' => request('endDate')]);
-        \Config::write(['contest.region' => request('region')]);
-        \Config::write(['contest.theme' => request('theme')]);
+	public function contestStore(Request $request) {
+		$id = time();
 
-        $contest = new Contest;
+		\Config::write(['contest.contest' => $id]);
+		\Config::write(['contest.endDate' => request('endDate')]);
+		\Config::write(['contest.region' => request('region')]);
+		\Config::write(['contest.theme' => request('theme')]);
 
-        $contest->id = $id;
-        $contest->theme = request('theme');
-        $contest->region = request('region');
+		$contest = new Contest;
 
-        $contest->save();
+		$contest->id = $id;
+		$contest->theme = request('theme');
+		$contest->region = request('region');
 
-        return redirect('/admin');
-    }
+		$contest->save();
+
+		return redirect('/admin');
+	}
 
 }
