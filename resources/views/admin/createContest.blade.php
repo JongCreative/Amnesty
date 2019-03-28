@@ -1,13 +1,13 @@
 @extends('layouts.dev')
 
 @section('content')
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%">
-    <div class="form_container" style="max-width: 500px;">
+<div class="forms_container">
+    <div class="form_container">
         <div class="header">Create new contest</div>
         <form method="POST" action="/admin/contest">
             @csrf
 
-            <label for="warning" style="display: block; font-size: 1.2em; font-weight: 700; margin-bottom: 8px; color: red;">WARNING, THIS WILL START A NEW CONTEST AND ENDS THE CURRENT ONE. </label>
+            <label for="warning">WARNING, THIS WILL START A NEW CONTEST AND ENDS THE CURRENT ONE. </label>
 
             <label for="region" class="">Region</label>
 
