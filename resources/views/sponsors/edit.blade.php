@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%">
-    <div class="form_container" style="max-width: 500px;">
+<div class="forms_container">
+    <div class="form_container">
         <div class="header">Edit Sponsor</div>
         <form enctype="multipart/form-data" method="POST" action="/sponsors/{{$sponsor->id}}">
             @csrf
@@ -35,8 +35,8 @@
                 {{ $errors->first('contribution') }}
             </div>
             @endif
-            <label for="contribution" style="display: block;">Contribution</label>
-            <textarea name="contribution" placeholder="Contribution" maxlength="500" style="width: 100%; padding: 12px 20px; margin: 8px 0; display: block; border-radius: 4px; box-sizing: border-box; min-height: 100px; ">{{ $sponsor->contribution }}</textarea>
+            <label for="contribution">Contribution</label>
+            <textarea name="contribution" placeholder="Contribution" maxlength="500">{{ $sponsor->contribution }}</textarea>
 
 
             <input type="submit" value="Update Sponsor">
