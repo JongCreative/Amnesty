@@ -557,6 +557,90 @@ a {
   background-color: #766a62;
 }
 
+.grid_sponsors {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-gap: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #c7c2ba;
+}
+
+.sponsor_card {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.sponsor_card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.sponsor_card .name {
+  font-size: 1em;
+  color: #fff;
+  padding: 5px;
+  background-color: #766a62;
+}
+.sponsor_card .title {
+  font-size: 0.8em;
+  color: #fff;
+  padding: 5px;
+  background-color: #574e48;
+}
+.sponsor_card .description {
+  background-color: #fff;
+  padding: 5px;
+  font-size: 0.9em;
+  letter-spacing: 0.2px;
+}
+
+.grid_jury {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-gap: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #c7c2ba;
+}
+
+.jury_card {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.jury_card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.jury_card .name {
+  font-size: 1em;
+  color: #fff;
+  padding: 5px;
+  background-color: #766a62;
+}
+.jury_card .title {
+  font-size: 0.8em;
+  color: #fff;
+  padding: 5px;
+  background-color: #574e48;
+}
+.jury_card .description {
+  background-color: #fff;
+  padding: 5px;
+  font-size: 0.9em;
+  letter-spacing: 0.2px;
+}
+
 html, body {
   font-family: "Arial", sans-serif;
   background-color: #363636;
@@ -650,48 +734,6 @@ ________________________________________________________*/
 
 /* END UNIVERSAL CONTENT
 ________________________________________________________ */
-.label-date {
-  display: block;
-}
-
-.label-textarea {
-  display: block;
-}
-
-textarea {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: block;
-  border-radius: 4px;
-  box-sizing: border-box;
-  min-height: 100px;
-}
-
-.btn-holder {
-  margin: 8px 0;
-}
-
-.btn-delete {
-  background: red;
-  color: white;
-  max-width: 300px;
-}
-
-.label_warning {
-  display: block;
-  font-size: 1.2em;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: red;
-}
-
-.label_contest_id {
-  display: block;
-  font-size: 1.2em;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
 
 /*  START EXAMPLE
 ________________________________________________________ 
