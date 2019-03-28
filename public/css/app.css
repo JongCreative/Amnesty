@@ -482,6 +482,7 @@ a {
 .parallax_content_wrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 20px 10px 20px 10px;
   background-color: #fff;
@@ -765,6 +766,48 @@ ________________________________________________________*/
 
 /* END UNIVERSAL CONTENT
 ________________________________________________________ */
+.label-date {
+  display: block;
+}
+
+.label-textarea {
+  display: block;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-height: 100px;
+}
+
+.btn-holder {
+  margin: 8px 0;
+}
+
+.btn-delete {
+  background: red;
+  color: white;
+  max-width: 300px;
+}
+
+.label_warning {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: red;
+}
+
+.label_contest_id {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
 
 /*  START EXAMPLE
 ________________________________________________________ 
