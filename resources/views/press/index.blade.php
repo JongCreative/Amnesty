@@ -28,6 +28,7 @@
                 {{ $pressArticle->source }}
                 {{ date('d-m-Y', strtotime($pressArticle->date)) }}
                 {!! nl2br(e( $pressArticle->descr))!!}
+                <a href="https://{{ $pressArticle->link }}">View article</a>
             </section>
             @if (Auth::user()->admin)
                 <section class="content_sub_wrapper">
