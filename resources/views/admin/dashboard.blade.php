@@ -1,11 +1,11 @@
 @extends('layouts.dev')
 
 @section('content')
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%; margin-top: 10px;">
-    <div class="form_container" style="max-width: 100%; min-width: 75%">
+<div class="forms_container">
+    <div class="form_container">
         <div class="header">Dashboard</div>
-        <div style="padding: 20px; background-color: #c7c2ba">
-            <div style="margin: 8px 0;">
+        <div>
+            <div>
                 Welcome {{ Auth::user()->name }}
             </div>
 
@@ -17,7 +17,7 @@
             @endif
 
             {{-- Creation links --}}
-            <div style="margin: 8px 0;">
+            <div>
                 <div><a href="/sponsors/create">Add new Sponsor</a></div>
                 <div><a href="/press/create">Add new press article</a></div>
                 <div><a href="/users">List users</a></div>
@@ -25,15 +25,15 @@
 
 
             {{-- Contest Data --}}
-            <div style="margin: 8px 0;">
+            <div>
                 <a href="/admin/contest/edit">change contest data</a>
             </div>
             <div>
                 <a href="/admin/contest/create">Start new Contest</a>
             </div>
 
-            <div style="margin: 8px 0;">
-                <div style="font-size: 1.2em; font-width: 700;">
+            <div >
+                <div>
                     Contest id: {{ $contestData->contest }}
                 </div>
                 <div>
