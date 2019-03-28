@@ -43,7 +43,7 @@
 <p>
 @foreach($photos as $photo)
     {{ $photo->title }}
-    <a href="/photos/{{ $photo->id }}"><img src="/storage/{{ $photo->src }}" style="max-width:100%"/></a>
+    <a href="/photos/{{ $photo->id }}"><img src="/storage/{{ $photo->src }}"/></a>
     <hr/>
 @endforeach
 </p>
