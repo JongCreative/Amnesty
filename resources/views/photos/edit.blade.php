@@ -11,7 +11,7 @@
                 <p class="header">Onschrijving aanpassen</p>
             </section>
             <section class="content_sub_wrapper">
-                <form class="form-insert" action="/photos/{{$photos->id}}" enctype="multipart/form-data" method="POST">
+                <form  class="form_wrapper form-insert" action="/photos/{{$photos->id}}" enctype="multipart/form-data" method="POST">
                     @method('PATCH')
                     @csrf
                     <section>
