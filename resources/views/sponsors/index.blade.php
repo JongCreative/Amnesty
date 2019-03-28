@@ -1,34 +1,88 @@
-@extends('layouts.dev')
+@extends('layouts.app')
+
+@section('pagetitle', 'Sponsoren')
 
 @section('content')
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%; margin-top: 10px;">
-    <div class="form_container" style="max-width: 100%; min-width: 75%">
-        <div class="header">Sponsors</div>
-        <div style="padding: 20px; background-color: #c7c2ba">
 
             {{-- Success Handler --}}
             @if (session('success'))
-            <div class="success">
-                {{ session('success') }}
-            </div>
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
             @endif
 
             {{-- Show all sponsors --}}
             @foreach($sponsors as $sponsor)
-            <div style="display: inline-block; margin: 16px;">
-                <a href="sponsors/{{ $sponsor->id }}">
-                    <div class="">{{ $sponsor->name }}</div>
-                    <div class=""><img src="/img/logo/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}'s logo" /></div>
-                </a>
-                <div>{{ $sponsor->title }}</div>
-                <div class="">{!! nl2br(e($sponsor->contribution)) !!}</div>
-            </div>
+                <div>
+                    <a href="sponsors/{{ $sponsor->id }}"></a>
+                    {{ $sponsor->name }}
+                    <img src="/img/logo/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}'s logo" />
+                    {{ $sponsor->title }} 
+                    {!! nl2br(e($sponsor->contribution)) !!}
+                </div>
             @endforeach
 
             {{ $sponsors->links() }}
-
-        </div>
+<div class="grid_sponsors">
+    <div class="sponsor_card">
+        <img src="{{url('/img/devlucht.jpg')}}" alt="">
+        <div class="name">Daisy Jong</div>
+        <div class="title">Backend, scrummaster</div>
+        <div class="description">Daisy is student bij Code Gorilla en is daar een master in Laravel gebleken. Deze skills samen met haar talent voor structureren heeft zij voor dit project in gezet</div>
+    </div>
+    <div class="sponsor_card">
+        <img src="{{url('/img/devlucht.jpg')}}" alt="">
+        <div class="name">Daisy Jong</div>
+        <div class="title">Backend, scrummaster</div>
+        <div class="description">Daisy is student bij Code Gorilla en is daar een master in Laravel gebleken. Deze skills samen met haar talent voor structureren heeft zij voor dit project in gezet</div>
+    </div>
+    <div class="sponsor_card">
+        <img src="{{url('/img/devlucht.jpg')}}" alt="">
+        <div class="name">Daisy Jong</div>
+        <div class="title">Backend, scrummaster</div>
+        <div class="description">Daisy is student bij Code Gorilla en is daar een master in Laravel gebleken. Deze skills samen met haar talent voor structureren heeft zij voor dit project in gezet</div>
+    </div>
+    <div class="sponsor_card">
+        <img src="{{url('/img/devlucht.jpg')}}" alt="">
+        <div class="name">Daisy Jong</div>
+        <div class="title">Backend, scrummaster</div>
+        <div class="description">Daisy is student bij Code Gorilla en is daar een master in Laravel gebleken. Deze skills samen met haar talent voor structureren heeft zij voor dit project in gezet</div>
+    </div>
+    <div class="sponsor_card">
+        <img src="{{url('/img/devlucht.jpg')}}" alt="">
+        <div class="name">Daisy Jong</div>
+        <div class="title">Backend, scrummaster</div>
+        <div class="description">Daisy is student bij Code Gorilla en is daar een master in Laravel gebleken. Deze skills samen met haar talent voor structureren heeft zij voor dit project in gezet</div>
+    </div>
+    <div class="sponsor_card">
+        <img src="{{url('/img/devlucht.jpg')}}" alt="">
+        <div class="name">Daisy Jong</div>
+        <div class="title">Backend, scrummaster</div>
+        <div class="description">Daisy is student bij Code Gorilla en is daar een master in Laravel gebleken. Deze skills samen met haar talent voor structureren heeft zij voor dit project in gezet</div>
     </div>
 </div>
-
 @endsection
+
+{{-- @extends('layouts.app')
+
+@section('pagetitle', 'Join the contest!')
+
+@section('content')
+<article class="content_container">
+    <div class="content_positioning content_positioning_1-2">
+        <article class="content_wrapper form_container">
+            <section class="content_sub_wrapper"></section>
+            <section class="content_sub_wrapper"></section>
+        </article>
+        <article class="content_wrapper form_container">
+            <section class="content_sub_wrapper"></section>
+            <section class="content_sub_wrapper"></section>
+        </article>
+    </div>
+    <div class="content_positioning content_positioning_2-2">
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+        </article>
+    </div>
+</article>
+@endsection --}}

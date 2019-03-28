@@ -6,19 +6,6 @@ use Illuminate\View\View;
 
 class ContestComposer {
 
-	public $endDate;
-	public $region;
-	public $theme;
-	public $contest;
-	public $mainPrize;
-	public $mainDescr;
-	public $secondPrize;
-	public $secondDescr;
-	public $thirdPrize;
-	public $thirdDescr;
-	public $monthPrize;
-	public $monthDescr;
-
 	/**
 	 * Create a new profile composer.
 	 *
