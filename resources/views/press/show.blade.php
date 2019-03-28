@@ -37,11 +37,9 @@
         </article>
     </div>
     <div class="content_positioning content_positioning_2-2">
-    <article class="content_wrapper">
-        <section class="content_sub_wrapper">
-                <img src="/storage/{{ $photos->src }}" />
-        </section>
-    </article>
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+        </article>
     </div>
-    </article>
-    @endsection
+</article>
+@endsection
