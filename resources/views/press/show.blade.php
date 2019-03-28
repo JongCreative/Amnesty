@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('pagetitle', {{ $press->title }})
+@section('pagetitle', $press->title)
 
 @section('content')
 
@@ -14,7 +14,7 @@
     <div class="content_positioning">
         <article class="content_wrapper form_container">
             <section class="content_sub_wrapper">
-                <p class="header">{{ $pressArticle->title }}</p>
+                <p class="header">{{ $press->title }}</p>
             </section>
             <section class="content_sub_wrapper">
                 <br /> {{ $press->source }}
