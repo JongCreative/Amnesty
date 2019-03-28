@@ -638,6 +638,16 @@ ________________________________________________________*/
   border: solid 2px seashell;
 }
 
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
 /* END UNIVERSAL CONTENT
 ________________________________________________________ */
 /*  START EXAMPLE
