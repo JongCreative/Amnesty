@@ -557,6 +557,48 @@ a {
   background-color: #766a62;
 }
 
+.grid_sponsors {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-gap: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #c7c2ba;
+}
+
+.sponsor_card {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.sponsor_card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.sponsor_card .name {
+  font-size: 1em;
+  color: #fff;
+  padding: 5px;
+  background-color: #766a62;
+}
+.sponsor_card .title {
+  font-size: 0.8em;
+  color: #fff;
+  padding: 5px;
+  background-color: #574e48;
+}
+.sponsor_card .description {
+  background-color: #fff;
+  padding: 5px;
+  font-size: 0.9em;
+  letter-spacing: 0.2px;
+}
+
 html, body {
   font-family: "Arial", sans-serif;
   background-color: #363636;
@@ -640,8 +682,8 @@ ________________________________________________________*/
 
 /* END UNIVERSAL CONTENT
 ________________________________________________________ */
-/*********** START EXAMPLE *************/
-/*
+/*  START EXAMPLE
+________________________________________________________ 
 
 @extends('layouts.app')
 
@@ -667,7 +709,8 @@ ________________________________________________________ */
 </article>
 @endsection
 
-*/
-/********** END EXAMPLE *************/
+
+    END EXAMPLE
+________________________________________________________ */
 
 /*# sourceMappingURL=app.css.map */
