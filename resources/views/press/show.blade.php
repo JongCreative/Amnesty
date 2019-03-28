@@ -1,30 +1,47 @@
-@extends('layouts.dev')
+@extends('layouts.app')
+
+@section('pagetitle', {{ $press->title }})
 
 @section('content')
 
-<div class="header">{{ $press->title }}</div>
-
-
-{{-- Success Handlers for User changes --}}
-@if (session('success'))
-<div class="">
-    {{ session('success') }}
-</div>
-@endif
-
-<div class="">{{ $press->source }}</div>
-<div class="">{{ date('d-m-Y', strtotime($press->date)) }}</div>
-<div class="">{!! nl2br(e( $press->descr))!!}</div>
-<div class="">https://{{ $press->link }}</div>
-
-
-<a href="/press/{{ $press->id }}/edit">Edit press article</a>
-
-<form method="POST" action="/press/{{$press->id}}">
-    @csrf
-    @method('DELETE')
-    <input type="submit" value="DELETE PRESS ARTICLE">
-</form>
-        
-
-@endsection
+<article class="content_container">
+    <div class="content_positioning">
+        <article class="content_wrapper form_container">
+            {{-- Success Handlers for User changes --}}
+            @include('inc.messages')
+        </article>
+    </div>
+    <div class="content_positioning">
+        <article class="content_wrapper form_container">
+            <section class="content_sub_wrapper">
+                <p class="header">{{ $pressArticle->title }}</p>
+            </section>
+            <section class="content_sub_wrapper">
+                <br /> {{ $press->source }}
+                <br /> {{ date('d-m-Y', strtotime($press->date)) }}
+                <br /> {!! nl2br(e( $press->descr))!!}
+                <br /> https://{{ $press->link }}
+            </section>
+        </article>
+        <article class="content_wrapper form_container flex_row">
+            <section class="content_sub_wrapper">
+                <a href="/press/{{ $press->id }}/edit">Edit press article</a>>
+            </section>
+            <section class="content_sub_wrapper">
+                <form method="POST" action="/press/{{$press->id}}">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="DELETE PRESS ARTICLE">
+                </form>
+            </section>
+        </article>
+    </div>
+    <div class="content_positioning content_positioning_2-2">
+    <article class="content_wrapper">
+        <section class="content_sub_wrapper">
+                <img src="/storage/{{ $photos->src }}" />
+        </section>
+    </article>
+    </div>
+    </article>
+    @endsection
