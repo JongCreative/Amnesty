@@ -4,13 +4,9 @@
 
 @section('content')
 
+{{-- Success Handlers for User changes --}}
+@include('inc.messages')
 <article class="content_container">
-    <div class="content_positioning">
-        <article class="content_wrapper form_container">
-            {{-- Success Handlers for User changes --}}
-            @include('inc.messages')
-        </article>
-    </div>
     <div class="content_positioning">
         <article class="content_wrapper form_container">
             <section class="content_sub_wrapper">
