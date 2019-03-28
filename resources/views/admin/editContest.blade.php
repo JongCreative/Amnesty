@@ -3,7 +3,7 @@
 @section('pagetitle', 'Update contest details')
 
 @section('content')
-<a href="/contest"> return to contest </a>
+<a href="/admin"> return to contest </a>
 <article class="content_container">
     <div class="content_positioning content_positioning_1-2">
         <article class="content_wrapper form_container">
@@ -16,7 +16,7 @@
                     @method('PATCH')
                     <section>
                         <div>
-                            <label>Contest id: {{ $contestData->contest }}</label>
+                            <label class="label_contest_id">Contest id: {{ $contestData->contest }}</label>
                         </div>
                         <div>
                             <label>Region<input id="region" type="text" class="" name="region" value="{{ $contestData->region }}" required autofocus></label>
@@ -40,7 +40,7 @@
                     </section>
                     <section>
                         <input type="reset" name="reset">
-                        <a href="/contest"> cancel </a>
+                        <a href="/admin"> cancel </a>
                     </section>
                 </form>
             </section>
