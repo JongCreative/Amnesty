@@ -6,7 +6,7 @@
 <a href="/press"> return to press </a>
 <article class="content_container">
     <div class="content_positioning content_positioning_1-2">
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper form_container flex_column">
             <section class="content_sub_wrapper">
                 <p class="header">Edit Press Article</p>
             </section>

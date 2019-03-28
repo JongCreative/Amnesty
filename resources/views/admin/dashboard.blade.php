@@ -6,7 +6,7 @@
 @section('content')
 <article class="content_container flex_column">
     <div class="content_positioning flex_row">
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper form_container flex_column">
             <section class="content_sub_wrapper">
                 <p class="header">Welcome {{ Auth::user()->name }}</p>
             </section>
@@ -28,7 +28,7 @@
             </section>
         </article>
 
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper form_container flex_column">
             <section class="content_sub_wrapper">
                 <p class="header">Current contest details</p>
             </section>
@@ -41,22 +41,22 @@
         </article>
     </div>
     <div class="content_positioning">
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper form_container flex_column">
             <section class="content_sub_wrapper">
                 <p class="header">prizes</p>
             </section>
             <section class="content_sub_wrapper">
-                <div>Main prize: {{ $contestData->mainPrize }}</div>
+                <div><h3>Main prize: {{ $contestData->mainPrize }}</h3></div>
                 <div>{!! nl2br(e($contestData->mainDescr)) !!}</div>
             </section>
         </article>
         <article class="content_wrapper form_container flex_row">
             <section class="content_sub_wrapper">
-                <div>2nd place prize: {{ $contestData->secondPrize }}</div>
+                <div><h4>2nd place prize: {{ $contestData->secondPrize }}</h4></div>
                 <div>{!! nl2br(e($contestData->secondDescr)) !!}</div>
             </section>
             <section class="content_sub_wrapper">
-                <div>3rd place prize: {{ $contestData->thirdPrize }}</div>
+                <div><h4>3rd place prize: {{ $contestData->thirdPrize }}</h4></div>
                 <div>{!! nl2br(e($contestData->thirdDescr)) !!}</div>
             </section>
         </article>

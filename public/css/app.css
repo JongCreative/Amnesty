@@ -231,7 +231,7 @@ a {
   background-color: #fff000;
 }
 
-/* Debugger 
+/* Debugger
   --------------------------------------------- */
 .debug {
   position: fixed;
@@ -260,14 +260,10 @@ a {
 }
 
 /* start parallax */
-.landingpage {
-  overflow: hidden;
-}
-
 .parallax {
   height: 500px;
   /* fallback for older browsers */
-  height: 100vh;
+  height: calc(100vh - 80px);
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-perspective: 300px;
@@ -322,6 +318,10 @@ a {
 
 #group2 .parallax_layer_base {
   background: #dadada;
+}
+
+.landingpage {
+  overflow: hidden;
 }
 
 #group3 {
@@ -446,6 +446,37 @@ a {
   padding: 10px;
   letter-spacing: 1px;
   font-weight: lighter;
+}
+
+.content_wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px 10px 20px 10px;
+  background-color: #fff;
+}
+.content_wrapper .block {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  flex-direction: column;
+  width: 25%;
+  letter-spacing: 0.5px;
+  padding: 5px;
+  background-color: #fafafa;
+}
+.content_wrapper .block .title {
+  font-size: smaller;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+}
+.content_wrapper .block .sub {
+  font-weight: bold;
+  font-size: 60%;
+  padding: 5px;
+  text-align: center;
 }
 
 .parallax_content_wrapper {
@@ -657,7 +688,6 @@ body {
 
 .pagetitle {
   height: 100px;
-  margin-top: 50px;
   color: #fff;
   background-color: #000000;
   font-size: 26px;
@@ -713,6 +743,7 @@ ________________________________________________________*/
 
 .content_wrapper {
   padding: 5px;
+  min-width: 300px;
 }
 
 .content_sub_wrapper {
