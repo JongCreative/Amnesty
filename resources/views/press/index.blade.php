@@ -3,40 +3,40 @@
 @section('pagetitle', 'All press articles')
 
 @section('content')
-<article class="content_container">
+<article class="content_container flex_column">
     <div class="content_positioning">
         <article class="content_wrapper form_container">
-            @if (session('success'))
-            <section class="content_sub_wrapper">
-                <article class="alert alert-success" style=" background-color:teal ; color:white">
-                    {{session('success')}}
-                </article>
-            </section>
-            @endif
-            @if (Auth::user()->admin)
-            <article class="content_wrapper form_container">
-                <a href="/press/create">Add new press article</a>
-            </article>
-            @endif
+            {{-- Success Handlers for User changes --}}
+            @include('inc.messages')
         </article>
-    </div>
-    <div class="content_positioning">
-    @foreach($press as $pressArticle)
+        @if (Auth::user()->admin)
         <article class="content_wrapper form_container">
+            <a href="/press/create">Add new press article</a>
+        </article>
+        @endif
+    </div>
+    <div class="content_positioning flex_row">
+    @foreach($press as $pressArticle)
+        <article class="content_wrapper form_container flex_column">
             <section class="content_sub_wrapper">
-                {{ $pressArticle->title }}
-                {{ $pressArticle->source }}
-                {{ date('d-m-Y', strtotime($pressArticle->date)) }}
-                {!! nl2br(e( $pressArticle->descr))!!}
-                <a href="https://{{ $pressArticle->link }}">View article</a>
+                <p class="header">{{ $pressArticle->title }}</p>
+            </section>
+            <section class="content_sub_wrapper">
+                <div>{{ $pressArticle->source }}</div>
+                <div>{{ date('d-m-Y', strtotime($pressArticle->date)) }}</div>
+                <div>{!! nl2br(e( $pressArticle->descr))!!}</div>
+                <div><a href="https://{{ $pressArticle->link }}">View article</a></div>
             </section>
             @if (Auth::user()->admin)
                 <section class="content_sub_wrapper">
-                    <a href="press/{{ $pressArticle->id }}">Show single article</a>
+                    <div><a href="press/{{ $pressArticle->id }}">Show single article</a></div>
                 </section>
             @endif
         </article>
     @endforeach
+        <article class="content_wrapper form_container flex_column">
+            <section class="content_sub_wrapper"></section>
+        </article>
     </div>
 </article>
 {{ $press->links() }}

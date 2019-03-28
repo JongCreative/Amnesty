@@ -660,6 +660,7 @@ ________________________________________________________*/
 
 .content_wrapper {
   padding: 5px;
+  min-width: 300px;
 }
 
 .content_sub_wrapper {
