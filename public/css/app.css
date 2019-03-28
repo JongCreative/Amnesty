@@ -678,6 +678,14 @@ textarea {
   max-width: 300px;
 }
 
+.warning {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: red;
+}
+
 /*  START EXAMPLE
 ________________________________________________________ 
 
