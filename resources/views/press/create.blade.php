@@ -3,7 +3,7 @@
 @section('pagetitle', 'Add a press article!')
 
 @section('content')
-<a href="/photos"> return to gallery </a>
+<a href="/press"> return to press </a>
 <article class="content_container">
     <div class="content_positioning content_positioning_1-2">
         <article class="content_wrapper form_container">
@@ -11,7 +11,7 @@
                 <p class="header">upload</p>
             </section>
             <section class="content_sub_wrapper">
-                <form  class="form_wrapper form-insert" action="/photos" enctype="multipart/form-data" method="POST">
+                <form  class="form_wrapper form-insert" method="POST" action="/press">
                     @csrf
                     <section>
                         <div>
