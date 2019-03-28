@@ -668,6 +668,16 @@ textarea {
   min-height: 100px;
 }
 
+.btn-holder {
+  margin: 8px 0;
+}
+
+.btn-delete {
+  background: red;
+  color: white;
+  max-width: 300px;
+}
+
 /*  START EXAMPLE
 ________________________________________________________ 
 

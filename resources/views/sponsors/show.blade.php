@@ -1,35 +1,46 @@
-@extends('layouts.dev')
+@extends('layouts.app')
+
+@section('pagetitle', 'Sponsor details')
 
 @section('content')
-<div class="forms_container">
-    <div class="form_container">
-        <div class="header">{{ $sponsor->name }}</div>
 
-
+<article class="content_container">
+    <div class="content_positioning">
+        <article class="content_wrapper form_container">
             {{-- Success Handlers for User changes --}}
-            @if (session('success'))
-            <div class="">
-                {{ session('success') }}
-            </div>
-            @endif
-            <div class=""><img src="/img/logo/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}'s logo" /></div>
-            <div>{{ $sponsor->title }}</div>
-            <div class="">{!! nl2br(e($sponsor->contribution)) !!}</div>
-
+            @include('inc.messages')
+        </article>
+    </div>
+    <div class="content_positioning">
+        <article class="content_wrapper form_container">
+            <section class="content_sub_wrapper">
+                <p class="header">{{ $sponsor->name }}</p>
+            </section>
+            <section class="content_sub_wrapper">
+                <br /> <img src="/img/logo/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}'s logo" />
+                <br /> {{ $sponsor->title }}
+                <br /> {!! nl2br(e($sponsor->contribution)) !!}
+            </section>
+        </article>
+        <article class="content_wrapper form_container flex_row">
             @if (Auth::user()->admin)
-            <div>
+            <section class="content_sub_wrapper">
                 <a href="/sponsors/{{ $sponsor->id }}/edit">Edit sponsor</a>
-
+            </section>
+            <section class="content_sub_wrapper">
                 <form method="POST" action="/sponsors/{{$sponsor->id}}">
                     @csrf
                     @method('DELETE')
                     <input type="submit" value="DELETE SPONSOR">
                 </form>
-            </div>
+            </section>
             @endif
-        </div>
+        </article>
     </div>
-
-</div>
-
+    <div class="content_positioning content_positioning_2-2">
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+        </article>
+    </div>
+</article>
 @endsection
