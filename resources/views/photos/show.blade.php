@@ -1,22 +1,22 @@
-@extends('layouts.daisy')
+@extends('layouts.app')
 
 @section('content')
 
 <a href="/photos"> return to gallery </a>
 
-<div class="form_container" style="display:flex; flex-direction: row;">
-    <article style="display:flex; flex-direction: column; width: 700px">
-        <section style="flex: 1">
+<div>
+    <article>
+        <section>
             <p class="header">foto details</p>
         </section>
-        <section style="flex: 1">
+        <section>
             <br /> {{ $photos->title }}
             <br /> {{ $photos->descr }}
             <br /> {{ $photos->focal }}
             <br /> {{ $photos->aperture }}
             <br />
         </section>
-        <section style="flex: 1">
+        <section>
             @if(!Auth::guest())
                 @if(Auth::user()->id == $photos->user_id)
                     <a class="button button_act" href="/photos/{{$photos->id}}/edit">edit</a>
@@ -30,7 +30,7 @@
         </section>
     </article>
     <article>
-        <img src="/storage/{{ $photos->src }}" style="width:100%"/>
+        <img src="/storage/{{ $photos->src }}" />
     </article>
 </div>
 
