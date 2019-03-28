@@ -15,7 +15,7 @@
                     @csrf
                     <section>
                         <div>
-                            <label for="warning">WARNING, THIS WILL START A NEW CONTEST AND ENDS THE CURRENT ONE. </label>
+                            <label class="label_warning">WARNING, THIS WILL START A NEW CONTEST AND ENDS THE CURRENT ONE.</label>
                         </div>
                         <div>
                             <label>Region<input id="region" type="text" class="" name="region" value="{{ $contestData->region }}" required autofocus></label>

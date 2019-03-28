@@ -678,7 +678,7 @@ textarea {
   max-width: 300px;
 }
 
-.warning {
+.label_warning {
   display: block;
   font-size: 1.2em;
   font-weight: 700;

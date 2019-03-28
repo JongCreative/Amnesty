@@ -3,7 +3,7 @@
 @section('pagetitle', 'Update contest details')
 
 @section('content')
-<a href="/admin"> return to contest </a>
+<a href="/admin"> return to dashboard </a>
 <article class="content_container">
     <div class="content_positioning content_positioning_1-2">
         <article class="content_wrapper form_container">
