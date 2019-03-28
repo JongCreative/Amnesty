@@ -9,7 +9,7 @@ $factory->define(App\User::class, function (Faker $faker) {
 		'email_verified_at' => now(),
 		'password' => Hash::make($faker->password), // password
 		'remember_token' => Str::random(10),
-		'descr' => $faker->text($maxNbChars = 200),
+		'descr' => $faker->realText($maxNbChars = 200),
 		'title' => $faker->jobTitle,
 	];
 });

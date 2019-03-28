@@ -4,7 +4,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Sponsor::class, function (Faker $faker) {
 	return [
-		'contribution' => $faker->text($maxNbChars = 200),
+		'contribution' => $faker->realText($maxNbChars = 200),
 	];
 });
 
