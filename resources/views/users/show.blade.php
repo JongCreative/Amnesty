@@ -1,14 +1,14 @@
 @extends('layouts.dev')
 
 @section('content')
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%; margin-top: 10px;">
-    <div class="form_container" style="max-width: 100%; min-width: 75%">
+<div>
+    <div>
         <div class="header">{{ $user->banned ? 'Banned User' : $user->name }}</div>
-        <div style="padding: 20px; background-color: #c7c2ba">
+        <div>
 
             {{-- Success Handlers for User changes --}}
             @if (session('success'))
-            <div class="">
+            <div>
                 {{ session('success') }}
             </div>
             @endif
@@ -25,24 +25,24 @@
                 <input type="submit" class="button" value="Delete Avatar" />
             </form>
 
-            <div style="margin: 8px 0;">
+            <div>
                 {{ $user->email }}
             </div>
 
             @if ($user->jury)
-            <div style="margin: 8px 0;">
+            <div>
                 Jury
             </div>
             @endif
 
             @if ($user->admin)
-            <div style="margin: 8px 0;">
+            <div>
                 Admin
             </div>
             @endif
 
-            <div style="margin: 8px 0;">
-                <div style="font-size: 1.2em; font-width: 700;">About me</div>
+            <div>
+                <div>About me</div>
                 <div class=>{!! nl2br(e($user->descr )) !!}</div>
             </div>
 
@@ -51,7 +51,7 @@
                 @csrf
                 @method('DELETE')
 
-                <input type="submit" value="Ban user" style="background: red; color: white; max-width: 300px">
+                <input type="submit" value="Ban user">
             </form>
             <a href="/users">Back</a>
         </div>
