@@ -3,16 +3,11 @@
 @section('pagetitle', $press->title)
 
 @section('content')
-
+{{-- Success Handlers for User changes --}}
+@include('inc.messages')
 <article class="content_container">
     <div class="content_positioning">
-        <article class="content_wrapper form_container">
-            {{-- Success Handlers for User changes --}}
-            @include('inc.messages')
-        </article>
-    </div>
-    <div class="content_positioning">
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper form_container flex_column">
             <section class="content_sub_wrapper">
                 <p class="header">{{ $press->title }}</p>
             </section>
@@ -31,7 +26,7 @@
                 <form method="POST" action="/press/{{$press->id}}">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" value="DELETE PRESS ARTICLE">
+                    <input type="submit" value="DELETE ARTICLE">
                 </form>
             </section>
         </article>
