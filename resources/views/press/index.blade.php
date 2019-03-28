@@ -1,42 +1,42 @@
-@extends('layouts.dev')
+@extends('layouts.app')
+
+@section('pagetitle', 'All press articles')
 
 @section('content')
-<div class="forms_container">
-    <div class="form_container">
-        <div class="header">Press</div>
-        <div>
-
-            {{-- Success Handler --}}
-            {{-- @if (session('success')) --}}
-            <div class="success">
-                {{ session('success') }}
-            </div>
-            {{-- @endif --}}
-
-            {{-- @if (Auth::user()->admin) --}}
-            <div>
+<article class="content_container">
+    <div class="content_positioning">
+        <article class="content_wrapper form_container">
+            @if (session('success'))
+            <section class="content_sub_wrapper">
+                <article class="alert alert-success" style=" background-color:teal ; color:white">
+                    {{session('success')}}
+                </article>
+            </section>
+            @endif
+            @if (Auth::user()->admin)
+            <article class="content_wrapper form_container">
                 <a href="/press/create">Add new press article</a>
-            </div>
-            {{-- @endif --}}
-
-            {{-- Show all sponsors --}}
-            @foreach($press as $pressArticle)
-            <div>
+            </article>
+            @endif
+        </article>
+    </div>
+    <div class="content_positioning">
+    @foreach($press as $pressArticle)
+        <article class="content_wrapper form_container">
+            <section class="content_sub_wrapper">
                 {{ $pressArticle->title }}
                 {{ $pressArticle->source }}
                 {{ date('d-m-Y', strtotime($pressArticle->date)) }}
                 {!! nl2br(e( $pressArticle->descr))!!}
-                <a href="https://{{ $pressArticle->link }}">View article</a>
-            </div>
-
-                {{-- @if (Auth::user()->admin) --}}
+            </section>
+            @if (Auth::user()->admin)
+                <section class="content_sub_wrapper">
                     <a href="press/{{ $pressArticle->id }}">Show single article</a>
-                {{-- @endif --}}
-
-
-            @endforeach
-
-            {{ $press->links() }}
-
-
+                </section>
+            @endif
+        </article>
+    @endforeach
+    </div>
+</article>
+{{ $press->links() }}
 @endsection
