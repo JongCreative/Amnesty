@@ -1,44 +1,43 @@
-@extends('layouts.dev')
+@extends('layouts.app')
+
+@section('pagetitle', 'All press articles')
 
 @section('content')
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%; margin-top: 10px;">
-    <div class="form_container" style="max-width: 100%; min-width: 75%">
-        <div class="header">Press</div>
-        <div style="padding: 20px; background-color: #c7c2ba">
-
-            {{-- Success Handler --}}
+<article class="content_container">
+    <div class="content_positioning">
+        <article class="content_wrapper form_container">
             @if (session('success'))
-            <div class="success">
-                {{ session('success') }}
-            </div>
+            <section class="content_sub_wrapper">
+                <article class="alert alert-success" style=" background-color:teal ; color:white">
+                    {{session('success')}}
+                </article>
+            </section>
             @endif
-
             @if (Auth::user()->admin)
-            <div>
+            <article class="content_wrapper form_container">
                 <a href="/press/create">Add new press article</a>
-            </div>
+            </article>
             @endif
-
-            {{-- Show all sponsors --}}
-            @foreach($press as $pressArticle)
-            <div style="display: inline-block; margin: 8px;">
-                <div class="">{{ $pressArticle->title }}</div>
-                <div class="">{{ $pressArticle->source }}</div>
-                <div class="">{{ date('d-m-Y', strtotime($pressArticle->date)) }}</div>
-                <div class="">{!! nl2br(e( $pressArticle->descr))!!}</div>
-                <div class=""><a href="https://{{ $pressArticle->link }}">View article</a></div>
-
-                @if (Auth::user()->admin)
-                <a href="press/{{ $pressArticle->id }}">Show single article</a>
-                @endif
-
-            </div>
-            @endforeach
-
-            {{ $press->links() }}
-        </div>
+        </article>
     </div>
-</div>
-
-
+    <div class="content_positioning">
+    @foreach($press as $pressArticle)
+        <article class="content_wrapper form_container">
+            <section class="content_sub_wrapper">
+                {{ $pressArticle->title }}
+                {{ $pressArticle->source }}
+                {{ date('d-m-Y', strtotime($pressArticle->date)) }}
+                {!! nl2br(e( $pressArticle->descr))!!}
+                <a href="https://{{ $pressArticle->link }}">View article</a>
+            </section>
+            @if (Auth::user()->admin)
+                <section class="content_sub_wrapper">
+                    <a href="press/{{ $pressArticle->id }}">Show single article</a>
+                </section>
+            @endif
+        </article>
+    @endforeach
+    </div>
+</article>
+{{ $press->links() }}
 @endsection

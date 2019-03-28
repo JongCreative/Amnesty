@@ -2,181 +2,166 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UploadAvatarRequest;
 use App\User;
 use Hash;
-use Image;
 use Illuminate\Http\Request;
-use App\Http\Requests\UploadAvatarRequest;
+use Image;
 
-class dashboardController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+class dashboardController extends Controller {
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function __construct() {
+		$this->middleware('auth');
+	}
 
-    public function index()
-    {
-        $user_id = auth()->user()->id;
-        $user = User::find($user_id);
-        return view('users.dashboard')->with('photos', $user->photos);
-    }
+	public function index() {
+		$user_id = auth()->user()->id;
+		$user = User::find($user_id);
+		return view('users.dashboard')->with('photos', $user->photos);
+	}
 
-    public function changeEmail()
-    {
-        return view('users.changeEmail');
-    }
+	public function changeEmail() {
+		return view('users.changeEmail');
+	}
 
-    public function updateEmail(Request $request)
-    {
-       if (!(Hash::check($request->get('currentPassword'), \Auth::user()->password))){
-          return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
-        }
+	public function updateEmail(Request $request) {
+		if (!(Hash::check($request->get('currentPassword'), \Auth::user()->password))) {
+			return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
+		}
 
-        $validateData = $request->validate([
-          'currentPassword' => 'required',
-        ]);
+		$validateData = $request->validate([
+			'currentPassword' => 'required',
+		]);
 
+		//Change email
 
-        //Change email
-      
-        $user = \Auth::user();
-        $user->email = $request->get('email');
-        $user->save();
+		$user = \Auth::user();
+		$user->email = $request->get('email');
+		$user->save();
 
-        return redirect('/dashboard')->with("success","email changed successfully!");
-    }
+		return redirect('/dashboard')->with("success", "email changed successfully!");
+	}
 
-    /**
-     * Change Description
-     * @return view, or change the description and returns to dashboard with success message.
-     */
-    public function changeDescr()
-    {
-        return view('users.changeDescription');
-    }
+	/**
+	 * Change Description
+	 * @return view, or change the description and returns to dashboard with success message.
+	 */
+	public function changeDescr() {
+		return view('users.changeDescription');
+	}
 
-    public function updateDescr(Request $request)
-    {
-       if (!(Hash::check($request->get('currentPassword'), \Auth::user()->password))){
-          return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
-        }
+	public function updateDescr(Request $request) {
+		if (!(Hash::check($request->get('currentPassword'), \Auth::user()->password))) {
+			return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
+		}
 
-        $validateData = $request->validate([
-          'currentPassword' => 'required',
-        ]);
+		$validateData = $request->validate([
+			'currentPassword' => 'required',
+		]);
 
-        dd($request);
-        //Change Description
-      
-        $user = \Auth::user();
-        $user->descr = $request->get('descr');
-        $user->save();
-        
-        return redirect('/dashboard')->with("success","About me has changed successfully!");
-    }
+		//Change Description
 
-    /**
-     * Change Password
-     * @return view, or change the description and returns to dashboard with success message.
-     */
-    public function changePassword()
-    {
-        return view('users.changePassword');
-    }
+		$user = \Auth::user();
+		$user->descr = $request->get('descr');
+		$user->save();
 
-    public function updatePassword(Request $request)
-    {
-       if (!(Hash::check($request->get('currentPassword'), \Auth::user()->password))){
-          return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
-        }
+		return redirect('/dashboard')->with("success", "About me has changed successfully!");
+	}
 
-        if(strcmp($request->get('currentPassword'), $request->get('newPassword')) == 0){
-              //Current password and new password are same
-            return redirect()->back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
-        }
+	/**
+	 * Change Password
+	 * @return view, or change the description and returns to dashboard with success message.
+	 */
+	public function changePassword() {
+		return view('users.changePassword');
+	}
 
-        if(strcmp($request->get('newPassword_confirmation'), $request->get('newPassword')) != 0){
-              //New Password and Confirm Password are not the same
-            return redirect()->back()->with("error","Confirm Password does not match with the New Password");
-        }
+	public function updatePassword(Request $request) {
+		if (!(Hash::check($request->get('currentPassword'), \Auth::user()->password))) {
+			return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
+		}
 
-        $validateData = $request->validate([
-            'currentPassword' => 'required',
-            'newPassword' => 'required|string|min:8|confirmed',
-        ]);
+		if (strcmp($request->get('currentPassword'), $request->get('newPassword')) == 0) {
+			//Current password and new password are same
+			return redirect()->back()->with("error", "New Password cannot be same as your current password. Please choose a different password.");
+		}
 
-        //Change Description
-      
-        $user = \Auth::user();
-        $user->password = Hash::make($request->get('newPassword'));
-        $user->save();
+		if (strcmp($request->get('newPassword_confirmation'), $request->get('newPassword')) != 0) {
+			//New Password and Confirm Password are not the same
+			return redirect()->back()->with("error", "Confirm Password does not match with the New Password");
+		}
 
-        return redirect('/dashboard')->with("success","Password has changed successfully!");
-            return redirect('/dashboard');
-    }
+		$validateData = $request->validate([
+			'currentPassword' => 'required',
+			'newPassword' => 'required|string|min:8|confirmed',
+		]);
 
-    public function changeName()
-    {
-        return view('users.changeName');
-    }
+		//Change Description
 
-    public function updateName(Request $request)
-    {
-       if (!(Hash::check($request->get('currentPassword'), \Auth::user()->password))){
-          return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
-        }
+		$user = \Auth::user();
+		$user->password = Hash::make($request->get('newPassword'));
+		$user->save();
 
-        $validateData = $request->validate([
-          'currentPassword' => 'required',
-        ]);
+		return redirect('/dashboard')->with("success", "Password has changed successfully!");
+		return redirect('/dashboard');
+	}
 
+	public function changeName() {
+		return view('users.changeName');
+	}
 
-        //Change email
-      
-        $user = \Auth::user();
-        $user->first_name = $request->get('first_name');
-        $user->last_name = $request->get('last_name');
-        $user->title = $request->get('title');
-        $user->save();
+	public function updateName(Request $request) {
+		if (!(Hash::check($request->get('currentPassword'), \Auth::user()->password))) {
+			return redirect()->back()->with("error", "Your current password does not match with the password you provided.");
+		}
 
-        return redirect('/dashboard')->with("success","Name has been changed successfully!");
-    }
+		$validateData = $request->validate([
+			'currentPassword' => 'required',
+		]);
 
-    public function avatar()
-    {
-        abort(404);
-    }
+		//Change email
 
-    public function updateAvatar(UploadAvatarRequest $request)
-    {
-      if($request->hasFile('avatar')) 
-      {
+		$user = \Auth::user();
+		$user->first_name = $request->get('first_name');
+		$user->last_name = $request->get('last_name');
+		$user->title = $request->get('title');
+		$user->save();
 
-        $destinationPath = '/img/avatar/';
-        $avatar = $request->file('avatar');
-        $filename = time() . '.' . $avatar->getClientOriginalExtension();
-        Image::make($avatar)->resize(256,256)->save( public_path($destinationPath . $filename ));
+		return redirect('/dashboard')->with("success", "Name has been changed successfully!");
+	}
 
-        $user = \Auth::user();
-        if ($user->avatar != 'default.png')
-        {
+	public function avatar() {
+		abort(404);
+	}
 
-          \File::delete(public_path($destinationPath . $user->avatar));
-        }
-        
-        $user->avatar = $filename;
-        $user->save();
-        return redirect('/dashboard')->with('Succes', 'Avatar has been updated');
-      } else {
-        return redirect('/dashboard');
-      }
+	public function updateAvatar(UploadAvatarRequest $request) {
+		if ($request->hasFile('avatar')) {
 
-    }
+			$destinationPath = '/img/avatar/';
+			$avatar = $request->file('avatar');
+			$filename = time() . '.' . $avatar->getClientOriginalExtension();
+			Image::make($avatar)->resize(null, 256, function ($constraint) {
+				$constraint->aspectRatio();
+			})
+				->resizeCanvas(256, 256, 'center')->save(public_path($destinationPath . $filename));
+
+			$user = \Auth::user();
+			if ($user->avatar != 'default.png') {
+
+				\File::delete(public_path($destinationPath . $user->avatar));
+			}
+
+			$user->avatar = $filename;
+			$user->save();
+			return redirect('/dashboard')->with('Succes', 'Avatar has been updated');
+		} else {
+			return redirect('/dashboard');
+		}
+
+	}
 
 }
