@@ -5,6 +5,7 @@ ________________________________________________________*/
     display: flex;
     flex-direction: column;
     width: 100%;
+    box-sizing: border-box;
 }
 .main_positioning {
     background-color: #c7c2ba;
@@ -27,7 +28,7 @@ ________________________________________________________*/
     display: flex;
     flex-direction: row;
     padding: 5px;
-    background-color: paleturquoise
+    background-color: paleturquoise;
 }
 
 .content_positioning {
@@ -36,13 +37,12 @@ ________________________________________________________*/
     background-color: palevioletred;
 }
 .content_positioning_1-2 {
-    padding: 5px;
     background-color: slateblue;
 }
 .content_wrapper {
     padding: 5px;
     min-width: 300px;
-    //background-color: peachpuff
+    //background-color: peachpuff;
 }
 .content_sub_wrapper{
     flex: 1;
@@ -59,10 +59,45 @@ ________________________________________________________*/
     display: flex;
     flex-direction: column;
 }
+.flex_1{
+    flex: 1;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+.page-item{
+    flex: 1;
+    padding: 5px;
+    background-color: #c7c2ba;
+}
+
+.cards_container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card_wrapper{
+    display: inline-block;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex: 1;
+}
 
 /* END UNIVERSAL CONTENT
 ________________________________________________________ */
-
+.h1 {
+    height: 100px;
+    color: #fff;
+    background-color: #000000;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    line-height: 100px;
+}
 
 .label-date {
     display: block;
@@ -80,10 +115,10 @@ textarea{
     box-sizing: border-box; 
     min-height: 100px;
 }
-.btn-holder{
+.btn_holder{
     margin: 8px 0;
 }
-.btn-delete{
+.btn_delete{
     background: red; 
     color: white; 
     max-width: 300px;
@@ -112,11 +147,11 @@ ________________________________________________________
 @section('content')
 <article class="content_container">
     <div class="content_positioning content_positioning_1-2">
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper">
             <section class="content_sub_wrapper"></section>
             <section class="content_sub_wrapper"></section>
         </article>
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper">
             <section class="content_sub_wrapper"></section>
             <section class="content_sub_wrapper"></section>
         </article>

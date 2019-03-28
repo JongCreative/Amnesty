@@ -7,27 +7,27 @@
 {{-- Success Handlers for User changes --}}
 @include('inc.messages')
 <article class="content_container">
-    <div class="content_positioning">
-        <article class="content_wrapper form_container">
+    <div class="content_positioning content_positioning_1-2">
+        <article class="content_wrapper">
             <section class="content_sub_wrapper">
-                <p class="header">{{ $sponsor->name }}</p>
+                <p class="h1">{{ $sponsor->name }}</p>
             </section>
             <section class="content_sub_wrapper">
-                <br /> <img src="/img/logo/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}'s logo" />
-                <br /> {{ $sponsor->title }}
-                <br /> {!! nl2br(e($sponsor->contribution)) !!}
+                <div><img src="/img/logo/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}'s logo" /></div>
+                <div>{{ $sponsor->title }}</div>
+                <div>{!! nl2br(e($sponsor->contribution)) !!}</div>
             </section>
         </article>
-        <article class="content_wrapper form_container flex_row">
+        <article class="content_wrapper flex_row">
             @if (Auth::user()->admin)
             <section class="content_sub_wrapper">
-                <a href="/sponsors/{{ $sponsor->id }}/edit">Edit sponsor</a>
+                <a class="button button_act" href="/sponsors/{{ $sponsor->id }}/edit">Edit sponsor details</a>
             </section>
             <section class="content_sub_wrapper">
                 <form method="POST" action="/sponsors/{{$sponsor->id}}">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" value="DELETE SPONSOR">
+                    <input class="button btn_delete" type="submit" value="DELETE SPONSOR">
                 </form>
             </section>
             @endif
