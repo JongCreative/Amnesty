@@ -1,31 +1,55 @@
-@extends('layouts.dev')
+@extends('layouts.app')
+
+@section('pagetitle', 'Update contest details')
 
 @section('content')
-<div class="forms_container">
-    <div class="form_container">
-        <div class="header">Edit contest</div>
-        <form method="POST" action="/admin/contest">
-            @csrf
-            {{ method_field('PATCH') }}
-            <label for="id">Contest id: {{ $contestData->contest }}</label>
-
-            <label for="region" class="">Region</label>
-
-            <input id="region" type="text" class="" name="region" value="{{ $contestData->region }}" required autofocus>
-
-            <label for="theme" class="">Theme</label>
-            <input id="theme" type="text" class="" name="theme" value="{{ $contestData->theme }}" required>
-
-            <label for="endDate">End Date</label>
-            <input id="endDate" type="date" class="" name="endDate" value="{{ $contestData->endDate }}" required>
-
-            <label for="mainPrize" class="">Main Prize</label>
-            <input id="mainPrize" type="text" class="" name="mainPrize" value="{{ $contestData->mainPrize }}" required>
-            <textarea name="mainDescr">{{ $contestData->mainDescr }}</textarea>
-
-            <input type="submit" value="Edit Contest Data">
-        </form>
+<a href="/contest"> return to contest </a>
+<article class="content_container">
+    <div class="content_positioning content_positioning_1-2">
+        <article class="content_wrapper form_container">
+            <section class="content_sub_wrapper">
+                <p class="header">Edit contest</p>
+            </section>
+            <section class="content_sub_wrapper">
+                <form class="form_wrapper form-insert" method="POST" action="/admin/contest">
+                    @csrf
+                    @method('PATCH')
+                    <section>
+                        <div>
+                            <label>Contest id: {{ $contestData->contest }}</label>
+                        </div>
+                        <div>
+                            <label>Region<input id="region" type="text" class="" name="region" value="{{ $contestData->region }}" required autofocus></label>
+                        </div>
+                        <div>
+                            <label>Theme<input id="theme" type="text" class="" name="theme" value="{{ $contestData->theme }}" required></label>
+                        </div>
+                        <div>
+                            <label>End Date<input id="endDate" type="date" class="" name="endDate" value="{{ $contestData->endDate }}" required></label>
+                        </div>
+                        <div>
+                            <label>Main Prize<input id="mainPrize" type="text" class="" name="mainPrize" value="{{ $contestData->mainPrize }}" required></label>
+                        </div>
+                        <div>
+                            <label>Description<textarea name="mainDescr">{{ $contestData->mainDescr }}</textarea></label>
+                        </div>
+                    <hr />
+                    </section>
+                    <section class="flex_row">
+                        <input class="button button_act" type="submit" value="Edit Contest Data">
+                    </section>
+                    <section>
+                        <input type="reset" name="reset">
+                        <a href="/contest"> cancel </a>
+                    </section>
+                </form>
+            </section>
+        </article>
     </div>
-</div>
-
+    <div class="content_positioning content_positioning_2-2">
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+        </article>
+    </div>
+</article>
 @endsection
