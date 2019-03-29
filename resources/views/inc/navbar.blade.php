@@ -36,6 +36,7 @@
 
         @else
         <div> --}}
+        <div>
             <!-- Authentication Links -->
             @guest
                 <li><a class="login" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -63,8 +64,7 @@
                         </li>
                     </ul>
                 </li>
-                @endguest
+            @endguest
         </div>
-
     </ul>
 </nav>
