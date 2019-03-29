@@ -47,7 +47,7 @@
                     <li>{{Auth::user()->name}}
                         <ul class="nav_child">
                             <li><a href="/dashboard">Dashboard</a></li>
-                            <li><a href="/dashboard">Dashboard</a></li>
+                            <li><a href="/photos/create">upload photo</a></li>
                         </ul>
                     <li><a class="logout" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
