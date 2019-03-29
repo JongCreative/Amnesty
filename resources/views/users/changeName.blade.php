@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%">
-    <div class="form_container" style="max-width: 500px;">
+<div>
+    <div>
         <div class="header">Change name</div>
         <form method="POST" action="/dashboard/name">
             @csrf
@@ -34,7 +34,7 @@
 
             <label for="currentPassword" class=""> Password </label>
 
-            <input id="currentPassword" type="password" class="" name="currentPassword" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+            <input id="currentPassword" type="password" class="" name="currentPassword" required >
 
             @if (session('error'))
             <div class="">
