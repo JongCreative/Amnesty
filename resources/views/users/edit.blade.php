@@ -2,47 +2,105 @@
 
 @section('content')
 
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%">
-    <div class="form_container" style="max-width: 500px;">
+
         <div class="header">Edit {{ $user->name }}</div>
 
         <form enctype="multipart/form-data" method="POST" action="/users/{{ $user->id }}">
             @csrf
             @method('PATCH')
 
-            <label for="title">Title</label>
-            <input id="title" type="text" name="title" value="{{ old('title') ? old('title') : $user->title }}">
+            <label>Title<input id="title" type="text" name="title" value="{{ old('title') ? old('title') : $user->title }}"></label>
 
             @if ($errors->has('avatar'))
             <div class="error">
                 {{ $errors->first('avatar') }}
             </div>
             @endif
-            <label>Update Avatar:</label>
-            <input type="file" name="avatar">
 
-            <label for="descr" class=""> About {{$user->name}} </label>
-            <textarea name="descr" placeholder="Description" maxlength="500" style="width: 100%; padding: 12px 20px; margin: 8px 0; display: block; border-radius: 4px; box-sizing: border-box; min-height: 100px; ">{{ $user->descr }}</textarea>
+            <label>Update Avatar:<input type="file" name="avatar"></label>
 
-            <label for="Ranks" style="display: block;"> Ranks </label>
-            <input type="checkbox" name="jury" {{
-                $user->jury ? ' checked="checked" ' : '' }}>
-            <label for="jury" class=""> Jury </label>
+            <label> About {{ $user->name }}<textarea name="descr" placeholder="Description" maxlength="500">{{ $user->descr }}</textarea></label>
 
-            <input type="checkbox" name="admin" {{
-                $user->admin ? ' checked="checked" ' : '' }}>
-            <label for="admin" class=""> Admin </label>
-
-            <input type="checkbox" name="banned" {{
-                $user->banned ? ' checked="checked" ' : '' }}>
-            <label for="banned" class=""> Banned </label>
-
-
+            <label> Ranks<input type="checkbox" name="jury" {{ $user->jury ? ' checked="checked" ' : '' }}></label>
+            <label> Jury<input type="checkbox" name="admin" {{ $user->admin ? ' checked="checked" ' : '' }}></label>
+            <label> Admin<input type="checkbox" name="banned" {{ $user->banned ? ' checked="checked" ' : '' }}></label>
+            <label> Banned </label>
             <input type="submit" value="Update {{$user->name}}">
-            <a href="/users/{{ $user->id }}" class="button?"> Back </a>
         </form>
 
     </div>
 </div>
 
+@endsection
+@extends('layouts.app')
+
+@section('pagetitle', 'Update Press Article')
+
+@section('content')
+<a href="/users/{{ $user->id }}"> return to user details page </a>
+<article class="content_container">
+    <div class="content_positioning content_positioning_1-2">
+        <article class="content_wrapper form_container flex_column">
+            <section class="content_sub_wrapper">
+                <p class="header">Edit Press Article</p>
+            </section>
+            <section class="content_sub_wrapper">
+                <form class="form_wrapper form-insert" method="POST" action="/press/{{$press->id}}">
+                    @csrf
+                    @method('PATCH')
+                    <section>
+                        <div>
+                            @if ($errors->has('title'))
+                            <div class="error">
+                                {{ $errors->first('title') }}
+                            </div>
+                            @endif
+                            <label>Title <input id="title" type="text" name="title" value="{{ old('title') ? old('title') : $press->title }} " autofocus></label>
+                        </div>
+                        <div>
+                            @if ($errors->has('src'))
+                            <div class="error">
+                                {{ $errors->first('src') }}
+                            </div>
+                            @endif
+                            <label>Source Name<input id="src" type="text" name="src" value="{{ old('src') ? old('src') : $press->source }}"></label>
+                        </div>
+                        <div>
+                            @if ($errors->has('link'))
+                            <div class="error">
+                                {{ $errors->first('link') }}
+                            </div>
+                            @endif
+                            <label>Link to article<input id="link" type="text" name="link" value="{{ old('link') ? old('link') : $press->link }}"></label>
+                        </div>
+                        <div>
+                            @if ($errors->has('date'))
+                            <div class="error">
+                                {{ $errors->first('date') }}
+                            </div>
+                            @endif
+                            <label>Publish Date<input id="date" type="date" name="date" value="{{ old('date') ? old('date') : $press->date }}"></label>
+                        </div>
+                        <div>
+                            <label>Description<textarea name="descr" placeholder="Description" maxlength="500">{{ $press->descr }}</textarea></label>
+                        </div>
+                    <hr />
+                    </section>
+                    <section class="flex_row">
+                        <input class="button button_act" type="submit">
+                    </section>
+                    <section>
+                        <input type="reset" name="reset">
+                        <a href="/press"> cancel </a>
+                    </section>
+                </form>
+            </section>
+        </article>
+    </div>
+    <div class="content_positioning content_positioning_2-2">
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+        </article>
+    </div>
+</article>
 @endsection
