@@ -1,15 +1,15 @@
 @extends('layouts.dev')
 
 @section('content')
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%; margin-top: 10px;">
-    <div class="form_container" style="max-width: 100%; min-width: 75%">
+<div>
+    <div >
         <div class="header">Dashboard</div>
-        <div style="padding: 20px; background-color: #c7c2ba">
-            <div style="margin: 8px 0;">
+        <div>
+            <div >
                 Welcome {{ Auth::user()->name }}
 
                 <div>{{ Auth::user()->title }}</div>
-                <a href="/dashboard/name" style="display: block;">Change name and title</a>
+                <a href="/dashboard/name">Change name and title</a>
             </div>
 
             <div>
@@ -29,7 +29,7 @@
 
 
             @if ( Auth::user()->admin )
-            <div style="margin: 8px 0;">
+            <div>
                 <a href="/admin">Admin Dashboard</a>
             </div>
             @endif
@@ -37,27 +37,27 @@
 
             {{-- Success Handlers for Dashboard changes --}}
             @if (session('success'))
-            <div style="margin: 8px 0;">
+            <div>
                 {{ session('success') }}
             </div>
             @endif
 
-            <div style="margin: 8px 0;">
+            <div>
                 {{ Auth::user()->email }}
                 <a href="/dashboard/email" style="display: block;">Change email</a>
             </div>
 
-            <div style="margin: 8px 0;">
+            <div>
                 <a href="/dashboard/password">Change Password</a>
             </div>
 
-            <div style="margin: 8px 0;">
-                <div class="">About me</div>
-                <div class=>{!! nl2br(e(Auth::user()->descr )) !!}</div>
+            <div>
+                <div>About me</div>
+                <div>{!! nl2br(e(Auth::user()->descr )) !!}</div>
                 <a href="/dashboard/description">Edit</a>
             </div>
 
-            <div style="margin: 8px 0;">
+            <div>
                 <h2>Current Contest</h2>
                 <div>
                     Contest region: {{ $contestData->region  }}
@@ -78,13 +78,13 @@
         </div>
 
         <div class="header">My submissions</div>
-        <div style="padding: 20px; background-color: #c7c2ba">
+        <div>
             @foreach ($photos as $photo)
             {{ $photo->title }}
             {{ $photo->descr }}
             {{ $photo->focal }}
             {{ $photo->aperture }}
-            <img src="/storage/{{ $photo->src }}" style="width:100%" />
+            <img src="/storage/{{ $photo->src }}" />
             @endforeach
         </div>
 
