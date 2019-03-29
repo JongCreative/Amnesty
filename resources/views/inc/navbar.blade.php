@@ -5,7 +5,7 @@
             <li><a href="/">Home</a></li>
             <li>Inzendingen
                 <ul class="nav_child">
-                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/photos">Gallery</a></li>
                     <li><a href="/winners">Winnaars</a></li>
                 </ul>
             </li>
