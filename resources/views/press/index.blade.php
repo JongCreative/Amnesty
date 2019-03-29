@@ -5,21 +5,21 @@
 @section('content')
 <article class="content_container flex_column">
     <div class="content_positioning">
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper">
             {{-- Success Handlers for User changes --}}
             @include('inc.messages')
         </article>
         @if (Auth::user()->admin)
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper">
             <a href="/press/create">Add new press article</a>
         </article>
         @endif
     </div>
-    <div class="content_positioning flex_row">
+    <div class="content_positioning cards_container">
     @foreach($press as $pressArticle)
-        <article class="content_wrapper form_container flex_column">
+        <article class="content_wrapper flex_column card_wrapper">
             <section class="content_sub_wrapper">
-                <p class="header">{{ $pressArticle->title }}</p>
+                <p class="h1">{{ $pressArticle->title }}</p>
             </section>
             <section class="content_sub_wrapper">
                 <div>{{ $pressArticle->source }}</div>
@@ -34,10 +34,11 @@
             @endif
         </article>
     @endforeach
-        <article class="content_wrapper form_container flex_column">
-            <section class="content_sub_wrapper"></section>
+    </div>
+    <div class="content_positioning">
+        <article class="content_wrapper flex_row">
+            {{ $press->links() }}
         </article>
     </div>
 </article>
-{{ $press->links() }}
 @endsection

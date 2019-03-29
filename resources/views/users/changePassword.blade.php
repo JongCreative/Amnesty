@@ -1,34 +1,41 @@
-@extends('layouts.dev')
+@extends('layouts.app')
+
+@section('pagetitle', 'Change password')
 
 @section('content')
-
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%">
-    <div class="form_container" style="max-width: 500px;">
-        <div class="header">Change password</div>  
-  
-        <form method="POST" action="/dashboard/password">
-            @csrf
-            @method('PATCH')
-
-            @if (session('error')) 
-                <div class="">
-                    {{ session('error') }}
-                </div>
-             @endif
-            
-            <label>Current Password</label>
-            <input type="password" name="currentPassword" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"/>
-                
-            <label>New Password</label>
-            <input type="password" name="newPassword" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"/>
-
-            <label>Confirm New Password</label>
-            <input type="password" name="newPassword_confirmation" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"/>
-
-            <input type="submit" value="Change Password">
-            <a href="/dashboard" class="button?"> Back </a>
-        </form>
-
+<a href="/dashboard"> return to dashboard </a>
+<article class="content_container">
+    <div class="content_positioning content_positioning_1-2">
+        <article class="content_wrapper form_container flex_column">
+            <section class="content_sub_wrapper">
+                <div class="h1">Change About me</div>
+            </section>
+            <section class="content_sub_wrapper">
+                <form class="form_wrapper form-insert" method="POST" action="/dashboard/password">
+                    @csrf
+                    @method('PATCH')
+                    <section>
+                        {{-- Success Handlers for User changes --}}
+                        @include('inc.messages')
+                    </section>
+                    <section>
+                        <div><label>Current Password<input type="password" name="currentPassword" required></label></div>
+                        <div><label>New Password<input type="password" name="newPassword" required></label></div>
+                        <div><label>Confirm New Password<input type="password" name="newPassword_confirmation" required></label></div>
+                    </section>
+                    <section class="flex_row">
+                        <input class="button button_act" type="reset" name="reset">
+                        <input class="button button_act" type="submit" value="Change Password">
+                    </section>
+                </form>
+            </section>
+        </article>
     </div>
-</div>
+    <div class="content_positioning content_positioning_2-2">
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+        </article>
+    </div>
+</article>
 @endsection
+

@@ -6,9 +6,9 @@
 <a href="/photos"> return to gallery </a>
 <article class="content_container">
     <div class="content_positioning content_positioning_1-2">
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper">
             <section class="content_sub_wrapper">
-                <p class="header">foto details</p>
+                <p class="h1">foto details</p>
             </section>
             <section class="content_sub_wrapper">
                 <br /> {{ $photos->title }}
@@ -17,9 +17,9 @@
                 <br /> {{ $photos->aperture }}
             </section>
         </article>
-        {{-- @if(!Auth::guest())
-        @if(Auth::user()->id == $photos->user_id) --}}
-            <article class="content_wrapper form_container flex_row">
+        @if(!Auth::guest())
+        @if(Auth::user()->id == $photos->user_id)
+            <article class="content_wrapper flex_row">
                 <section class="content_sub_wrapper">
                     <a class="button button_act" href="/photos/{{$photos->id}}/edit">edit</a>
                 </section>
@@ -31,13 +31,13 @@
                     </form>
                 </section>
             </article>
-        {{-- @endif
-        @endif --}}
+        @endif
+        @endif
     </div>
     <div class="content_positioning content_positioning_2-2">
         <article class="content_wrapper">
             <section class="content_sub_wrapper">
-                    <img src="/storage/{{ $photos->src }}" />
+                <img src="/storage/{{ $photos->src }}" />
             </section>
         </article>
     </div>

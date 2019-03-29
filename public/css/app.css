@@ -448,7 +448,7 @@ a {
   font-weight: lighter;
 }
 
-.content_wrapper {
+.parallax_content_wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -456,7 +456,7 @@ a {
   padding: 20px 10px 20px 10px;
   background-color: #fff;
 }
-.content_wrapper .block {
+.parallax_content_wrapper .block {
   display: flex;
   align-items: center;
   margin-top: 5px;
@@ -466,13 +466,13 @@ a {
   padding: 5px;
   background-color: #fafafa;
 }
-.content_wrapper .block .title {
+.parallax_content_wrapper .block .title {
   font-size: smaller;
   font-weight: bold;
   padding: 5px;
   text-align: center;
 }
-.content_wrapper .block .sub {
+.parallax_content_wrapper .block .sub {
   font-weight: bold;
   font-size: 60%;
   padding: 5px;
@@ -689,6 +689,7 @@ body {
 
 .pagetitle {
   height: 100px;
+  margin-top: 50px;
   color: #fff;
   background-color: #000000;
   font-size: 26px;
@@ -708,6 +709,7 @@ ________________________________________________________*/
   display: flex;
   flex-direction: column;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .main_positioning {
@@ -738,7 +740,6 @@ ________________________________________________________*/
 }
 
 .content_positioning_1-2 {
-  padding: 5px;
   background-color: slateblue;
 }
 
@@ -764,8 +765,52 @@ ________________________________________________________*/
   flex-direction: column;
 }
 
+.flex_1 {
+  flex: 1;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.page-item {
+  flex: 1;
+  padding: 5px;
+  background-color: #c7c2ba;
+}
+
+.cards_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card_wrapper {
+  display: inline-block;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex: 1;
+}
+
+.img_size {
+  width: 100%;
+}
+
 /* END UNIVERSAL CONTENT
 ________________________________________________________ */
+.h1 {
+  height: 100px;
+  color: #fff;
+  background-color: #000000;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  line-height: 100px;
+}
+
 .label-date {
   display: block;
 }
@@ -784,11 +829,11 @@ textarea {
   min-height: 100px;
 }
 
-.btn-holder {
+.btn_holder {
   margin: 8px 0;
 }
 
-.btn-delete {
+.btn_delete {
   background: red;
   color: white;
   max-width: 300px;
@@ -819,11 +864,11 @@ ________________________________________________________
 @section('content')
 <article class="content_container">
     <div class="content_positioning content_positioning_1-2">
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper">
             <section class="content_sub_wrapper"></section>
             <section class="content_sub_wrapper"></section>
         </article>
-        <article class="content_wrapper form_container">
+        <article class="content_wrapper">
             <section class="content_sub_wrapper"></section>
             <section class="content_sub_wrapper"></section>
         </article>
