@@ -729,18 +729,11 @@ ________________________________________________________*/
 .content_container {
   display: flex;
   flex-direction: row;
-  padding: 5px;
-  background-color: paleturquoise;
+  background-color: #c7c2ba;
 }
 
 .content_positioning {
   flex: 1;
-  padding: 5px;
-  background-color: palevioletred;
-}
-
-.content_positioning_1-2 {
-  background-color: slateblue;
 }
 
 .content_wrapper {
@@ -751,7 +744,6 @@ ________________________________________________________*/
 .content_sub_wrapper {
   flex: 1;
   padding: 5px;
-  background-color: lightgreen;
   border: solid 2px seashell;
 }
 
@@ -789,9 +781,11 @@ ________________________________________________________*/
 
 .card_wrapper {
   display: inline-block;
+  background-color: #c7c2ba;
   flex-wrap: wrap;
   justify-content: space-around;
   flex: 1;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .img_size {
