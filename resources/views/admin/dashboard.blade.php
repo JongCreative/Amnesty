@@ -22,10 +22,6 @@
                 <div><a href="/admin/contest/edit">change contest data</a></div>
                 <div><a href="/admin/contest/create">Start new Contest</a></div>
             </section>
-            <section class="content_sub_wrapper">
-                <div><a href="/admin/contest/edit">change contest data</a></div>
-                <div><a href="/admin/contest/create">Start new Contest</a></div>
-            </section>
         </article>
 
         <article class="content_wrapper form_container flex_column">
