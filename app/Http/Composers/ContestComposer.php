@@ -32,6 +32,7 @@ class ContestComposer {
 
 		setlocale(LC_ALL, 'nl_NL');
 		$this->endDate = strftime('%d %B %Y', strtotime(config('contest.endDate')));
+		$this->end = config('contest.endDate');
 
 		$monthName = ucfirst(strftime('%B', mktime(0, 0, 0, date('m'))));
 		$this->currentPrize = $monthName . ': ' . $this->monthPrize;
