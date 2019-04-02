@@ -36,28 +36,28 @@
           <!-- start content parallax -->
           <div class="textheader">
             <div class="title">Amnesty International fotowedstrijd<br>
-              <div class="sub">{{ $contestData->theme }}</div>
+              <div class="sub">Thema: {{ $contestData->theme }}</div>
             </div>
-            <div class="txt">Wedstrijd eindigt op {{ $contestData->endDate }}</div>
+            <div class="txt">De deadline voor inzendingen eindigd op {{ $contestData->endDate }}</div>
           </div>
           <div class="parallax_content_wrapper">
             <div class="block">
-              <div class="title">De wedstrijd</div>
-              <div class="sub">Lorem ipsum dolor sit amet</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              <div class="button"><a href="/photos/create">Deelnemen</a></div>
+              <div class="title">Wedstrijd</div>
+              <hr>
+              <div class="txt"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+              <div class="label">Deelnemen</div>
             </div>
             <div class="block">
-              <div class="title">Series</div>
-              <div class="sub">Lorem ipsum dolor sit amet</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              <div class="button"><a href="/photos/create">Deelnemen</a></div>
+              <div class="title">Inzendingen</div>
+              <hr>
+              <div class="txt"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+              <div class="label">Deelnemen</div>
             </div>
             <div class="block">
-              <div class="title">Enkele foto's</div>
-              <div class="sub">Lorem ipsum dolor sit amet</div>
-              <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-              <div class="button"><a href="/photos/create">Deelnemen</a></div>
+              <div class="title">Prijzen</div>
+              <hr>
+              <div class="txt"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+              <div class="label">Deelnemen</div>
             </div>
           </div>
           <div class="textheader">
@@ -65,7 +65,6 @@
               <div class="sub">{{ $contestData->currentPrize }}</div>
             </div>
             <div class="txt">{{ $contestData->monthDescr }}</div>
-            <div class="button"><a href="/photos/create">Deelnemen</a></div>
           </div>
           <!-- end content parallax -->
         </div>
