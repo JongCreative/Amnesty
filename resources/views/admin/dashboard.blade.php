@@ -1,58 +1,62 @@
-@extends('layouts.dev')
+
+@extends('layouts.app')
+
+@section('pagetitle', 'Dashboard')
 
 @section('content')
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%; margin-top: 10px;">
-    <div class="form_container" style="max-width: 100%; min-width: 75%">
-        <div class="header">Dashboard</div>
-        <div style="padding: 20px; background-color: #c7c2ba">
-            <div style="margin: 8px 0;">
-                Welcome {{ Auth::user()->name }}
-            </div>
+<article class="content_container flex_column">
+    <div class="content_positioning flex_row">
+        <article class="content_wrapper form_container flex_column">
+            <section class="content_sub_wrapper">
+                <p class="header">Welcome {{ Auth::user()->name }}</p>
+            </section>
 
-            {{-- Success Handler --}}
-            @if (session('success')) 
-                <div class="success">
-                    {{ session('success') }}
-                </div>
-             @endif
+            @include('inc.messages'){{-- Success Handlers for User changes --}}
 
-            {{-- Creation links --}}
-            <div style="margin: 8px 0;">
+            <section class="content_sub_wrapper">
                 <div><a href="/sponsors/create">Add new Sponsor</a></div>
                 <div><a href="/press/create">Add new press article</a></div>
                 <div><a href="/users">List users</a></div>
-            </div>
+            </section>
+            <section class="content_sub_wrapper">
+                <div><a href="/admin/contest/edit">change contest data</a></div>
+                <div><a href="/admin/contest/create">Start new Contest</a></div>
+            </section>
+        </article>
 
-
-            {{-- Contest Data --}}
-            <div style="margin: 8px 0;">
-                <a href="/admin/contest/edit">change contest data</a>
-            </div>
-            <div>
-                <a href="/admin/contest/create">Start new Contest</a>
-            </div>
-
-            <div style="margin: 8px 0;">
-                <div style="font-size: 1.2em; font-width: 700;">
-                    Contest id: {{ $contestData->contest }}
-                </div>
-                <div>
-                    Contest region: {{ $contestData->region  }}
-                </div>
-                <div>
-                    Contest prize: {{ $contestData->prize  }}
-                </div>
-                <div>
-                    Contest theme: {{ $contestData->theme }}
-                </div>
-                <div>
-                    Contest end date: {{ $contestData->endDate }}
-                </div>
-            </div>
-
-        </div>
+        <article class="content_wrapper form_container flex_column">
+            <section class="content_sub_wrapper">
+                <p class="header">Current contest details</p>
+            </section>
+            <section class="content_sub_wrapper">
+                <div>Contest id: {{ $contestData->contest }}</div>
+                <div>Contest region: {{ $contestData->region  }}</div>
+                <div>Contest theme: {{ $contestData->theme }}</div>
+                <div>Contest end date: {{ $contestData->endDate }}</div>
+            </section>
+        </article>
     </div>
-</div>
-
+    <div class="content_positioning">
+        <article class="content_wrapper form_container flex_column">
+            <section class="content_sub_wrapper">
+                <p class="header">prizes</p>
+            </section>
+            <section class="content_sub_wrapper">
+                <div><h3>Main prize: {{ $contestData->mainPrize }}</h3></div>
+                <div>{!! nl2br(e($contestData->mainDescr)) !!}</div>
+            </section>
+        </article>
+        <article class="content_wrapper form_container flex_row">
+            <section class="content_sub_wrapper">
+                <div><h4>2nd place prize: {{ $contestData->secondPrize }}</h4></div>
+                <div>{!! nl2br(e($contestData->secondDescr)) !!}</div>
+            </section>
+            <section class="content_sub_wrapper">
+                <div><h4>3rd place prize: {{ $contestData->thirdPrize }}</h4></div>
+                <div>{!! nl2br(e($contestData->thirdDescr)) !!}</div>
+            </section>
+        </article>
+    </div>
+</article>
 
 @endsection

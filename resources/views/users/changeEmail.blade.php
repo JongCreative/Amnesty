@@ -1,39 +1,46 @@
-@extends('layouts.dev')
+@extends('layouts.app')
+
+@section('pagetitle', 'Update user details')
 
 @section('content')
-
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%">
-    <div class="form_container" style="max-width: 500px;">
-        <div class="header">Change email</div>  
-        <form method="POST" action="/dashboard/email">
-            @csrf
-            @method('PATCH')
-
-            <label for="email" style="display: block; font-size: 1.2em; font-weight: 700; margin-bottom: 8px;"> Current email: {{ Auth::user()->email }} </label>
-            <label for="email"> email </label>
-            <input id="email" type="email" name="email" value="{{ old('email') }}" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-
-            @if ($errors->has('email'))
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('email') }}</strong>
-              </span>
-            @endif
-
-            <label for="currentPassword"> Password </label>
-
-            <input id="currentPassword" type="password" name="currentPassword" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-
-            @if (session('error')) 
-                <div class="">
-                    {{ session('error') }}
-                </div>
-             @endif
-
-
-            <input type="submit" value="Change email">
-
-            <a href="/dashboard" class="button?"> Back </a>
-        </form>
+<a href="/dashboard"> return to dashboard </a>
+<article class="content_container">
+    <div class="content_positioning content_positioning_1-2">
+        <article class="content_wrapper form_container flex_column">
+            <section class="content_sub_wrapper">
+                <div class="h1">Change email</div>
+            </section>
+            <section class="content_sub_wrapper">
+                <form class="form_wrapper form-insert" enctype="multipart/form-data" method="POST" action="/dashboard/email">
+                    @csrf
+                    @method('PATCH')
+                    <section>
+                        <div><label>Current email: {{ Auth::user()->email }} </label></div>
+                        <div><label>email<input id="email" type="email" name="email" value="{{ old('email') }}" required ></label></div>
+                        @if ($errors->has('email'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ $errors->first('email') }}
+                        </div>
+                        @endif
+                        <div><label>Password<input id="currentPassword" type="password" name="currentPassword" required></label></div>            
+                        <hr />
+                    </section>
+                    <section class="content_sub_wrapper">
+                        {{-- Success Handlers for User changes --}}
+                        @include('inc.messages')
+                        <input class="button button_act" type="submit" value="Change email">
+                    </section>
+                    <section>
+                        <input class="btn" type="reset" name="reset">
+                    </section>
+                </form>
+            </section>
+        </article>
     </div>
-</div>
+    <div class="content_positioning content_positioning_2-2">
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+        </article>
+    </div>
+</article>
 @endsection

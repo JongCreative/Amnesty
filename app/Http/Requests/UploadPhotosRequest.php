@@ -24,21 +24,22 @@ class UploadPhotosRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required',
-            'descr' => 'required',
-            //'src.*' => 'required|mimes:jpeg,jpg|max:1999|min:1000',
+            'src'       => 'required',
+            'src.*'     => 'image|mimes:jpeg,jpg|max:5000|min:10',
+            'title'     => 'required',
+            'descr'     => 'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'title'         => 'please enter a title',
-            'descr'         => 'please enter a description',
-            'src.required'  => 'no photo',
-            'src.mimes'     => 'we only accept jpeg or jpg format',
-            'src.max'       => 'max',
-            'src.min'       => 'min',
+            'src.required'      => 'Please select a photo to join the contest',
+            'src.mimes'         => 'we only accept jpeg or jpg format',
+            'src.max'           => 'The photo should be smaller 5 MB',
+            'src.min'           => 'The photo should be larger than 10 kb',
+            'title.required'    => 'please enter a title',
+            'descr.required'    => 'please enter a description',
         ];
     }
 }

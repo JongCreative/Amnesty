@@ -4,11 +4,14 @@
 @import 'nav';
 @import 'forms';
 @import 'parallax';
+@import 'gallery';
+@import 'sponsors';
+@import 'jury';
 
 html, body{
   font-family: $font-family-sans-serif;
   background-color: $body-bg;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 body {
@@ -20,6 +23,21 @@ body {
   padding:0;
 }
 
+.pagetitle{
+  height: 100px;
+  margin-top: 50px;
+  color: $white;
+  background-color: $black;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  line-height: 100px;
+}
+
+
 .actionbox{
   background-color: $yellow;
 }
+
+@import 'layout';

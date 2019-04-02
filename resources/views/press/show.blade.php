@@ -1,34 +1,40 @@
-@extends('layouts.dev')
+@extends('layouts.app')
+
+@section('pagetitle', 'Press article details')
 
 @section('content')
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%; margin-top: 10px;">
-    <div class="form_container" style="max-width: 100%; min-width: 75%">
-        <div class="header">{{ $press->title }}</div>
-        <div style="padding: 20px; background-color: #c7c2ba">
-
-            {{-- Success Handlers for User changes --}}
-            @if (session('success')) 
-                <div class="">
-                    {{ session('success') }}
-                </div>
-             @endif
-
-            <div class="">{{ $press->source }}</div>
-            <div class="">{{ date('d-m-Y', strtotime($press->date)) }}</div>
-            <div class="">https://{{ $press->link }}</div>
-
-            <div style="margin: 8px 0;">
-                <a href="/press/{{ $press->id }}/edit">Edit press article</a>
-
+{{-- Success Handlers for User changes --}}
+@include('inc.messages')
+<article class="content_container">
+    <div class="content_positioning content_positioning_1-2">
+        <article class="content_wrapper flex_column">
+            <section class="content_sub_wrapper">
+                <p class="h1">{{ $press->title }}</p>
+            </section>
+            <section class="content_sub_wrapper">
+                <br /> {{ $press->source }}
+                <br /> {{ date('d-m-Y', strtotime($press->date)) }}
+                <br /> {!! nl2br(e( $press->descr))!!}
+                <br /> https://{{ $press->link }}
+            </section>
+        </article>
+        <article class="content_wrapper flex_row">
+            <section class="content_sub_wrapper">
+                <a class="button button_act" href="/press/{{ $press->id }}/edit">Edit press article</a>
+            </section>
+            <section class="content_sub_wrapper">
                 <form method="POST" action="/press/{{$press->id}}">
                     @csrf
                     @method('DELETE')
-                  	<input type="submit" value="DELETE PRESS ARTICLE" style="background: red; color: white; max-width: 300px">
+                    <input class="button btn_delete" type="submit" value="DELETE ARTICLE">
                 </form>
-            </div>
-        </div>
+            </section>
+        </article>
     </div>
-    
-</div>
-
+    <div class="content_positioning content_positioning_2-2">
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+        </article>
+    </div>
+</article>
 @endsection

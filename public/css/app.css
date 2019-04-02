@@ -2,6 +2,10 @@
   border: solid 1px orangered;
 }
 
+.debug2 {
+  border: solid 1px orangered;
+}
+
 .button {
   font-size: 0.9rem;
   font-weight: bold;
@@ -81,7 +85,8 @@ a {
   background-color: #dadada;
   display: block;
 }
-.nav li .register, .nav li .logout {
+.nav li .register,
+.nav li .logout {
   margin-top: 10px;
   height: 60px;
   width: 90px;
@@ -89,10 +94,12 @@ a {
   border: 1px solid #000000;
   display: block;
 }
-.nav li .register:hover, .nav li .logout:hover {
+.nav li .register:hover,
+.nav li .logout:hover {
   background-color: #dadada;
 }
-.nav li .login, .nav li .dashboard {
+.nav li .login,
+.nav li .dashboard {
   margin-top: 10px;
   height: 60px;
   width: 90px;
@@ -102,20 +109,20 @@ a {
   color: #fff;
   display: block;
 }
-.nav li .login:hover, .nav li .dashboard:hover {
+.nav li .login:hover,
+.nav li .dashboard:hover {
   background-color: #363636;
 }
 
 .nav li:hover ul {
   opacity: 1;
-  top: 80px;
-  transform: translateY(0px);
-  transition: opacity 0.3s, transform 0.2s ease-in;
+  display: flex;
   z-index: -2;
+  animation: NavFadeIn 0.5s;
 }
 
 .nav_child {
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: center;
   list-style: none;
@@ -126,10 +133,8 @@ a {
   left: 0;
   position: absolute;
   opacity: 0;
-  top: 80px;
-  transform: translateY(-25px);
+  top: 100%;
   z-index: -1;
-  transition: opacity 0.3s, transform 0.2s ease-in;
 }
 .nav_child li {
   height: 40px;
@@ -155,6 +160,16 @@ a {
   display: block;
 }
 
+@keyframes NavFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .forms_container {
   margin-top: 140px;
   display: grid;
@@ -216,7 +231,7 @@ a {
   background-color: #fff000;
 }
 
-/* Debugger 
+/* Debugger
   --------------------------------------------- */
 .debug {
   position: fixed;
@@ -248,7 +263,7 @@ a {
 .parallax {
   height: 500px;
   /* fallback for older browsers */
-  height: 100vh;
+  height: calc(100vh - 80px);
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-perspective: 300px;
@@ -302,7 +317,11 @@ a {
 }
 
 #group2 .parallax_layer_base {
-  background: #dadada;
+  background: #fff;
+}
+
+.landingpage {
+  overflow: hidden;
 }
 
 #group3 {
@@ -322,7 +341,7 @@ a {
 }
 
 #group4 .parallax_layer_base {
-  background: #dadada;
+  background: #fff;
 }
 
 #group5 {
@@ -342,7 +361,7 @@ a {
 }
 
 #group6 .parallax_layer_base {
-  background: #dadada;
+  background: #fff;
 }
 
 #group7 {
@@ -429,45 +448,218 @@ a {
   font-weight: lighter;
 }
 
-.content_wrapper {
+.parallax_content_wrapper {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding: 20px 10px 20px 10px;
-  background-color: #fff;
+  background-color: #eeeeee;
 }
-.content_wrapper .block {
+.parallax_content_wrapper .block {
   display: flex;
   align-items: center;
   margin-top: 5px;
   flex-direction: column;
-  width: 25%;
-  letter-spacing: 0.5px;
   padding: 5px;
-  background-color: #fafafa;
+  background-color: #fff;
+  margin: 10px 10px;
+  width: 280px;
+  height: 440px;
+  background: #FFFFFF;
+  border-radius: 4px 4px 0px 0px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
 }
-.content_wrapper .block .title {
-  font-size: smaller;
+.parallax_content_wrapper .block .title {
+  padding-top: 30px;
   font-weight: bold;
-  padding: 5px;
   text-align: center;
+  color: #3f3f3f;
+  letter-spacing: 3px;
 }
-.content_wrapper .block .sub {
+.parallax_content_wrapper .block hr {
+  width: 80%;
+  height: 1px;
+  color: #bdbec0;
+}
+.parallax_content_wrapper .block .txt {
+  text-align: center;
+  padding: 5px 30px 5px 30px;
+  font-size: 50%;
+}
+.parallax_content_wrapper .block .label {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #000;
+  color: #FFFFFF;
   font-weight: bold;
-  font-size: 60%;
-  padding: 5px;
+  letter-spacing: 3px;
   text-align: center;
+  vertical-align: bottom;
 }
-.content_wrapper .block .txt {
-  font-size: 40%;
+
+.content_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.content_top {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.content_top .left {
+  background-color: #c7c2ba;
+  text-align: left;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  padding: 5px 0 5px 10px;
+}
+.content_top .right {
+  background-color: #b1aca5;
+  text-align: right;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  padding: 5px 10px 5px 0;
+}
+
+.grid_left {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #c7c2ba;
+}
+
+.grid_right {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #b1aca5;
+}
+
+.item_card {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+.item_card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.item_card .item_title {
+  font-size: 0.8em;
+  color: #fff;
   padding: 5px;
   text-align: center;
+  background-color: #574e48;
+}
+.item_card .item_creator {
+  font-size: 1em;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  background-color: #766a62;
+}
+
+.grid_sponsors {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-gap: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #c7c2ba;
+}
+
+.sponsor_card {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.sponsor_card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.sponsor_card .name {
+  font-size: 1em;
+  color: #fff;
+  padding: 5px;
+  background-color: #766a62;
+}
+.sponsor_card .title {
+  font-size: 0.8em;
+  color: #fff;
+  padding: 5px;
+  background-color: #574e48;
+}
+.sponsor_card .description {
+  background-color: #fff;
+  padding: 5px;
+  font-size: 0.9em;
+  letter-spacing: 0.2px;
+}
+
+.grid_jury {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-gap: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #c7c2ba;
+}
+
+.jury_card {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.jury_card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.jury_card .name {
+  font-size: 1em;
+  color: #fff;
+  padding: 5px;
+  background-color: #766a62;
+}
+.jury_card .title {
+  font-size: 0.8em;
+  color: #fff;
+  padding: 5px;
+  background-color: #574e48;
+}
+.jury_card .description {
+  background-color: #fff;
+  padding: 5px;
+  font-size: 0.9em;
+  letter-spacing: 0.2px;
 }
 
 html, body {
   font-family: "Arial", sans-serif;
   background-color: #363636;
-  overflow: hidden;
 }
 
 body {
@@ -479,8 +671,196 @@ body {
   padding: 0;
 }
 
+.pagetitle {
+  height: 100px;
+  margin-top: 50px;
+  color: #fff;
+  background-color: #000000;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  line-height: 100px;
+}
+
 .actionbox {
   background-color: #FFFF00;
 }
+
+/* START GLOBAL BODY.
+________________________________________________________*/
+.main_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main_positioning {
+  background-color: #c7c2ba;
+  padding: 1px;
+}
+
+.main_positioning2-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* END GLOBAL BODY.
+________________________________________________________*/
+/* START UNIVERSAL CONTENT
+________________________________________________________*/
+.content_container {
+  display: flex;
+  flex-direction: row;
+  background-color: #c7c2ba;
+}
+
+.content_positioning {
+  flex: 1;
+}
+
+.content_wrapper {
+  padding: 5px;
+  min-width: 300px;
+}
+
+.content_sub_wrapper {
+  flex: 1;
+  padding: 5px;
+  border: solid 2px seashell;
+}
+
+.flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex_1 {
+  flex: 1;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.page-item {
+  flex: 1;
+  padding: 5px;
+  background-color: #c7c2ba;
+}
+
+.cards_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card_wrapper {
+  display: inline-block;
+  background-color: #c7c2ba;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.img_size {
+  width: 100%;
+}
+
+/* END UNIVERSAL CONTENT
+________________________________________________________ */
+.h1 {
+  height: 100px;
+  color: #fff;
+  background-color: #000000;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  line-height: 100px;
+}
+
+.label-date {
+  display: block;
+}
+
+.label-textarea {
+  display: block;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-height: 100px;
+}
+
+.btn_holder {
+  margin: 8px 0;
+}
+
+.btn_delete {
+  background: red;
+  color: white;
+  max-width: 300px;
+}
+
+.label_warning {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: red;
+}
+
+.label_contest_id {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/*  START EXAMPLE
+________________________________________________________ 
+
+@extends('layouts.app')
+
+@section('pagetitle', 'Join the contest!')
+
+@section('content')
+<article class="content_container">
+    <div class="content_positioning content_positioning_1-2">
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+            <section class="content_sub_wrapper"></section>
+        </article>
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+            <section class="content_sub_wrapper"></section>
+        </article>
+    </div>
+    <div class="content_positioning content_positioning_2-2">
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+        </article>
+    </div>
+</article>
+@endsection
+
+
+    END EXAMPLE
+________________________________________________________ */
 
 /*# sourceMappingURL=app.css.map */
