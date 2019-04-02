@@ -11,10 +11,10 @@
                 <p class="h1">foto details</p>
             </section>
             <section class="content_sub_wrapper">
-                <br /> {{ $photos->title }}
-                <br /> {{ $photos->descr }}
-                <br /> {{ $photos->focal }}
-                <br /> {{ $photos->aperture }}
+                <div>Title: {{ $photos->title }}</div>
+                <div>Description: {{ $photos->descr }}</div>
+                <div>Focal point: {{ $photos->focal }}</div>
+                <div>Aperture: {{ $photos->aperture }}</div>
             </section>
         </article>
         @if(!Auth::guest())
@@ -37,7 +37,7 @@
     <div class="content_positioning content_positioning_2-2">
         <article class="content_wrapper">
             <section class="content_sub_wrapper">
-                <img src="/storage/{{ $photos->src }}" />
+                <img class="img_size"  src="/storage/{{ $photos->src }}" />
             </section>
         </article>
     </div>

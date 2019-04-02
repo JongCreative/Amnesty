@@ -6,12 +6,12 @@
             <li>Inzendingen
                 <ul class="nav_child">
                     <li><a href="/photos">Gallery</a></li>
-                    <li><a href="/winners">Winnaars</a></li>
+                    <{{-- li><a href="/winners">Winnaars</a></li> --}}
                 </ul>
             </li>
             <li>Wedstrijd
                 <ul class="nav_child">
-                    <li><a href="/terms">Voorwaarden</a></li>
+                    {{-- <li><a href="/terms">Voorwaarden</a></li> --}}
                     <li><a href="/jury">Jury</a></li>
                     <li><a href="/sponsors">Sposoren</a></li>
                     <li><a href="/press">Pers</a></li>
