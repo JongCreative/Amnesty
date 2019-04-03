@@ -245,9 +245,10 @@
   .block {
     display: flex;
     align-items: center;
-    margin-top: 5px;
+    margin: 5px 16px;
     flex-direction: column;
-    width: 25%;
+    min-width: 25%;
+    width: 330px;
     letter-spacing: 0.5px;
     padding: 5px;
     background-color: $block-bg;
@@ -281,7 +282,7 @@
     align-items: center;
     margin-top: 5px;
     flex-direction: column;
-    width: 25%;
+    width: 330px;
     letter-spacing: 0.5px;
     padding: 5px;
     background-color: $block-bg;

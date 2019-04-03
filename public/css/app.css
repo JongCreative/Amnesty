@@ -454,9 +454,10 @@ a {
 .parallax_content_wrapper .block {
   display: flex;
   align-items: center;
-  margin-top: 5px;
+  margin: 5px 16px;
   flex-direction: column;
-  width: 25%;
+  min-width: 25%;
+  width: 330px;
   letter-spacing: 0.5px;
   padding: 5px;
   background-color: #fafafa;
@@ -487,7 +488,7 @@ a {
   align-items: center;
   margin-top: 5px;
   flex-direction: column;
-  width: 25%;
+  width: 330px;
   letter-spacing: 0.5px;
   padding: 5px;
   background-color: #fafafa;
