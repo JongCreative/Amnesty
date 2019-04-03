@@ -17,7 +17,7 @@ a {
   margin: 0;
   padding: 0;
   font-size: .9rem;
-  z-index: 5;
+  z-index: 3;
 
   li {
     float: left;
@@ -79,7 +79,7 @@ a {
   opacity: 1;
   display: flex;
   z-index: -2;
-  animation: NavFadeIn 0.5s;
+  animation: NavFadeIn 1s;
 }
 
 .nav_child {
@@ -95,7 +95,6 @@ a {
   position: absolute;
   opacity: 0;
   top: 100%;
-  z-index: -1;
 
   li {
     height: 40px;
@@ -105,7 +104,6 @@ a {
     font-family: "Arial", sans-serif;
     background-color: $nav-child-li-bg;
     color: $white;
-    z-index: -1;
 
     a {
       display: block;
@@ -113,7 +111,6 @@ a {
       text-decoration: none;
       transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out, fill 0.25s ease-in-out;
       // cursor: pointer;
-      z-index: -1;
     }
 
     a:hover {
@@ -128,11 +125,9 @@ a {
 @keyframes NavFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(-25px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
   }
 }
