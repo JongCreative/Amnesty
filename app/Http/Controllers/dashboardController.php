@@ -141,7 +141,7 @@ class dashboardController extends Controller {
 	public function updateAvatar(UploadAvatarRequest $request) {
 		if ($request->hasFile('avatar')) {
 
-			$destinationPath = '/img/avatar/';
+			$destinationPath = 'img/avatar/';
 			$avatar = $request->file('avatar');
 			$filename = time() . '.' . $avatar->getClientOriginalExtension();
 			Image::make($avatar)->resize(null, 256, function ($constraint) {
