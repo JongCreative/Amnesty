@@ -1,6 +1,6 @@
 <nav class="navbar_container">
     <ul class="nav">
-        <li><img src="{{URL ('img/Logo.png')}}" height="80px"></li>
+        <li><a href="/"><img src="{{URL ('img/Logo.png')}}" height="80px"></a></li>
         <div>
             <li><a href="/">Home</a></li>
             <li>Inzendingen
