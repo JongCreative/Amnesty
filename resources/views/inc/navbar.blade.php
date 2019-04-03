@@ -1,7 +1,7 @@
 <nav class="navbar_container">
   <ul class="nav">
     <li><img src="{{URL ('img/Logo.png')}}" height="80px"></li>
-    <div>
+    <div class="nav_screen">
       <li><a href="/">Home</a></li>
       <li><a href="/photos">Gallery</a></li>
       <li>Wedstrijd
@@ -14,7 +14,7 @@
       </li>
     </div>
 
-    <div>
+    <div class="nav_screen">
       <!-- Authentication Links -->
       @guest
         <li><a class="login" href="{{ route('login') }}">{{ __('Login') }}</a></li>

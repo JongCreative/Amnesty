@@ -165,6 +165,23 @@ a {
     opacity: 1;
   }
 }
+.nav_screen {
+  display: block;
+}
+
+.nav_mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .nav_screen {
+    display: none;
+  }
+
+  .nav_mobile {
+    display: block;
+  }
+}
 .forms_container {
   margin-top: 140px;
   display: grid;
