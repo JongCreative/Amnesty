@@ -1,12 +1,5 @@
 // Variables
 @import 'variables';
-@import 'buttons';
-@import 'nav';
-@import 'forms';
-@import 'parallax';
-@import 'gallery';
-@import 'sponsors';
-@import 'jury';
 
 html, body{
   font-family: $font-family-sans-serif;
@@ -35,9 +28,16 @@ body {
   line-height: 100px;
 }
 
-
 .actionbox{
   background-color: $yellow;
 }
 
+@import 'buttons';
+@import 'nav';
+@import 'forms';
+@import 'parallax';
+@import 'mobileParallax';
+@import 'gallery';
+@import 'sponsors';
+@import 'jury';
 @import 'layout';

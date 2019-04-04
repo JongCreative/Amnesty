@@ -12,6 +12,10 @@
     &:hover{
       background-color: $nav-a-hover;
     }
+
+    a {
+      color: $black;
+    }
 }
 
 .button_sm {
@@ -19,19 +23,19 @@
     font-weight: bold;
     background-color: $black;
     color: $white;
-  
+
     &:hover {
       background-color: $dark_hover;
     }
   }
-  
+
   .button_act {
     font-size: 0.9rem;
     font-weight: bold;
     background-color: $yellow;
     border-color: $yellow;
     color: $black;
-  
+
     &:hover {
       background-color: $yellow_hover;
       border-color: $yellow_hover;

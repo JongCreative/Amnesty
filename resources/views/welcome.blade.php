@@ -12,10 +12,6 @@
 <body>
     @include('inc.navbar')
 
-  <div class="debug">
-    <label><input type="checkbox"> Debug</label>
-  </div>
-
   <div class=landingpage>
     <div class="parallax">
       <div id="group1" class="parallax_group">
@@ -45,13 +41,13 @@
             <div class="block">
 
               <div class="title">De wedstrijd</div>
-              <div class="sub">Lorem ipsum dolor sit amet</div>
+              <div class="sub"></div>
               <div class="txt">Wereldwijd zijn miljoenen mensen op de vlucht. Wat is jouw beeld bij vluchten?  Je zou hierbij kunnen denken aan de omstandigheden, een verscheidenheid aan emoties of misschien denk jij aan iets heel anders als jij aan het thema vluchten denkt. AI daagt jou uit om vluchten op jouw manier in  beeld te brengen.</div>
               <div class="button">Deelnemen</div>
             </div>
             <div class="block">
               <div class="title">Inzendingen</div>
-              <div class="sub">Lorem ipsum dolor sit amet</div>
+              <div class="sub"></div>
               <div class="txt">De inzendingen moeten voldoen aan de volgende voorwaarden:
                 <br />
                   1. Je mag max 3 fotos inzenden<br />
@@ -90,14 +86,15 @@
         <div class="parallax_layer parallax_layer_back">
         </div>
       </div>
+
       <div id="group4" class="parallax_group">
         <div class="parallax_layer parallax_layer_base">
           <!-- start content parallax -->
           <div class="textheader">
             <div class="title">De prijzen<br>
-              <div class="sub">Prachtige prijzen</div>
+              <div class="sub"></div>
             </div>
-            <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
+            <div class="txt"></div>
           </div>
           <div class="parallax_content_wrapper">
             <div class="block">
@@ -120,13 +117,7 @@
             </div>
           </div>
         </div>
-        <div class="textheader">
-          <div class="title">Winnaar van de maand<br>
-            <div class="sub">Elke maand een stedentrip</div>
-          </div>
-          <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
-          <div class="button"><a href="#">Venetie</a></div>
-        </div>
+
         <!-- end content parallax -->
       </div>
       <div id="group5" class="parallax_group">
@@ -135,14 +126,15 @@
         <div class="parallax_layer parallax_layer_base">
         </div>
       </div>
+
       <div id="group6" class="parallax_group">
         <div class="parallax_layer parallax_layer_base">
           <!-- start content parallax -->
           <div class="textheader">
             <div class="title">De Jury<br>
-              <div class="sub">Lorem ipsum dolor sit amet</div>
+              <div class="sub"></div>
             </div>
-            <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
+            <div class="txt">De beoordeling van de fotos worden aan deze specialisten overgelaten.</div>
           </div>
 
           <div class="parallax_content_wrapper">
@@ -168,16 +160,6 @@
 
   </div>
 
-  <script>
-  var debugInput = document.querySelector("input");
-
-  function updateDebugState() {
-    document.body.classList.toggle('debug-on', debugInput.checked);
-  }
-  debugInput.addEventListener("click", updateDebugState);
-  updateDebugState();
-
-  </script>
 </body>
 
 </html>
