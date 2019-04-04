@@ -27,7 +27,7 @@
             <div class="title">Hoe ziet vluchten er voor jou uit?</div><br>
             <p>Deze eerste editie 2019 heeft als thema "vluchten". Met mooie prijzen en maandelijkse winnaars. Iederereen mag mee doen. Van professionals tot hobbyisten. </p>
             <p>De sluitingsdatum voor de hoofdprijs is {{ $contestData->endDate }}</p>
-            <div class="button">Doe mee!</div>
+            <div class="button"><a href="/photos">Doe mee!</a></div>
           </div>
         </div>
       </div>
@@ -43,6 +43,7 @@
 
           <div class="parallax_content_wrapper">
             <div class="block">
+
               <div class="title">De wedstrijd</div>
               <div class="sub">Lorem ipsum dolor sit amet</div>
               <div class="txt">Wereldwijd zijn miljoenen mensen op de vlucht. Wat is jouw beeld bij vluchten?  Je zou hierbij kunnen denken aan de omstandigheden, een verscheidenheid aan emoties of misschien denk jij aan iets heel anders als jij aan het thema vluchten denkt. AI daagt jou uit om vluchten op jouw manier in  beeld te brengen.</div>
@@ -103,19 +104,19 @@
               <div class="title">Hoofdprijs</div>
               <div class="sub">{{ $contestData->mainPrize }}</div>
               <div class="txt">{!! nl2br(e($contestData->mainDescr)) !!}</div>
-              <div class="button">meer info</div>
+              <div class="button"><a href="#">meer info</a></div>
             </div>
             <div class="block">
               <div class="title">2e prijs</div>
               <div class="sub">{{ $contestData->secondPrize }}</div>
               <div class="txt">{!! nl2br(e($contestData->secondDescr)) !!}</div>
-              <div class="button">meer info</div>
+              <div class="button"><a href="#">meer info</a></div>
             </div>
             <div class="block">
               <div class="title">3e prijs</div>
               <div class="sub">{{ $contestData->thirdPrize }}</div>
               <div class="txt">{!! nl2br(e($contestData->thirdDescr)) !!}</div>
-              <div class="button">meer info</div>
+              <div class="button"><a href="#">meer info</a></div>
             </div>
           </div>
         </div>
@@ -124,7 +125,7 @@
             <div class="sub">Elke maand een stedentrip</div>
           </div>
           <div class="txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magn</div>
-          <div class="button">Venetie</div>
+          <div class="button"><a href="#">Venetie</a></div>
         </div>
         <!-- end content parallax -->
       </div>

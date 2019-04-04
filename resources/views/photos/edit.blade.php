@@ -8,7 +8,7 @@
     <div class="content_positioning content_positioning_1-2">
         <article class="content_wrapper form_container">
             <section class="content_sub_wrapper">
-                <p class="header">Onschrijving aanpassen</p>
+                <p class="header">Omschrijving aanpassen</p>
             </section>
             <section class="content_sub_wrapper">
                 <form  class="form_wrapper form-insert" action="/photos/{{$photos->id}}" enctype="multipart/form-data" method="POST">

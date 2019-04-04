@@ -1,4 +1,5 @@
 <nav class="navbar_container">
+
   <ul class="nav">
     <li><img src="{{URL ('img/Logo.png')}}" height="80px"></li>
     <div class="nav_screen">

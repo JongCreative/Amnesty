@@ -23,7 +23,7 @@
                         <label>Password<input id="currentPassword" type="password" class="" name="currentPassword" required></label>
                     </section>
                     <section>
-                        <input class="btn" type="reset" name="reset">
+                        {{-- <input class="btn" type="reset" name="reset"> --}}
                         <input type="submit" value="Update About Me">
                     </section>
                 </form>
