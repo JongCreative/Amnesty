@@ -1,0 +1,49 @@
+// disabled Parallax for mobile
+
+@media (max-width: 800px) {
+	.landing {
+		overflow: auto;
+	}
+
+	.parallax{
+		height: auto;
+		overflow: auto;
+	}
+
+	.parallax_group{
+		position: static;
+		height: auto;
+	}
+
+	.parallax_layer {
+		position: static;
+	}
+
+	.parallax_layer_back{
+		position: static;
+	}
+
+	#group1 .parallax_layer_base {
+		background: url(/img/vluchtBreda.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+	}
+
+	.hpblok {
+		position: static;
+		width: auto;
+		transform: translate(0,0)
+	}
+
+	.textheader {
+		margin: 0;
+	}
+
+	#group3, #group5 {
+		display: none;
+	}
+
+	.parallax_content_wrapper .block {
+		height: auto;
+	}
+}
