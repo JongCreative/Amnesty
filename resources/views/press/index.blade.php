@@ -9,11 +9,14 @@
             {{-- Success Handlers for User changes --}}
             @include('inc.messages')
         </article>
-        @if (Auth::user()->admin)
-        <article class="content_wrapper">
-            <a href="/press/create">Add new press article</a>
-        </article>
-        @endif
+        @guest
+        @else
+            @if (Auth::user()->admin)
+                <article class="content_wrapper">
+                    <a href="/press/create">Add new press article</a>
+                </article>
+            @endif
+        @endguest
     </div>
     <div class="content_positioning cards_container">
     @foreach($press as $pressArticle)
@@ -27,11 +30,16 @@
                 <div>{!! nl2br(e( $pressArticle->descr))!!}</div>
                 <div><a href="https://{{ $pressArticle->link }}">View article</a></div>
             </section>
-            @if (Auth::user()->admin)
-                <section class="content_sub_wrapper">
-                    <div><a href="press/{{ $pressArticle->id }}">Show single article</a></div>
-                </section>
-            @endif
+
+            @guest
+            @else
+                @if (Auth::user()->admin)
+                    <section class="content_sub_wrapper">
+                        <div><a href="press/{{ $pressArticle->id }}">Show single article</a></div>
+                    </section>
+                @endif
+            @endguest
+
         </article>
     @endforeach
     </div>
