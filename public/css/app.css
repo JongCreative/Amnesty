@@ -50,6 +50,9 @@ body {
 .button:hover {
   background-color: #dadada;
 }
+.button a {
+  color: #000000;
+}
 
 .button_sm {
   font-size: 0.9rem;
