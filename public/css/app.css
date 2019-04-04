@@ -359,7 +359,7 @@ a {
   overflow-y: auto;
   -webkit-perspective: 300px;
   perspective: 300px;
-  font-size: 200%;
+  font-size: 2em;
 }
 
 .parallax_group {
@@ -488,7 +488,7 @@ a {
 .hpblok .subtitle {
   color: #fff;
   text-shadow: 0.2px 0.2px rgba(255, 255, 255, 0.589);
-  font-size: 60%;
+  font-size: 0.6em;
   padding-bottom: 5px;
 }
 .hpblok .title {
@@ -505,7 +505,7 @@ a {
   border-color: #FFFF00;
   color: #000000;
   padding: 5px;
-  font-size: 75%;
+  font-size: 0.75em;
   display: inline-block;
 }
 .hpblok .button:hover {
@@ -513,7 +513,7 @@ a {
 }
 .hpblok p {
   color: #fffffff8;
-  font-size: 60%;
+  font-size: 0.6em;
   padding: 10px;
   letter-spacing: 1px;
   font-weight: lighter;
@@ -533,7 +533,7 @@ a {
 }
 .textheader .txt {
   color: #000000;
-  font-size: 60%;
+  font-size: 0.6em;
   padding: 10px;
   letter-spacing: 1px;
   font-weight: lighter;
@@ -565,42 +565,30 @@ a {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
 }
 .parallax_content_wrapper .block .title {
+  font-size: smaller;
   padding-top: 30px;
   font-weight: bold;
   text-align: center;
   color: #3f3f3f;
   letter-spacing: 3px;
+  padding: 5px;
 }
-
+.parallax_content_wrapper .block hr {
+  width: 80%;
+  height: 1px;
+  color: #bdbec0;
+}
 .parallax_content_wrapper .block .sub {
   font-weight: bold;
   font-size: 60%;
   padding: 5px;
+  font-size: 0.6em;
   text-align: center;
-}
-
-.parallax_content_wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 20px 10px 20px 10px;
-  background-color: #fff;
-}
-.parallax_content_wrapper .block {
-  display: flex;
-  align-items: center;
-  margin-top: 5px;
-  flex-direction: column;
-  width: 330px;
-  letter-spacing: 0.5px;
-  padding: 5px;
-  background-color: #fafafa;
 }
 .parallax_content_wrapper .block .txt {
   text-align: center;
   padding: 5px 30px 5px 30px;
-  font-size: 50%;
+  font-size: 0.4em;
 }
 .parallax_content_wrapper .block .label {
   width: 100%;
