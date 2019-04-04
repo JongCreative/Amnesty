@@ -172,7 +172,7 @@ a {
 .nav .menu_button {
   cursor: pointer;
   display: flex;
-  padding: 0 20px;
+  padding: 0 28px;
   position: relative;
   min-width: 0;
   align-items: center;
@@ -505,7 +505,7 @@ a {
   border-color: #FFFF00;
   color: #000000;
   padding: 5px;
-  font-size: 0.75em;
+  font-size: 0.75rem;
   display: inline-block;
 }
 .hpblok .button:hover {
@@ -582,13 +582,13 @@ a {
   font-weight: bold;
   font-size: 60%;
   padding: 5px;
-  font-size: 0.6em;
+  font-size: 1rem;
   text-align: center;
 }
 .parallax_content_wrapper .block .txt {
   text-align: center;
   padding: 5px 30px 5px 30px;
-  font-size: 0.4em;
+  font-size: 0.9rem;
 }
 .parallax_content_wrapper .block .label {
   width: 100%;
