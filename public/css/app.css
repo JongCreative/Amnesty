@@ -868,10 +868,21 @@ ________________________________________________________*/
 
 .card_wrapper {
   display: inline-block;
-  background-color: #c7c2ba;
   flex-wrap: wrap;
   justify-content: space-around;
   flex: 1;
+  margin: 10px;
+}
+
+.card_wrapper:nth-child(odd) {
+  background-color: red;
+}
+
+.card_wrapper:nth-child(even) {
+  background-color: blueviolet;
+}
+
+.gallery_card_wrapper:nth-child(n) {
   background-color: rgba(255, 255, 255, 0.6);
 }
 

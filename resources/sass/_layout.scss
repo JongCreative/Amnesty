@@ -82,15 +82,23 @@ ________________________________________________________*/
 }
 .card_wrapper{
     display: inline-block;
-    background-color: $form-bg;
+    //background-color: $form-bg;
     flex-wrap: wrap;
     justify-content: space-around;
     flex: 1;
-    background-color: $hpblok-title-bg;
+    margin: 10px;
+    //background-color: $hpblok-title-bg;
 }
-// .card_wrapper:first-child { 
-//     background-color: $hpblok-title-bg;
-//   }
+.card_wrapper:nth-child(odd) { 
+    background-color: red
+  }
+.card_wrapper:nth-child(even) { 
+    background-color: blueviolet
+}
+.gallery_card_wrapper:nth-child(n){
+    background-color: $hpblok-title-bg; 
+}
+
 .img_size{
     width: 100%;
 }
