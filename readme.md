@@ -1,4 +1,4 @@
-<p align="center" style="font-size: 28px;"><b>Amnesty Fotowedstrijd</b></p>
+<h1 align="center">Amnesty Fotowedstrijd</h1>
 
 
 ## About
