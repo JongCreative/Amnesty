@@ -35,36 +35,50 @@
         <div class="parallax_layer parallax_layer_base">
           <!-- start content parallax -->
           <div class="textheader">
-            <div class="title">Amnesty International fotowedstrijd<br>
-              <div class="sub">Thema: {{ $contestData->theme }}</div>
+{{--             <div class="title">Amnesty International fotowedstrijd<br>
+              <div class="sub">{{ $contestData->theme }}</div>
             </div>
-            <div class="txt">De deadline voor inzendingen eindigd op {{ $contestData->endDate }}</div>
+            <div class="txt">Wedstrijd eindigt op {{ $contestData->endDate }}</div> --}}
           </div>
+
           <div class="parallax_content_wrapper">
             <div class="block">
-              <div class="title">Wedstrijd</div>
-              <hr>
-              <div class="txt"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
-              <div class="label">Deelnemen</div>
+
+              <div class="title">De wedstrijd</div>
+              <div class="sub">Lorem ipsum dolor sit amet</div>
+              <div class="txt">Wereldwijd zijn miljoenen mensen op de vlucht. Wat is jouw beeld bij vluchten?  Je zou hierbij kunnen denken aan de omstandigheden, een verscheidenheid aan emoties of misschien denk jij aan iets heel anders als jij aan het thema vluchten denkt. AI daagt jou uit om vluchten op jouw manier in  beeld te brengen.</div>
+              <div class="button">Deelnemen</div>
             </div>
             <div class="block">
               <div class="title">Inzendingen</div>
-              <hr>
-              <div class="txt"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
-              <div class="label">Deelnemen</div>
+              <div class="sub">Lorem ipsum dolor sit amet</div>
+              <div class="txt">De inzendingen moeten voldoen aan de volgende voorwaarden:
+                <br />
+                  1. Je mag max 3 fotos inzenden<br />
+                  2. Het vereiste formaat is max 2 mb in jpg per ingezonden foto.<br />
+                  3. Het beeld moet jouw eigen creatie zijn<br />
+                  4. Het beeld mag naar eigen wens bewerkt zijn.<br /><br />
+                  De deadline voor de inzendingen is {{ $contestData->endDate }}.
+              </div>
+              <div class="button">Deelnemen</div>
             </div>
             <div class="block">
-              <div class="title">Prijzen</div>
-              <hr>
-              <div class="txt"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
-              <div class="label">Deelnemen</div>
+              <div class="title">Dit kan je winnen</div>
+              <div class="sub">Verschillende prijzen dankzij onze sponsors</div>
+              <div class="txt">
+                De hoofdprijs is {{ $contestData->mainPrize }} <br />
+                De 2e prijs is {{ $contestData->secondPrize }} <br />
+                De 3e prijs is {{ $contestData->thirdPrize }} <br />
+              </div>
+              <div class="button">Deelnemen</div>
             </div>
           </div>
           <div class="textheader">
-            <div class="title">Elke maand een winnaar<br>
+{{--             <div class="title">Elke maand een winnaar<br>
               <div class="sub">{{ $contestData->currentPrize }}</div>
             </div>
             <div class="txt">{{ $contestData->monthDescr }}</div>
+            <div class="button">Deelnemen</div> --}}
           </div>
           <!-- end content parallax -->
         </div>

@@ -4,6 +4,10 @@ a {
   cursor: pointer;
 }
 
+.navbar_container {
+  position: relative;
+}
+
 .nav {
   display: flex;
   flex-direction: row;
@@ -17,7 +21,7 @@ a {
   margin: 0;
   padding: 0;
   font-size: .9rem;
-  z-index: 5;
+  z-index: 3;
 
   li {
     float: left;
@@ -79,11 +83,10 @@ a {
   opacity: 1;
   display: flex;
   z-index: -2;
-  animation: NavFadeIn 0.5s;
+  animation: NavFadeIn 1s;
 }
 
 .nav_child {
-  display: none;
   flex-direction: row;
   justify-content: center;
   list-style: none;
@@ -95,7 +98,6 @@ a {
   position: absolute;
   opacity: 0;
   top: 100%;
-  z-index: -1;
 
   li {
     height: 40px;
@@ -105,7 +107,6 @@ a {
     font-family: "Arial", sans-serif;
     background-color: $nav-child-li-bg;
     color: $white;
-    z-index: -1;
 
     a {
       display: block;
@@ -113,7 +114,6 @@ a {
       text-decoration: none;
       transition: background-color 0.25s ease-in-out, border-color 0.25s ease-in-out, color 0.25s ease-in-out, fill 0.25s ease-in-out;
       // cursor: pointer;
-      z-index: -1;
     }
 
     a:hover {
@@ -128,11 +128,117 @@ a {
 @keyframes NavFadeIn {
   0% {
     opacity: 0;
-    transform: translateY(-25px);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0);
+  }
+}
+
+/** Responsive Design Navigation**/
+.nav {
+  .menu_button {
+    cursor: pointer;
+    display: flex;
+    padding: 0 20px;
+    position: relative;
+    min-width: 0;
+    align-items: center;
+
+    span {
+      background: $nav-a-font;
+      display: block;
+      height: 4px;
+      position: relative;
+      width: 32px;
+      border-radius: 2px;
+
+      &:before,
+      &:after {
+        background: $nav-a-font;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all .2s ease-out;
+        width: 100%;
+        border-radius: 2px;
+      }
+
+      &:before {
+        top: -10px;
+      }
+
+      &:after {
+        top: 10px;
+      }
+    }
+  }
+
+  .nav_toggle:checked~.nav_links {
+    max-width: 150px;
+  }
+
+  .nav_toggle:checked~.menu_button span {
+    background: transparent;
+
+    &:before {
+      transform: rotate(45deg);
+      top: 0px;
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+      top: 0px;
+    }
+  }
+
+  .nav_links {
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 100%;
+    list-style: none;
+    clear: both;
+    max-width: 0;
+    transition: max-width 1s ease-out;
+    z-index: 5;
+
+    li {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      background-color: $nav-child-bg;
+      color: $white;
+
+      a {
+        background-color: $nav-child-bg;
+        color: $white;
+        text-align: right;
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+.nav_screen {
+  display: block;
+}
+
+.nav_mobile {
+  display: none;
+}
+
+.nav_toggle {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .nav_screen {
+    display: none;
+  }
+
+  .nav_mobile {
+    display: block;
   }
 }
