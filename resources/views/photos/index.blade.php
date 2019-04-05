@@ -21,9 +21,9 @@
             </div>
         </article> --}}
     </div>
-    <div class="content_positioning cards_container">
+    <div class="content_positioning cards_container gallery_card_container">
     @foreach($photos as $photo)
-        <article class="content_wrapper flex_column card_wrapper">
+        <article class="content_wrapper flex_column card_wrapper gallery_card_wrapper">
             <section class="content_sub_wrapper">
                 <p class="h1">{{ $photo->title }}</p>
             </section>
