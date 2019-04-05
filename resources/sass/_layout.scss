@@ -27,7 +27,6 @@ ________________________________________________________*/
 .content_container {
     display: flex;
     flex-direction: row;
-    //padding: 5px;
     background-color: $form-bg;
     //background-color: paleturquoise;
 }
@@ -37,11 +36,11 @@ ________________________________________________________*/
     //padding: 5px;
     //background-color: palevioletred;
 }
-.content_positioning_1-2 {
-    //background-color: slateblue;
-}
+// .content_positioning_1-2 {
+//     background-color: slateblue;
+// }
 .content_wrapper {
-    padding: 5px;
+    //padding: 5px;
     min-width: 300px;
     //background-color: peachpuff;
 }
@@ -49,9 +48,23 @@ ________________________________________________________*/
     flex: 1;
     padding: 5px;
     //background-color: lightgreen;
-    border: solid 2px seashell;
+    //border: 1px solid #888;
 }
 
+.whitespace{
+    height: 40px;
+    //background-color: paleturquoise;
+}
+@media (max-width: 500px) {
+    .whitespace {
+        height: 10px;
+    }
+  }
+.center_content{
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+}
 .flex_row{
     display: flex;
     flex-direction: row;
@@ -70,7 +83,6 @@ ________________________________________________________*/
 .flex_2{
     flex: 2;
 }
-
 .pagination {
     display: flex;
     flex-direction: row;
@@ -90,23 +102,26 @@ ________________________________________________________*/
 }
 .card_wrapper{
     display: inline-block;
-    //background-color: $form-bg;
     flex-wrap: wrap;
     justify-content: space-around;
     flex: 1;
-    margin: 10px;
-    //background-color: $hpblok-title-bg;
+    max-width: 95%;;
+    //margin: 10px;
 }
 .card_wrapper:nth-child(odd) .card_sub_wrapper{ 
-    //background-color: red;
     background-color: $darker_warm_grey;
     border: none;
   }
 .card_wrapper:nth-child(even) .card_sub_wrapper{ 
-    //background-color: blueviolet;
-    background-color: $dark_hover;
+    //background-color: $dark_hover;
+    color: #000;
     flex-direction: row-reverse;
     border: none;
+}
+
+.gallery_card_wrapper{
+    margin: 10px;
+    max-width: 500px;
 }
 .gallery_card_container:nth-child(n){
     flex-direction: row; 
@@ -124,7 +139,7 @@ ________________________________________________________ */
 .h1 {
     height: 100px;
     color: #fff;
-    background-color: #000000;
+    background-color:black;
     font-size: 26px;
     font-weight: bold;
     text-align: center;
@@ -132,18 +147,15 @@ ________________________________________________________ */
     line-height: 100px;
 }
 .h2 {
-    width: 100%;
-    background-color: #000;
-    color: #FFFFFF;
+    color: #FFF;
     font-weight: bold;
-    font-size: 125%;
+    font-size: 30px;
     letter-spacing: 3px;
     text-align: center;
-    vertical-align: bottom;
 }
 .h3 {
-    font-size: 0.8em;
-    color: $white;
+    font-size: 22px;
+    font-weight: 600;
     padding: 5px;
     text-align: center;
 }
@@ -185,6 +197,17 @@ textarea{
     font-weight: 700;
     margin-bottom: 8px;
 }
+
+.alert{
+    color: white;
+}
+.alert-danger{
+    background-color:tomato;
+}
+.alert-success{
+    background-color:teal;
+}
+
 
 /*  START EXAMPLE
 ________________________________________________________ 

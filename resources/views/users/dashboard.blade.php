@@ -4,8 +4,8 @@
 
 @section('content')
 <article class="content_container flex_column">
-    <div class="content_positioning flex_row">
-        <article class="content_wrapper flex_wrap">
+    <div class="content_positioning flex_wrap">
+        <article class="content_wrapper">
             <section class="content_sub_wrapper">
                 <p class="h1">About me</p>
             </section>

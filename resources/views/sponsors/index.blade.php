@@ -21,12 +21,13 @@
     @foreach($sponsors as $sponsor)
         <article class="content_wrapper flex_column card_wrapper">
             <section class="content_sub_wrapper card_sub_wrapper flex_wrap">
-                <div class="flex_1">
-                    <img src="/img/logo/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}'s logo" />
+                <div class="flex_1 center_content">
+                    {{-- <img src="/img/logo/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}'s logo" /> --}}
+                    <img src="https://pbs.twimg.com/profile_images/931190512731807746/yO8Lcr9H_400x400.jpg" alt="{{ $sponsor->name }}'s logo" />
                 </div>
-                <div class="flex_2">
-                    <p class="h2">{{ $sponsor->name }}</p>
-                    <div class="h3">{!! nl2br(e($sponsor->contribution)) !!}</div>
+                <div class="flex_2 flex_column center_content">
+                    <p class="h2 center_content">{{ $sponsor->name }}</p>
+                    <div class="h3 center_content">{!! nl2br(e($sponsor->contribution)) !!}</div>
                     <div>{{ $sponsor->title }}</div>
 
                     @guest @else @if (Auth::user()->admin)
@@ -34,6 +35,7 @@
                     @endif @endguest
                 </div>
             </section>
+            <section class="whitespace"></section>
         </article>
     @endforeach
 

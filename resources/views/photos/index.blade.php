@@ -32,7 +32,8 @@
                 <div>{!! nl2br(e( $photo->descr))!!}</div>
             </section>
         </article>
-    @endforeach
+        @endforeach
+        <section class="whitespace"></section>
     </div>
     <div class="content_positioning">
         <article class="content_wrapper flex_row">

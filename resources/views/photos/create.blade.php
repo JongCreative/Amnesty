@@ -11,6 +11,8 @@
                 <p class="header">upload een foto</p>
             </section>
             <section class="content_sub_wrapper">
+            {{-- Success Handlers for User changes --}}
+            @include('inc.messages')
                 <form  class="form_wrapper form-insert" action="/photos" enctype="multipart/form-data" method="POST">
                     @csrf
                     <section>
