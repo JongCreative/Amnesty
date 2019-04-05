@@ -1,65 +1,80 @@
-@extends('layouts.dev')
+@extends('layouts.app')
 
 @section('content')
 
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%">
-    <div class="form_container" style="max-width: 500px;">
-        <div class="header">Register</div>
-  
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+<article class="content_container">
+    <div class="content_positioning content_positioning_1-2">
+        <div class="form_container">
+            <article class="content_wrapper form_container">
+                <section class="content_sub_wrapper">
+                    <p class="header">Register</p>
+                </section>
+                <section class="content_sub_wrapper">
 
-            <label for="first_name" class="">First name</label>
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
 
-            <input id="first_name" type="text" class="" name="first_name" value="{{ old('first_name') }}" required autofocus>
+                        <label for="first_name" class="">First name</label>
 
-            @if ($errors->has('first_name'))
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('first_name') }}</strong>
-              </span>
-            @endif
+                        <input id="first_name" type="text" class="" name="first_name" value="{{ old('first_name') }}" required autofocus>
+
+                        @if ($errors->has('first_name'))
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('first_name') }}</strong>
+                          </span>
+                        @endif
 
 
-            <label for="last_name" class="">Last name</label>
-            <input id="last_name" type="text" class="" name="last_name" value="{{ old('last_name') }}" required>
+                        <label for="last_name" class="">Last name</label>
+                        <input id="last_name" type="text" class="" name="last_name" value="{{ old('last_name') }}" required>
 
-            @if ($errors->has('last_name'))
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('last_name') }}</strong>
-              </span>
-            @endif
+                        @if ($errors->has('last_name'))
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('last_name') }}</strong>
+                          </span>
+                        @endif
 
-            <label for="email" class=""> email </label>
-            <input id="email" type="email" class="" name="email" value="{{ old('email') }}" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                        <label for="email" class=""> email </label>
+                        <input id="email" type="email" class="" name="email" value="{{ old('email') }}" required>
 
-            @if ($errors->has('email'))
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('email') }}</strong>
-              </span>
-            @endif
+                        @if ($errors->has('email'))
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                          </span>
+                        @endif
 
-            <label for="password" class=""> Password </label>
+                        <label for="password" class=""> Password </label>
 
-            <input id="password" type="password" class="" name="password" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                        <input id="password" type="password" class="" name="password" required>
 
-            @if ($errors->has('password'))
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('password') }}</strong>
-              </span>
-            @endif
+                        @if ($errors->has('password'))
+                          <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                          </span>
+                        @endif
 
-            <label for="password-confirm" class="">Confirm Password</label>
+                        <label for="password-confirm" class="">Confirm Password</label>
 
-            <input id="password-confirm" type="password" class="" name="password_confirmation" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                        <input id="password-confirm" type="password" class="" name="password_confirmation" required>
 
-            <input type="radio" name="terms" value="check" required>
-            <label>I agree with the terms of the contest.</label> <br />
+                        <input type="radio" name="terms" value="check" required>
+                        <label>I agree with the terms of the contest.</label> <br />
 
-            <input type="checkbox" name="newsletter">
-            <label>I want to register for the newsletter.</label>
+                        <input type="checkbox" name="newsletter">
+                        <label>I want to register for the newsletter.</label>
 
-            <input type="submit" value="register">
-        </form>
+                        <input type="submit" value="register">
+                    </form>
+
+                </section>
+            </article>
+        </div>
     </div>
-</div>
+    <div class="content_positioning content_positioning_2-2">
+        <article class="content_wrapper">
+            <section class="content_sub_wrapper"></section>
+        </article>
+    </div>
+</article>
+
 @endsection

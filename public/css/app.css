@@ -327,7 +327,10 @@ a {
   background-color: #c7c2ba;
   color: #000000;
 }
-.form_container form input[type=text], .form_container form select {
+.form_container form input[type=email],
+.form_container form input[type=password],
+.form_container form input[type=text],
+.form_container form select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
