@@ -60,8 +60,15 @@ ________________________________________________________*/
     display: flex;
     flex-direction: column;
 }
+.flex_wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
 .flex_1{
     flex: 1;
+}
+.flex_2{
+    flex: 2;
 }
 
 .pagination {
@@ -79,6 +86,7 @@ ________________________________________________________*/
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 .card_wrapper{
     display: inline-block;
@@ -89,11 +97,19 @@ ________________________________________________________*/
     margin: 10px;
     //background-color: $hpblok-title-bg;
 }
-.card_wrapper:nth-child(odd) { 
-    background-color: red
+.card_wrapper:nth-child(odd) .card_sub_wrapper{ 
+    //background-color: red;
+    background-color: $darker_warm_grey;
+    border: none;
   }
-.card_wrapper:nth-child(even) { 
-    background-color: blueviolet
+.card_wrapper:nth-child(even) .card_sub_wrapper{ 
+    //background-color: blueviolet;
+    background-color: $dark_hover;
+    flex-direction: row-reverse;
+    border: none;
+}
+.gallery_card_container:nth-child(n){
+    flex-direction: row; 
 }
 .gallery_card_wrapper:nth-child(n){
     background-color: $hpblok-title-bg; 
@@ -114,6 +130,22 @@ ________________________________________________________ */
     text-align: center;
     align-items: center;
     line-height: 100px;
+}
+.h2 {
+    width: 100%;
+    background-color: #000;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 125%;
+    letter-spacing: 3px;
+    text-align: center;
+    vertical-align: bottom;
+}
+.h3 {
+    font-size: 0.8em;
+    color: $white;
+    padding: 5px;
+    text-align: center;
 }
 
 .label-date {

@@ -18,20 +18,19 @@
     <div class="content_positioning cards_container">
     @foreach($sponsors as $sponsor)
         <article class="content_wrapper flex_column card_wrapper">
-            <section class="content_sub_wrapper">
-                <p class="h1">{{ $sponsor->name }}</p>
-            </section>
-            <section class="content_sub_wrapper">
-                <div><a href="sponsors/{{ $sponsor->id }}"></a></div>
-                <div><img src="/img/logo/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}'s logo" /></div>
-                <div>{{ $sponsor->title }} </div>
-                <div>{!! nl2br(e($sponsor->contribution)) !!}</div>
-            </section>
-            @if (Auth::user()->admin)
-                <section class="content_sub_wrapper">
+            <section class="content_sub_wrapper card_sub_wrapper flex_wrap">
+                <div class="flex_1">
+                    <img src="/img/logo/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}'s logo" />
+                </div>
+                <div class="flex_2">
+                    <p class="h2">{{ $sponsor->name }}</p>
+                    <div class="h3">{!! nl2br(e($sponsor->contribution)) !!}</div>
+                    <div>{{ $sponsor->title }}</div>
+                    @if (Auth::user()->admin)
                     <div><a href="sponsors/{{ $sponsor->id }}">Show single sponsor</a></div>
-                </section>
-            @endif
+                    @endif
+                </div>
+            </section>
         </article>
     @endforeach
     </div>
