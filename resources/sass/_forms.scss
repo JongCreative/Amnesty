@@ -1,66 +1,71 @@
-.forms_container{
-    margin-top: 140px;
-    display: grid;
-    width: 80%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    padding: 20px, 0, 10px, 0;
-  }
-  
-  .form_container{ 
-    padding: 10px;
-  
-      .header{
-        height: 100px;
-        color: $white;
-        background-color: $black;
-        font-size: 26px;
-        font-weight: bold;
-        text-align: center;
-        align-items: center;
-        line-height: 100px;
-      }
-  
-      form{
-        padding: 20px;
-        background-color: $form-bg;
-        color: $black;
-        input[type="text"], select {
-          width: 100%;
-          padding: 12px 20px;
-          margin: 8px 0;
-          display: inline-block;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-          }
-        
-          input[type=submit] {
-            width: 100%;
-            background-color: $yellow;
-            color: black;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-          }
-          
-          input[type=submit]:hover {
-            background-color: $yellow_hover;
-          }
+.forms_container {
+  margin-top: 140px;
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px, 0, 10px, 0;
+}
 
-          .button {
-            width: 100%;
-            background-color: $yellow;
-            color: black;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            cursor: pointer;
-          }
-          
-          .button:hover {
-            background-color: $yellow_hover;
-          }
-      }
+.form_container {
+  padding: 10px;
+
+  .header {
+    height: 100px;
+    color: $white;
+    background-color: $black;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    line-height: 100px;
   }
+
+  form {
+    padding: 20px;
+    background-color: $form-bg;
+    color: $black;
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+
+    input[type=submit] {
+      width: 100%;
+      background-color: $yellow;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: $yellow_hover;
+    }
+
+    .button {
+      width: 100%;
+      background-color: $yellow;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: $yellow_hover;
+    }
+  }
+}

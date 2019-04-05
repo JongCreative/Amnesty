@@ -20,17 +20,17 @@
                 <p class="h1">{{ $juryMember->title }}</p>
             </section>
             <section class="content_sub_wrapper">
-                <div><a href="/sponsors/{{ $juryMember->id }}"><img class="img_size" src="{{url('/img/jury1.jpg')}}"/></a></div>
+                <div><a href="/sponsors/{{ $juryMember->id }}"><img class="img_size" src="img/avatar/{{ $juryMember->avatar }}"/></a></div>
                 <div class="description">{!! nl2br(e($juryMember->descr)) !!}</div>
                 <div class="name">{{ $juryMember->name }}</div>
-                <img src="{{url('/img/jury1.jpg')}}" alt="">
+                {{-- <img src="{{url('/img/jury1.jpg')}}" alt=""> --}}
             </section>
         </article>
     @endforeach
     </div>
     <div class="content_positioning">
         <article class="content_wrapper flex_row">
-            
+
         </article>
     </div>
 </article>

@@ -2,52 +2,58 @@
 
 @section('content')
 
-<div class="forms_container" style="display: flex; justify-content: center; width: 100%">
-    <div class="form_container" style="max-width: 500px;">
-        <div class="header">Login</div>
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+<article class="content_container">
+    <div class="form_container">
+        <article class="content_wrapper form_container">
+            <section class="content_sub_wrapper">
+                <p class="header">Login</p>
+            </section>
+            <section class="content_sub_wrapper">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
 
-            @if (session('message')) 
-                <div class="">
-                    {{ session('message') }}
-                </div>
-            @endif
-            
-            <label for="email" class="">{{ __('E-Mail Address') }}</label>
-            <input id="email" type="email" class="" name="email" value="{{ old('email') }}" required autofocus style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                    @if (session('message'))
+                        <div class="">
+                            {{ session('message') }}
+                        </div>
+                    @endif
 
-            @if ($errors->has('email'))
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-            @endif
+                    <label for="email">{{ __('E-Mail Address') }}</label>
+                    <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
 
-            <label for="password" class="">{{ __('Password') }}</label>
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
 
-            <input id="password" type="password" class="" name="password" required style="width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+                    <label for="password" class="">{{ __('Password') }}</label>
 
-            @if ($errors->has('password'))
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-            @endif
+                    <input id="password" type="password" class="" name="password" required>
 
-            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    @if ($errors->has('password'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
 
-            <label class="" for="remember">
-                {{ __('Remember Me') }}
-            </label>
+                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-            <input type="submit" value="{{ __('Login') }}">
+                    <label class="" for="remember">
+                        {{ __('Remember Me') }}
+                    </label>
 
-            @if (Route::has('password.request'))
-                <a class="" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
-                </a>
-            @endif
+                    <input type="submit" value="{{ __('Login') }}">
 
-        </form>
+                    @if (Route::has('password.request'))
+                        <a class="" href="{{ route('password.request') }}">
+                            {{ __('Forgot Your Password?') }}
+                        </a>
+                    @endif
+
+                </form>
+            </section>
+        </article>
     </div>
-</div>
+</article>
 @endsection
