@@ -883,14 +883,29 @@ ________________________________________________________*/
 }
 
 .content_wrapper {
-  padding: 5px;
   min-width: 300px;
 }
 
 .content_sub_wrapper {
   flex: 1;
   padding: 5px;
-  border: solid 2px seashell;
+}
+
+.whitespace {
+  height: 40px;
+}
+
+@media (max-width: 500px) {
+  .whitespace {
+    height: 10px;
+  }
+}
+.center_content {
+  display: flex;
+  justify-content: center;
+  /* align horizontal */
+  align-items: center;
+  /* align vertical */
 }
 
 .flex_row {
@@ -940,7 +955,7 @@ ________________________________________________________*/
   flex-wrap: wrap;
   justify-content: space-around;
   flex: 1;
-  margin: 10px;
+  max-width: 95%;
 }
 
 .card_wrapper:nth-child(odd) .card_sub_wrapper {
@@ -949,9 +964,14 @@ ________________________________________________________*/
 }
 
 .card_wrapper:nth-child(even) .card_sub_wrapper {
-  background-color: #363636;
+  color: #000;
   flex-direction: row-reverse;
   border: none;
+}
+
+.gallery_card_wrapper {
+  margin: 10px;
+  max-width: 500px;
 }
 
 .gallery_card_container:nth-child(n) {
@@ -971,7 +991,7 @@ ________________________________________________________ */
 .h1 {
   height: 100px;
   color: #fff;
-  background-color: #000000;
+  background-color: black;
   font-size: 26px;
   font-weight: bold;
   text-align: center;
@@ -980,19 +1000,16 @@ ________________________________________________________ */
 }
 
 .h2 {
-  width: 100%;
-  background-color: #000;
-  color: #FFFFFF;
+  color: #FFF;
   font-weight: bold;
-  font-size: 125%;
+  font-size: 30px;
   letter-spacing: 3px;
   text-align: center;
-  vertical-align: bottom;
 }
 
 .h3 {
-  font-size: 0.8em;
-  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
   padding: 5px;
   text-align: center;
 }
@@ -1038,6 +1055,18 @@ textarea {
   font-size: 1.2em;
   font-weight: 700;
   margin-bottom: 8px;
+}
+
+.alert {
+  color: white;
+}
+
+.alert-danger {
+  background-color: tomato;
+}
+
+.alert-success {
+  background-color: teal;
 }
 
 /*  START EXAMPLE
