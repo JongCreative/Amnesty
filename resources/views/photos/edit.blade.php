@@ -11,11 +11,13 @@
                 <p class="header">Omschrijving aanpassen</p>
             </section>
             <section class="content_sub_wrapper">
+            {{-- Success Handlers for User changes --}}
+            @include('inc.messages')
                 <form  class="form_wrapper form-insert" action="/photos/{{$photos->id}}" enctype="multipart/form-data" method="POST">
                     @method('PATCH')
                     @csrf
                     <section>
-                        <br /><input type="text" name="title" placeholder="title" value="{{ $photos->title }}">
+                        <br /><input type="text" name="title" placeholder="title" value="{{ $photos->title }}" required autofocus>
                         <br /><input type="text" name="descr" placeholder="descr" value="{{ $photos->descr }}">
                         <br /><input type="text" name="focal" placeholder="focal" value="{{ $photos->focal }}">
                         <br /><input type="text" name="aperture" placeholder="aperture" value="{{ $photos->aperture }}">
