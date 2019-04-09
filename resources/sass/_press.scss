@@ -1,0 +1,36 @@
+.press_container {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 450px);
+    grid-gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: $grid-container-bg; 
+  }
+
+.press_card{
+  width: 450px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px black;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card_date{
+    font-size: 0.8em;
+    color: $white;
+    padding: 5px;
+    text-align: center;
+    background-color: $black;
+  }
+
+  .card_link{
+    font-size: 0.8em;
+    color: $black;
+    padding: 5px;
+    text-align: center;
+    background-color: $yellow;
+  }
