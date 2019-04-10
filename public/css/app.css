@@ -752,9 +752,10 @@ a {
   border: solid 1px yellow;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
 }
-.jury_card img {
-  height: 250px;
+.jury_card .cover {
   object-fit: cover;
+  width: 250px;
+  height: 250px;
 }
 
 .card_name {
