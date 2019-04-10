@@ -4,6 +4,7 @@
 
 @section('content')
 
+
 <div class="grid_container">
         @foreach($juryMembers as $juryMember)
         <div class="jury_card">
@@ -18,7 +19,7 @@
 <article class="content_container flex_column">
     <div class="content_positioning">
         <article class="content_wrapper">
-            Success Handlers for User changes 
+            {{-- Success Handlers for User changes  --}}
             @include('inc.messages')
         </article>
         <article class="content_wrapper">
