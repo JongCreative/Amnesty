@@ -1,79 +1,42 @@
-.content_container{
-  display: flex;
-  flex-direction: column;
-}
-
-.content_top{
-display: grid;
-grid-template-columns: auto auto;
-
-  .left{
-    background-color: $page-left;
-    text-align: left;
-    font-weight: bold;
-    letter-spacing: 0.3px;
-    padding: 5px 0 5px 10px;
-  }
-  .right{
-    background-color: $page-right;
-    text-align: right;
-    font-weight: bold;
-    letter-spacing: 0.3px;
-    padding: 5px 10px 5px 0;
-
-  }
-}
-
-.grid_left {
-  max-width: 1000px;
+.grid_container {
+  max-width: 1500px;
   margin: 0 auto;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, 200px);
-  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-gap: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: $page-left; 
+  background-color: $grid-container-bg; 
 }
 
-.grid_right {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, 200px);
-  grid-gap: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: $page-right; 
-}
-
-
-.item_card{
-  width: 200px;
-  height: 200px;
+.gallery_card{
+  width: 250px;
+  height: 250px;
   display: flex;
   flex-direction: column;
-
-  img{
-    width: 200px;
-    height: 200px;
+  border: solid 1px yellow;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+  .cover{
     object-fit: cover;
+    width: 250px;
+    height: 192px;
   }
+}
 
-  .item_title{
-    font-size: 0.8em;
-    color: $white;
-    padding: 5px;
-    text-align: center;
-    background-color: $darker_warm_grey;
-  }
+.card_phototitle{
+  font-size: 1em;
+  font-weight: bold;
+  color: $white;
+  padding: 5px;
+  text-align: center;
+  background-color: $black;
+}
 
-  .item_creator{
-    font-size: 1em;
-    color: $white;
-    padding: 5px;
-    text-align: center;
-    background-color: $dark_warm_grey;
-  }
+.card_creator{
+  font-size: 0.8em;
+  color: $white;
+  padding: 5px;
+  text-align: center;
+  background-color: $black;
 }
